@@ -9,6 +9,11 @@ const nextConfig: NextConfig = {
         hostname: "iykyk.shop",
         pathname: "/cdn/shop/files/**",
       },
+      {
+        protocol: "https",
+        hostname: "ucarecdn.com",
+        pathname: "/**",
+      },
     ],
   },
 };

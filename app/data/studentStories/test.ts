@@ -591,6 +591,10 @@ export const studentStory: StudentStoryProps = {
   gallery: {
     images: [
       {
+        url: "https://ucarecdn.com/17097d22-59fa-447b-ba90-93dacafcecff/iykyk.gif",
+        caption: "IYKYK Site Tour",
+      },
+      {
         url: "https://iykyk.shop/cdn/shop/files/IMG_7886_288x288.jpg?v=1733202084",
         caption: "Reinvent Earrings",
       },
