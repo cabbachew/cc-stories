@@ -14,6 +14,7 @@ import {
   Trophy,
   User,
 } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
 
 export default function Overview({
   studentStory,
@@ -171,6 +172,8 @@ export default function Overview({
               </div>
             </div>
           </div>
+
+          <Separator className="my-6" />
 
           <div className="space-y-2">
             <h4 className="font-semibold flex items-center gap-2">
