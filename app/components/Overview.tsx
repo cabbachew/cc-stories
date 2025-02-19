@@ -135,6 +135,13 @@ export default function Overview({
                 {studentStory.mentorInfo.name}
               </h3>
               <div className="space-y-4">
+                {studentStory.mentorInfo.education && (
+                  <p className="text-base text-muted-foreground">
+                    {studentStory.mentorInfo.education.major}
+                    <span className="mx-2">⬩</span>
+                    {studentStory.mentorInfo.education.university}
+                  </p>
+                )}
                 <div className="space-y-2">
                   <p className="text-sm text-muted-foreground">
                     {studentStory.mentorInfo.background}

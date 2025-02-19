@@ -15,6 +15,10 @@ export interface StudentStoryProps {
     expertise: string[];
     background: string;
     photoUrl: string;
+    education?: {
+      university: string;
+      major: string;
+    };
   };
   mentorshipMatch: {
     relationship: string;

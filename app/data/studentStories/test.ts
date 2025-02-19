@@ -44,6 +44,10 @@ export const studentStory: StudentStoryProps = {
       "Digital Marketing",
       "Product Design",
     ],
+    education: {
+      university: "Brown University",
+      major: "Political Science and Math",
+    },
     background:
       "Experienced entrepreneur and business mentor specializing in helping young founders launch and scale their ventures",
   },
