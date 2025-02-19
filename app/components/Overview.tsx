@@ -124,19 +124,22 @@ export default function Overview({
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-6">
-          <div className="flex items-start gap-6">
-            <Avatar className="h-24 w-24">
-              <AvatarImage
-                src={studentStory.mentorInfo.photoUrl}
-                alt={studentStory.mentorInfo.name}
-              />
-              <AvatarFallback>{studentStory.mentorInfo.name[0]}</AvatarFallback>
-            </Avatar>
-            <div className="space-y-2">
-              <h3 className="font-semibold text-lg">
-                {studentStory.mentorInfo.name}
-              </h3>
-              <div className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Mentor info container */}
+            <div className="flex gap-6">
+              <Avatar className="h-24 w-24 shrink-0">
+                <AvatarImage
+                  src={studentStory.mentorInfo.photoUrl}
+                  alt={studentStory.mentorInfo.name}
+                />
+                <AvatarFallback>
+                  {studentStory.mentorInfo.name[0]}
+                </AvatarFallback>
+              </Avatar>
+              <div className="space-y-2">
+                <h3 className="font-semibold text-lg">
+                  {studentStory.mentorInfo.name}
+                </h3>
                 {studentStory.mentorInfo.education && (
                   <p className="text-base text-muted-foreground">
                     {studentStory.mentorInfo.education.major}
@@ -144,24 +147,26 @@ export default function Overview({
                     {studentStory.mentorInfo.education.university}
                   </p>
                 )}
-                <div className="space-y-2">
-                  <p className="text-sm text-muted-foreground">
-                    {studentStory.mentorInfo.background}
-                  </p>
-                </div>
-                <div className="space-y-2">
-                  <h4 className="font-semibold">Expertise</h4>
-                  <div className="flex flex-wrap gap-1.5">
-                    {studentStory.mentorInfo.expertise.map((skill) => (
-                      <Badge
-                        key={skill}
-                        variant="secondary"
-                        className="rounded-md font-normal"
-                      >
-                        {skill}
-                      </Badge>
-                    ))}
-                  </div>
+                <p className="text-sm text-muted-foreground">
+                  {studentStory.mentorInfo.background}
+                </p>
+              </div>
+            </div>
+
+            {/* Expertise container */}
+            <div className="space-y-4">
+              <div className="space-y-2">
+                <h4 className="font-semibold">Expertise</h4>
+                <div className="flex flex-wrap gap-1.5">
+                  {studentStory.mentorInfo.expertise.map((skill) => (
+                    <Badge
+                      key={skill}
+                      variant="secondary"
+                      className="rounded-md font-normal"
+                    >
+                      {skill}
+                    </Badge>
+                  ))}
                 </div>
               </div>
             </div>
