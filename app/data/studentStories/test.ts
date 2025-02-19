@@ -591,7 +591,7 @@ export const studentStory: StudentStoryProps = {
   gallery: {
     images: [
       {
-        url: "https://ucarecdn.com/17097d22-59fa-447b-ba90-93dacafcecff/iykyk.gif",
+        url: "https://ucarecdn.com/0c4a914f-c48a-43bd-a85f-149687285ea3/iykyk.gif",
         caption: "IYKYK Site Tour",
       },
       {
