@@ -313,7 +313,9 @@ export default function Overview({
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="text-muted-foreground">{studentStory.futureGoals}</p>
+          <p className="text-muted-foreground text-sm">
+            {studentStory.futureGoals}
+          </p>
         </CardContent>
       </Card>
     </div>
