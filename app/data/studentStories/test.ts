@@ -16,7 +16,8 @@ export const studentStory: StudentStoryProps = {
       "Volleyball",
       "Community Service",
     ],
-    photoUrl: "/placeholder/student/rose-cornell.jpg",
+    photoUrl:
+      "https://ucarecdn.com/9cc608ec-aeae-450a-bd20-5c3a54059c9e/-/scale_crop/480x480/",
   },
   painPoints: [
     "Difficulty carrying ideas through to completion",
