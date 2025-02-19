@@ -1,3 +1,18 @@
+interface GalleryImage {
+  url: string;
+  caption: string;
+}
+
+interface GalleryAsset {
+  title: string;
+  url: string;
+}
+
+interface Gallery {
+  images: GalleryImage[];
+  assets: GalleryAsset[];
+}
+
 export interface StudentStoryProps {
   headline: string;
   studentInfo: {
@@ -37,7 +52,11 @@ export interface StudentStoryProps {
   outcomes: {
     milestones: string[];
     documentation: string[];
-    testimonials: string[];
+    testimonials: {
+      quote: string;
+      author: string;
+      role: string;
+    }[];
     currentStatus: string;
   };
   impactSummary: string;
@@ -60,4 +79,5 @@ export interface StudentStoryProps {
       sessions: string[];
     }[];
   };
+  gallery?: Gallery;
 }

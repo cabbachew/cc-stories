@@ -103,8 +103,18 @@ export const studentStory: StudentStoryProps = {
       "Marketing materials and social media content",
     ],
     testimonials: [
-      "placeholder_parent_testimonial: 'Rose's growth as an entrepreneur has been remarkable. The mentorship provided exactly the structure and guidance she needed.'",
-      "placeholder_student_testimonial: 'Working with Phoebe helped me turn my creative ideas into a real business. I learned so much about entrepreneurship and gained confidence in my abilities.'",
+      {
+        quote:
+          "Rose's growth as an entrepreneur has been remarkable. The mentorship provided exactly the structure and guidance she needed to transform her creative passion into a successful business.",
+        author: "Parent",
+        role: "Rose's Mother",
+      },
+      {
+        quote:
+          "Working with Phoebe helped me turn my creative ideas into a real business. I learned so much about entrepreneurship and gained confidence in my abilities. Her guidance was exactly what I needed to take my jewelry designs to the next level.",
+        author: "Rose Cornell",
+        role: "Student",
+      },
     ],
     currentStatus:
       "Operating successful jewelry business with expanding charitable initiatives and growing customer base",
@@ -575,6 +585,45 @@ export const studentStory: StudentStoryProps = {
         summary:
           "Developed Every Mother Counts partnership, approached $4,000 in total revenue, and launched Valentine's collection.",
         sessions: ["s29", "s30", "s31", "s32"],
+      },
+    ],
+  },
+  gallery: {
+    images: [
+      {
+        url: "https://iykyk.shop/cdn/shop/files/IMG_7886_288x288.jpg?v=1733202084",
+        caption: "Reinvent Earrings",
+      },
+      {
+        url: "https://iykyk.shop/cdn/shop/files/IMG_6239_288x288.jpg?v=1712306744",
+        caption: "Signature Small Pearl Initial Necklace",
+      },
+      {
+        url: "https://iykyk.shop/cdn/shop/files/IMG_7894_300ebd24-1652-47be-9eb4-e8c173dfe45b_288x288.jpg?v=1733203276",
+        caption: "Reshaped Earrings",
+      },
+      {
+        url: "https://iykyk.shop/cdn/shop/files/IMG_7861_608x608.jpg?v=1733202084",
+        caption: "The Art of Evolving",
+      },
+      // Add more images as needed
+    ],
+    assets: [
+      {
+        title: "Business Plan PDF",
+        url: "/assets/business-plan.pdf",
+      },
+      {
+        title: "Marketing Strategy",
+        url: "/assets/marketing-strategy.pdf",
+      },
+      {
+        title: "Brand Guidelines",
+        url: "/assets/brand-guidelines.pdf",
+      },
+      {
+        title: "Sales Report Q3",
+        url: "/assets/sales-report-q3.pdf",
       },
     ],
   },
