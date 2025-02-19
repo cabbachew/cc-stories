@@ -235,7 +235,7 @@ export default function Overview({
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <ArrowRight className="h-5 w-5" />
-            What's Next?
+            What&apos;s Next?
           </CardTitle>
         </CardHeader>
         <CardContent>

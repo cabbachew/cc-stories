@@ -7,6 +7,7 @@ import Overview from "./Overview";
 import MilestonesTimeline from "./timeline/MilestonesTimeline";
 import SessionsTimeline from "./timeline/SessionsTimeline";
 import { StudentStoryProps } from "@/app/types/StudentStory";
+import { TimelineSession, TimelineChapter } from "@/app/types/timeline";
 
 export default function TimelineTabs({
   studentStory,
@@ -14,8 +15,8 @@ export default function TimelineTabs({
   chapters,
 }: {
   studentStory: StudentStoryProps;
-  sessions: any[];
-  chapters: any[];
+  sessions: TimelineSession[];
+  chapters: TimelineChapter[];
 }) {
   const [viewMode, setViewMode] = useState<"story" | "feed">("story");
   const [activeTab, setActiveTab] = useState("overview");

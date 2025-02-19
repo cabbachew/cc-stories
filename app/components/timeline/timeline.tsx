@@ -92,10 +92,10 @@ interface TimelineItemProps extends Omit<HTMLMotionProps<"li">, "ref"> {
   icon?: React.ReactNode;
   /** Color theme for the icon */
   iconColor?: TimelineColor;
-  /** Current status of the item */
-  status?: "completed" | "in-progress" | "pending";
   /** Color theme for the connector line */
   connectorColor?: TimelineColor;
+  /** Current status of the item */
+  status?: "completed" | "in-progress" | "pending";
   /** Whether to show the connector line */
   showConnector?: boolean;
   /** Size of the icon */
@@ -114,20 +114,12 @@ const TimelineItem = React.forwardRef<HTMLLIElement, TimelineItemProps>(
       title,
       description,
       icon,
-      iconColor,
-      status = "completed",
+      iconColor = "primary",
       connectorColor,
-      showConnector = true,
-      iconsize,
+      status = "completed",
       loading,
       error,
-      // Omit unused Framer Motion props
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      initial,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      animate,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      transition,
+      // Remove unused props
       ...props
     },
     ref
@@ -154,7 +146,7 @@ const TimelineItem = React.forwardRef<HTMLLIElement, TimelineItemProps>(
               <div className="relative flex h-8 w-8 animate-pulse items-center justify-center rounded-full bg-muted ring-8 ring-background">
                 <Loader2 className="h-4 w-4 animate-spin text-muted-foreground" />
               </div>
-              {showConnector && (
+              {props.showConnector && (
                 <div className="h-full w-0.5 animate-pulse bg-muted" />
               )}
             </div>
@@ -193,7 +185,7 @@ const TimelineItem = React.forwardRef<HTMLLIElement, TimelineItemProps>(
               <div className="relative flex h-8 w-8 items-center justify-center rounded-full bg-destructive/20 ring-8 ring-background">
                 <AlertCircle className="h-4 w-4 text-destructive" />
               </div>
-              {showConnector && (
+              {props.showConnector && (
                 <TimelineConnector status="pending" className="h-full" />
               )}
             </div>
@@ -229,11 +221,20 @@ const TimelineItem = React.forwardRef<HTMLLIElement, TimelineItemProps>(
             <TimelineIcon
               icon={icon}
               color={iconColor}
-              status={status}
-              iconSize={iconsize}
+              iconSize={props.iconsize}
             />
           </div>
-          {showConnector && <div className="h-16 w-0.5 bg-border mt-2" />}
+          {props.showConnector && (
+            <div
+              className={cn("h-16 w-0.5 mt-2", {
+                "bg-primary": connectorColor === "primary",
+                "bg-secondary": connectorColor === "secondary",
+                "bg-muted": connectorColor === "muted",
+                "bg-accent": connectorColor === "accent",
+                "bg-border": !connectorColor,
+              })}
+            />
+          )}
         </div>
 
         {/* Content */}
@@ -337,20 +338,11 @@ TimelineTime.displayName = "TimelineTime";
 
 const TimelineConnector = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> & {
+  Omit<HTMLMotionProps<"div">, "ref"> & {
     status?: "completed" | "in-progress" | "pending";
     color?: "primary" | "secondary" | "muted" | "accent";
   }
 >(({ className, status = "completed", color, ...props }, ref) => {
-  const {
-    style,
-    onDrag,
-    onDragStart,
-    onDragEnd,
-    onAnimationStart,
-    onAnimationEnd,
-    ...filteredProps
-  } = props;
   return (
     <motion.div
       ref={ref}
@@ -370,7 +362,7 @@ const TimelineConnector = React.forwardRef<
       initial={{ height: 0 }}
       animate={{ height: "100%" }}
       transition={{ duration: 0.5 }}
-      {...filteredProps}
+      {...props}
     />
   );
 });
@@ -408,12 +400,10 @@ TimelineTitle.displayName = "TimelineTitle";
 const TimelineIcon = ({
   icon,
   color = "primary",
-  status = "completed",
   iconSize = "md",
 }: {
   icon?: React.ReactNode;
   color?: "primary" | "secondary" | "muted" | "accent" | "destructive";
-  status?: "completed" | "in-progress" | "pending" | "error";
   iconSize?: "sm" | "md" | "lg";
 }) => {
   const sizeClasses = {

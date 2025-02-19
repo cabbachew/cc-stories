@@ -1,5 +1,3 @@
-import { ReactNode } from "react";
-
 export interface TimelineSession {
   id: string | number;
   date: string;

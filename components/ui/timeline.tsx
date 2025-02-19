@@ -34,9 +34,7 @@ const iconVariants = cva(
 
 interface TimelineProps
   extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof timelineVariants> {
-  iconSize?: VariantProps<typeof iconVariants>["size"];
-}
+    VariantProps<typeof timelineVariants> {}
 
 interface TimelineItemProps extends React.HTMLAttributes<HTMLDivElement> {
   date: Date | string | number;
@@ -47,12 +45,10 @@ interface TimelineItemProps extends React.HTMLAttributes<HTMLDivElement> {
   status?: "completed" | "in-progress" | "pending";
   loading?: boolean;
   error?: string;
-  connectorColor?: "primary" | "secondary" | "muted" | "accent";
-  showConnector?: boolean;
 }
 
 const Timeline = React.forwardRef<HTMLDivElement, TimelineProps>(
-  ({ children, className, size, iconSize, ...props }, ref) => {
+  ({ children, className, size, ...props }, ref) => {
     return (
       <div
         ref={ref}
@@ -82,8 +78,6 @@ const TimelineItem = React.forwardRef<HTMLDivElement, TimelineItemProps>(
       status = "completed",
       loading,
       error,
-      connectorColor,
-      showConnector,
       ...props
     },
     ref
