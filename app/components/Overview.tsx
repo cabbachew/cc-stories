@@ -8,15 +8,15 @@ import {
   Brain,
   GraduationCap,
   Heart,
-  LineChart,
   Medal,
   Target,
   Trophy,
   User,
-  Image,
+  Image as ImageIcon,
   Link,
 } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
+import Image from "next/image";
 import {
   Carousel,
   CarouselContent,
@@ -330,7 +330,7 @@ export default function Overview({
                   <div className="absolute left-0 top-0 h-full w-1 bg-muted-foreground/20 rounded-full" />
                   <blockquote className="space-y-2">
                     <p className="text-sm text-muted-foreground italic">
-                      "{testimonial.quote}"
+                      &ldquo;{testimonial.quote}&rdquo;
                     </p>
                     <footer className="text-sm">
                       <span className="font-medium text-foreground">
@@ -353,7 +353,7 @@ export default function Overview({
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Image className="h-5 w-5" />
+            <ImageIcon className="h-5 w-5" />
             Gallery
           </CardTitle>
         </CardHeader>
@@ -375,14 +375,19 @@ export default function Overview({
                     <div className="p-1">
                       <div className="overflow-hidden rounded-lg bg-muted aspect-square">
                         {image.url ? (
-                          <img
+                          <Image
                             src={image.url}
-                            alt={image.caption}
+                            alt={image.caption || "Gallery image"}
+                            width={288}
+                            height={288}
                             className="h-full w-full object-cover transition-all hover:scale-105"
                           />
                         ) : (
                           <div className="h-full w-full flex items-center justify-center">
-                            <Image className="h-10 w-10 text-muted-foreground/50" />
+                            <ImageIcon
+                              className="h-10 w-10 text-muted-foreground/50"
+                              aria-hidden="true"
+                            />
                           </div>
                         )}
                       </div>
