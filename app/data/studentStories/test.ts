@@ -35,6 +35,8 @@ export const studentStory: StudentStoryProps = {
   ],
   mentorInfo: {
     name: "Phoebe Dragseth",
+    photoUrl:
+      "https://ucarecdn.com/08f96ed3-792b-4bbb-8995-a0f61f514151/-/crop/797x797/0,3/-/preview/",
     expertise: [
       "Business Development",
       "E-commerce",

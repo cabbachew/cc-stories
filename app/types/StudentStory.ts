@@ -14,6 +14,7 @@ export interface StudentStoryProps {
     name: string;
     expertise: string[];
     background: string;
+    photoUrl: string;
   };
   mentorshipMatch: {
     relationship: string;

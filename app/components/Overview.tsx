@@ -93,11 +93,22 @@ export default function Overview({
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-6">
-          <div className="space-y-2">
-            <h3 className="font-semibold">{studentStory.mentorInfo.name}</h3>
-            <div className="text-sm text-muted-foreground">
-              <p>Expertise: {studentStory.mentorInfo.expertise.join(", ")}</p>
-              <p>Background: {studentStory.mentorInfo.background}</p>
+          <div className="flex items-start gap-6">
+            <Avatar className="h-24 w-24">
+              <AvatarImage
+                src={studentStory.mentorInfo.photoUrl}
+                alt={studentStory.mentorInfo.name}
+              />
+              <AvatarFallback>{studentStory.mentorInfo.name[0]}</AvatarFallback>
+            </Avatar>
+            <div className="space-y-2">
+              <h3 className="font-semibold text-lg">
+                {studentStory.mentorInfo.name}
+              </h3>
+              <div className="text-sm text-muted-foreground">
+                <p>Expertise: {studentStory.mentorInfo.expertise.join(", ")}</p>
+                <p>Background: {studentStory.mentorInfo.background}</p>
+              </div>
             </div>
           </div>
 
