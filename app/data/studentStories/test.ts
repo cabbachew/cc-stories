@@ -610,20 +610,12 @@ export const studentStory: StudentStoryProps = {
     ],
     assets: [
       {
-        title: "Business Plan PDF",
-        url: "/assets/business-plan.pdf",
+        title: "IYKYK Shop",
+        url: "https://iykyk.shop/",
       },
       {
-        title: "Marketing Strategy",
-        url: "/assets/marketing-strategy.pdf",
-      },
-      {
-        title: "Brand Guidelines",
-        url: "/assets/brand-guidelines.pdf",
-      },
-      {
-        title: "Sales Report Q3",
-        url: "/assets/sales-report-q3.pdf",
+        title: "IYKYK Instagram",
+        url: "https://www.instagram.com/iykyk_co/f",
       },
     ],
   },
