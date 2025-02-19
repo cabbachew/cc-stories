@@ -11,7 +11,7 @@ export default function StudentStory() {
           <h1 className="text-2xl md:text-3xl font-bold">
             {studentStory.headline}
           </h1>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-base text-muted-foreground">
             {studentStory.impactSummary}
           </p>
         </div>
