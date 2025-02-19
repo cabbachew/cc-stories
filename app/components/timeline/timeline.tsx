@@ -119,7 +119,7 @@ const TimelineItem = React.forwardRef<HTMLLIElement, TimelineItemProps>(
       status = "completed",
       loading,
       error,
-      // Remove unused props
+      showConnector,
       ...props
     },
     ref
@@ -146,7 +146,7 @@ const TimelineItem = React.forwardRef<HTMLLIElement, TimelineItemProps>(
               <div className="relative flex h-8 w-8 animate-pulse items-center justify-center rounded-full bg-muted ring-8 ring-background">
                 <Loader2 className="h-4 w-4 animate-spin text-muted-foreground" />
               </div>
-              {props.showConnector && (
+              {showConnector && (
                 <div className="h-full w-0.5 animate-pulse bg-muted" />
               )}
             </div>
@@ -185,7 +185,7 @@ const TimelineItem = React.forwardRef<HTMLLIElement, TimelineItemProps>(
               <div className="relative flex h-8 w-8 items-center justify-center rounded-full bg-destructive/20 ring-8 ring-background">
                 <AlertCircle className="h-4 w-4 text-destructive" />
               </div>
-              {props.showConnector && (
+              {showConnector && (
                 <TimelineConnector status="pending" className="h-full" />
               )}
             </div>
@@ -224,7 +224,7 @@ const TimelineItem = React.forwardRef<HTMLLIElement, TimelineItemProps>(
               iconSize={props.iconsize}
             />
           </div>
-          {props.showConnector && (
+          {showConnector && (
             <div
               className={cn("h-16 w-0.5 mt-2", {
                 "bg-primary": connectorColor === "primary",

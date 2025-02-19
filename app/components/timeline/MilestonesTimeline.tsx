@@ -66,6 +66,7 @@ export default function MilestonesTimeline({
             description={chapter.summary}
             icon={<BookOpen className="h-4 w-4" />}
             status="completed"
+            showConnector={index !== sortedChapters.length - 1}
           />
         </motion.div>
       ))}

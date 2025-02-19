@@ -65,6 +65,7 @@ export default function SessionsTimeline({
             description={session.summary}
             icon={<Calendar className="h-4 w-4" />}
             status="completed"
+            showConnector={index !== sortedSessions.length - 1}
           />
         </motion.div>
       ))}
