@@ -22,55 +22,52 @@ export default function TimelineTabs({
   const [activeTab, setActiveTab] = useState("overview");
 
   return (
-    <Card>
-      <Tabs
-        defaultValue="overview"
-        className="p-6"
-        onValueChange={(value) => setActiveTab(value)}
-      >
-        <div className="flex items-center justify-between mb-6">
-          <TabsList>
-            <TabsTrigger value="overview">Overview</TabsTrigger>
-            <TabsTrigger value="milestones">Milestones</TabsTrigger>
-            <TabsTrigger value="sessions">Sessions</TabsTrigger>
-          </TabsList>
+    <Tabs
+      defaultValue="overview"
+      onValueChange={(value) => setActiveTab(value)}
+    >
+      <div className="flex items-center justify-between mb-6">
+        <TabsList>
+          <TabsTrigger value="overview">Overview</TabsTrigger>
+          <TabsTrigger value="milestones">Milestones</TabsTrigger>
+          <TabsTrigger value="sessions">Sessions</TabsTrigger>
+        </TabsList>
 
-          {(activeTab === "milestones" || activeTab === "sessions") && (
-            <div className="flex items-center space-x-2">
-              <Switch
-                id="view-mode"
-                checked={viewMode === "feed"}
-                onCheckedChange={(checked) =>
-                  setViewMode(checked ? "feed" : "story")
-                }
-              />
-              <Label htmlFor="view-mode">
-                {viewMode === "story" ? "Story" : "Feed"}
-              </Label>
-            </div>
-          )}
-        </div>
+        {(activeTab === "milestones" || activeTab === "sessions") && (
+          <div className="flex items-center space-x-2">
+            <Switch
+              id="view-mode"
+              checked={viewMode === "feed"}
+              onCheckedChange={(checked) =>
+                setViewMode(checked ? "feed" : "story")
+              }
+            />
+            <Label htmlFor="view-mode">
+              {viewMode === "story" ? "Story" : "Feed"}
+            </Label>
+          </div>
+        )}
+      </div>
 
-        <TabsContent value="overview">
-          <Overview studentStory={studentStory} />
-        </TabsContent>
+      <TabsContent value="overview">
+        <Overview studentStory={studentStory} />
+      </TabsContent>
 
-        <TabsContent value="milestones">
-          <MilestonesTimeline
-            chapters={chapters}
-            loading={false}
-            viewMode={viewMode}
-          />
-        </TabsContent>
+      <TabsContent value="milestones">
+        <MilestonesTimeline
+          chapters={chapters}
+          loading={false}
+          viewMode={viewMode}
+        />
+      </TabsContent>
 
-        <TabsContent value="sessions">
-          <SessionsTimeline
-            sessions={sessions}
-            loading={false}
-            viewMode={viewMode}
-          />
-        </TabsContent>
-      </Tabs>
-    </Card>
+      <TabsContent value="sessions">
+        <SessionsTimeline
+          sessions={sessions}
+          loading={false}
+          viewMode={viewMode}
+        />
+      </TabsContent>
+    </Tabs>
   );
 }
