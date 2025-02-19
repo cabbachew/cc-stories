@@ -187,7 +187,7 @@ export default function Overview({
             </div>
           </div>
 
-          <Separator className="my-6" />
+          {/* <Separator className="my-6" /> */}
 
           <div className="space-y-2">
             <h4 className="font-semibold flex items-center gap-2">
@@ -293,7 +293,7 @@ export default function Overview({
           <div className="grid gap-6 md:grid-cols-2">
             <div className="space-y-4">
               <div className="space-y-2">
-                <h4 className="font-semibold">Milestones</h4>
+                <h4 className="font-semibold">Milestones Reached</h4>
                 <ul className="list-disc list-inside text-sm text-muted-foreground">
                   {studentStory.outcomes.milestones.map((milestone, i) => (
                     <li key={i}>{milestone}</li>
@@ -302,7 +302,7 @@ export default function Overview({
               </div>
             </div>
             <div>
-              <h4 className="font-semibold mb-3">Assets</h4>
+              <h4 className="font-semibold mb-3">Project Assets</h4>
               <div className="space-y-2">
                 {studentStory.gallery?.assets?.map((asset, index) => (
                   <a
@@ -320,7 +320,7 @@ export default function Overview({
             </div>
           </div>
 
-          <Separator className="my-6" />
+          {/* <Separator className="my-6" /> */}
 
           <div className="space-y-2">
             <h4 className="font-semibold">Testimonials</h4>
