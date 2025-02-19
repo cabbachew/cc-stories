@@ -1,6 +1,7 @@
 import { StudentStoryProps } from "@/app/types/StudentStory";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
 import {
   ArrowRight,
   BookOpen,
@@ -30,29 +31,57 @@ export default function Overview({
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-6">
-          <div className="flex items-start gap-6">
-            <Avatar className="h-24 w-24">
-              <AvatarImage
-                src={studentStory.studentInfo.photoUrl}
-                alt={studentStory.studentInfo.name}
-              />
-              <AvatarFallback>
-                {studentStory.studentInfo.name[0]}
-              </AvatarFallback>
-            </Avatar>
-            <div className="space-y-2">
-              <h3 className="font-semibold text-lg">
-                {studentStory.studentInfo.name}
-              </h3>
-              <div className="space-y-1 text-sm text-muted-foreground">
-                <p>Grade: {studentStory.studentInfo.grade}</p>
-                <p>School: {studentStory.studentInfo.school}</p>
-                <p>
-                  Personality: {studentStory.studentInfo.personality.join(", ")}
+          <div className="flex flex-col md:flex-row items-start gap-8">
+            <div className="flex gap-6 w-full md:w-auto">
+              <Avatar className="h-24 w-24 shrink-0">
+                <AvatarImage
+                  src={studentStory.studentInfo.photoUrl}
+                  alt={studentStory.studentInfo.name}
+                />
+                <AvatarFallback>
+                  {studentStory.studentInfo.name[0]}
+                </AvatarFallback>
+              </Avatar>
+              <div className="space-y-2">
+                <h3 className="font-semibold text-lg">
+                  {studentStory.studentInfo.name}
+                </h3>
+                <p className="text-base text-muted-foreground">
+                  {studentStory.studentInfo.grade}
+                  <span className="mx-2">⬩</span>
+                  {studentStory.studentInfo.school}
                 </p>
-                <p>
-                  Interests: {studentStory.studentInfo.interests.join(", ")}
-                </p>
+              </div>
+            </div>
+
+            <div className="flex-1 space-y-4 w-full md:pl-4">
+              <div className="space-y-2">
+                <h4 className="font-semibold">Personality</h4>
+                <div className="flex flex-wrap gap-1.5">
+                  {studentStory.studentInfo.personality.map((trait) => (
+                    <Badge
+                      key={trait}
+                      variant="secondary"
+                      className="rounded-md font-normal"
+                    >
+                      {trait}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+              <div className="space-y-2">
+                <h4 className="font-semibold">Interests</h4>
+                <div className="flex flex-wrap gap-1.5">
+                  {studentStory.studentInfo.interests.map((interest) => (
+                    <Badge
+                      key={interest}
+                      variant="outline"
+                      className="rounded-md font-normal bg-white"
+                    >
+                      {interest}
+                    </Badge>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -105,9 +134,26 @@ export default function Overview({
               <h3 className="font-semibold text-lg">
                 {studentStory.mentorInfo.name}
               </h3>
-              <div className="text-sm text-muted-foreground">
-                <p>Expertise: {studentStory.mentorInfo.expertise.join(", ")}</p>
-                <p>Background: {studentStory.mentorInfo.background}</p>
+              <div className="space-y-4">
+                <div className="space-y-2">
+                  <p className="text-sm text-muted-foreground">
+                    {studentStory.mentorInfo.background}
+                  </p>
+                </div>
+                <div className="space-y-2">
+                  <h4 className="font-semibold">Expertise</h4>
+                  <div className="flex flex-wrap gap-1.5">
+                    {studentStory.mentorInfo.expertise.map((skill) => (
+                      <Badge
+                        key={skill}
+                        variant="secondary"
+                        className="rounded-md font-normal"
+                      >
+                        {skill}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
