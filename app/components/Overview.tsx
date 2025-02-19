@@ -381,6 +381,7 @@ export default function Overview({
                             alt={image.caption || "Gallery image"}
                             width={288}
                             height={288}
+                            unoptimized
                             className="h-full w-full object-cover transition-all hover:scale-105"
                           />
                         ) : (
