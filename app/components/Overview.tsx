@@ -31,8 +31,9 @@ export default function Overview({
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-6">
-          <div className="flex flex-col md:flex-row items-start gap-8">
-            <div className="flex gap-6 w-full md:w-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Student info container */}
+            <div className="flex gap-6">
               <Avatar className="h-24 w-24 shrink-0">
                 <AvatarImage
                   src={studentStory.studentInfo.photoUrl}
@@ -54,7 +55,8 @@ export default function Overview({
               </div>
             </div>
 
-            <div className="flex-1 space-y-4 w-full md:pl-4">
+            {/* Personality/Interests container */}
+            <div className="space-y-4">
               <div className="space-y-2">
                 <h4 className="font-semibold">Personality</h4>
                 <div className="flex flex-wrap gap-1.5">
