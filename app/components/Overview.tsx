@@ -361,8 +361,9 @@ export default function Overview({
           <div className="flex justify-center">
             <Carousel
               opts={{
-                align: "center",
+                align: "start",
                 loop: true,
+                slidesToScroll: 1,
               }}
               className="w-full max-w-4xl"
             >
@@ -370,7 +371,7 @@ export default function Overview({
                 {studentStory.gallery?.images?.map((image, index) => (
                   <CarouselItem
                     key={index}
-                    className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3"
+                    className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3"
                   >
                     <div className="p-1">
                       <div className="overflow-hidden rounded-lg bg-muted aspect-square">
