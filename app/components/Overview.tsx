@@ -57,9 +57,9 @@ export default function Overview({
                 <h3 className="font-semibold text-lg">
                   {studentStory.studentInfo.name}
                 </h3>
-                <p className="text-base text-muted-foreground">
+                <p className="text-base text-muted-foreground flex items-center">
                   {studentStory.studentInfo.grade}
-                  <span className="mx-2">⬩</span>
+                  <Separator orientation="vertical" className="mx-2 h-4" />
                   {studentStory.studentInfo.school}
                 </p>
               </div>
@@ -140,9 +140,9 @@ export default function Overview({
                   {studentStory.mentorInfo.name}
                 </h3>
                 {studentStory.mentorInfo.education && (
-                  <p className="text-base text-muted-foreground">
+                  <p className="text-base text-muted-foreground flex items-center">
                     {studentStory.mentorInfo.education.major}
-                    <span className="mx-2">⬩</span>
+                    <Separator orientation="vertical" className="mx-2 h-4" />
                     {studentStory.mentorInfo.education.university}
                   </p>
                 )}
