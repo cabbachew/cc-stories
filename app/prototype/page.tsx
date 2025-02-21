@@ -74,6 +74,10 @@ export default function PrototypePage() {
               <Badge variant="outline" className="text-sm">
                 {formatDate(studentStory.lastSessionDate)}
               </Badge>
+              <span className="text-[#111827]/20">|</span>
+              <Badge variant="outline" className="text-sm">
+                {studentStory.sessionsCompleted} sessions
+              </Badge>
             </div>
           </div>
         </div>

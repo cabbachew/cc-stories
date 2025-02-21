@@ -6,6 +6,7 @@ export const studentStory = {
   topic: "Robotics / Electronics / CAD",
   startDate: "2024-02",
   lastSessionDate: "2024-07-15",
+  sessionsCompleted: 12,
   learningPlanUrl:
     "https://cc-proposals.vercel.app/proposals/f99fcca0-2e03-47af-9a85-cae4b1fe2c21",
   timeline: {
