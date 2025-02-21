@@ -2,11 +2,12 @@ export const studentStory = {
   id: "611ae784-f69c-4304-9dc1-2347ea2ac8ac",
   headline:
     "Building a Self-Driving Robot: A Journey in Engineering and Innovation",
+  discipline: "Science, Engineering & Technology",
+  topic: "Robotics / Electronics / CAD",
   startDate: "2024-02",
+  lastSessionDate: "2024-07-15",
   learningPlanUrl:
     "https://cc-proposals.vercel.app/proposals/f99fcca0-2e03-47af-9a85-cae4b1fe2c21",
-  topic: "Robotics / Electronics / CAD",
-  discipline: "Science, Engineering & Technology",
   timeline: {
     milestones: [
       {
