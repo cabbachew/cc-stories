@@ -1,7 +1,7 @@
 "use client";
 
 // import { Timeline, TimelineItem } from "@/app/components/timeline";
-import { TimelineLayout } from "@/app/components/timeline";
+import { TimelineLayout } from "@/components/custom-timeline";
 import { BookOpen } from "lucide-react";
 // import { motion } from "framer-motion";
 import { TimelineChapter } from "@/app/types/timeline";

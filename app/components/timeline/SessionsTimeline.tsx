@@ -1,11 +1,15 @@
 "use client";
 
-import { Timeline, TimelineItem } from "@/app/components/timeline";
-import { TimelineLayout } from "@/app/components/timeline";
+import {
+  Timeline,
+  TimelineItem,
+  TimelineLayout,
+} from "@/components/custom-timeline";
 import { Calendar } from "lucide-react";
 // import { motion } from "framer-motion";
 import { TimelineSession } from "@/app/types/timeline";
 import React from "react";
+
 export default function SessionsTimeline({
   sessions,
   loading,

@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Timeline, TimelineItem } from "./timeline";
+import { Timeline, TimelineItem } from "./custom-timeline";
 import { motion } from "framer-motion";
 import type { TimelineElement } from "@/app/types";
 
