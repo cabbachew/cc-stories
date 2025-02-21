@@ -12,7 +12,16 @@ import {
   TimelineTitle,
   TimelineDescription,
 } from "@/components/ui/timeline";
-import { Link, Pencil, Cpu, Radio, Navigation, TestTube } from "lucide-react";
+import {
+  Link,
+  Pencil,
+  Cpu,
+  Radio,
+  Navigation,
+  TestTube,
+  User,
+  GraduationCap,
+} from "lucide-react";
 import NextLink from "next/link";
 import Image from "next/image";
 
@@ -93,6 +102,67 @@ export default function PrototypePage() {
               <Link className="h-4 w-4 text-[#111827]" />
               <span>Initial Learning Plan</span>
             </NextLink>
+          </div>
+        </div>
+
+        {/* Student and Mentor Section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Student Column */}
+          <div className="space-y-4">
+            <h2 className="text-xl font-semibold text-[#111827] flex items-center gap-2">
+              <User className="h-5 w-5" />
+              The Student
+            </h2>
+            <div className="flex items-start gap-4">
+              <div className="h-24 w-24 rounded-full bg-gray-200 flex-shrink-0">
+                {studentStory.studentProfileImage && (
+                  <img
+                    src={studentStory.studentProfileImage}
+                    alt={`${studentStory.studentName}'s profile`}
+                    className="h-full w-full rounded-full object-cover"
+                    onError={(e) => {
+                      e.currentTarget.style.display = "none";
+                    }}
+                  />
+                )}
+              </div>
+              <div className="space-y-1">
+                <div className="font-medium">{studentStory.studentName}</div>
+                <div className="space-y-0.5 text-sm text-muted-foreground">
+                  <div>{studentStory.studentSchool}</div>
+                  <div>Grade {studentStory.studentGrade}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Mentor Column */}
+          <div className="space-y-4">
+            <h2 className="text-xl font-semibold text-[#111827] flex items-center gap-2">
+              <GraduationCap className="h-5 w-5" />
+              The Mentor
+            </h2>
+            <div className="flex items-start gap-4">
+              <div className="h-24 w-24 rounded-full bg-gray-200 flex-shrink-0">
+                {studentStory.mentorProfileImage && (
+                  <img
+                    src={studentStory.mentorProfileImage}
+                    alt={`${studentStory.mentorName}'s profile`}
+                    className="h-full w-full rounded-full object-cover"
+                    onError={(e) => {
+                      e.currentTarget.style.display = "none";
+                    }}
+                  />
+                )}
+              </div>
+              <div className="space-y-1">
+                <div className="font-medium">{studentStory.mentorName}</div>
+                <div className="space-y-0.5 text-sm text-muted-foreground">
+                  <div>{studentStory.mentorSchool}</div>
+                  <div>{studentStory.mentorMajor}</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 

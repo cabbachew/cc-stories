@@ -7,6 +7,15 @@ export const studentStory = {
   startDate: "2024-02",
   lastSessionDate: "2024-07-15",
   sessionsCompleted: 12,
+  studentProfileImage: "",
+  mentorProfileImage:
+    "https://ucarecdn.com/3b65f0ed-2c5c-4da1-a34a-a1356aa36d1b/",
+  studentName: "Jack Z",
+  studentGrade: 7,
+  studentSchool: "Avenues The World School",
+  mentorName: "Skye H",
+  mentorSchool: "Stanford University",
+  mentorMajor: "Aerospace Engineering and Product Design",
   learningPlanUrl:
     "https://cc-proposals.vercel.app/proposals/f99fcca0-2e03-47af-9a85-cae4b1fe2c21",
   timeline: {
