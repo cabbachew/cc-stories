@@ -51,7 +51,7 @@ const Timeline = React.forwardRef<HTMLOListElement, TimelineProps>(
         aria-label="Timeline"
         className={cn(
           timelineVariants({ size }),
-          "relative min-h-[600px] w-full py-8",
+          "relative min-h-[600px] w-full space-y-8 py-8",
           className
         )}
         {...props}
@@ -207,17 +207,16 @@ const TimelineItem = React.forwardRef<HTMLLIElement, TimelineItemProps>(
 
     const content = (
       <div
-        // className="grid grid-cols-[1fr_auto_1fr] gap-4 items-start"
-        className="grid grid-cols-[auto_auto_1fr] gap-4 items-start"
+        className="grid grid-cols-[minmax(auto,8rem)_auto_1fr] items-start px-4"
         {...(status === "in-progress" ? { "aria-current": "step" } : {})}
       >
         {/* Date */}
         <div className="flex flex-col justify-start pt-1">
-          <TimelineTime className="text-right pr-4">{date}</TimelineTime>
+          <TimelineTime className="text-right">{date}</TimelineTime>
         </div>
 
         {/* Timeline dot and connector */}
-        <div className="flex flex-col items-center">
+        <div className="relative flex flex-col items-center mx-4">
           <div className="relative z-10">
             <TimelineIcon
               icon={icon}
@@ -227,7 +226,7 @@ const TimelineItem = React.forwardRef<HTMLLIElement, TimelineItemProps>(
           </div>
           {showConnector && (
             <div
-              className={cn("h-16 w-0.5 mt-2", {
+              className={cn("absolute top-10 h-[calc(100%+2rem)] w-0.5", {
                 "bg-primary": connectorColor === "primary",
                 "bg-secondary": connectorColor === "secondary",
                 "bg-muted": connectorColor === "muted",
