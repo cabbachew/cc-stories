@@ -318,6 +318,11 @@ export default function PrototypePage() {
             </div>
           </div>
 
+          {/* Student Background Blurb */}
+          <div className="text-sm text-muted-foreground leading-relaxed pl-4 border-l-2 border-[#fbc012]">
+            {studentStory.backgroundBlurb}
+          </div>
+
           <div className="border-t border-[#111827]/5" />
 
           {/* The Perfect Match Section */}

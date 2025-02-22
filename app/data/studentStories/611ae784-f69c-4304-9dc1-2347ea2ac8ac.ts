@@ -18,6 +18,8 @@ export const studentStory = {
   mentorName: "Skye H",
   mentorSchool: "Stanford University",
   mentorMajor: "Aerospace Engineering & Product Design",
+  backgroundBlurb:
+    "A bright 7th grader with a passion for robotics and engineering, Jack sought expert guidance to develop his technical skills and bring his innovative ideas to life. This neurodivergent innovator's determination to attend MIT and create advanced robotics drove him to seek daily mentorship, focusing on functional projects and expanding his technical capabilities.",
   learningPlanUrl:
     "https://cc-proposals.vercel.app/proposals/f99fcca0-2e03-47af-9a85-cae4b1fe2c21",
   timeline: {
