@@ -11,19 +11,17 @@ export default function Home() {
               href="/engagements/bca78955-2e42-44b6-84a3-cb31dfa64a7f"
               className="block space-y-2"
             >
-              <h2 className="text-lg font-semibold">
-                bca78955-2e42-44b6-84a3-cb31dfa64a7f
-              </h2>
+              <h2 className="text-lg font-semibold">Prototype v1.0</h2>
               <p className="text-sm text-muted-foreground">
-                View engagement details
+                bca78955-2e42-44b6-84a3-cb31dfa64a7f
               </p>
             </Link>
           </div>
           <div className="p-4 border rounded-lg hover:bg-muted/50 transition-colors">
             <Link href="/prototype" className="block space-y-2">
-              <h2 className="text-lg font-semibold">Prototype</h2>
+              <h2 className="text-lg font-semibold">Prototype v1.1</h2>
               <p className="text-sm text-muted-foreground">
-                View prototype page
+                611ae784-f69c-4304-9dc1-2347ea2ac8ac
               </p>
             </Link>
           </div>
