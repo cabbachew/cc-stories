@@ -65,13 +65,13 @@ export default function PrototypePage() {
           <div className="flex flex-wrap gap-1.5 sm:gap-2 md:gap-3 items-center">
             <Badge
               variant="secondary"
-              className="text-[11px] sm:text-xs md:text-sm"
+              className="text-[11px] sm:text-xs md:text-sm font-mono font-normal uppercase tracking-wider"
             >
               {studentStory.discipline}
             </Badge>
             <Badge
               variant="secondary"
-              className="text-[11px] sm:text-xs md:text-sm"
+              className="text-[11px] sm:text-xs md:text-sm font-mono font-normal uppercase tracking-wider"
             >
               {studentStory.topic}
             </Badge>
@@ -81,7 +81,7 @@ export default function PrototypePage() {
           <div className="flex flex-wrap gap-1.5 sm:gap-2 md:gap-3 items-center">
             <Badge
               variant="outline"
-              className="text-[11px] sm:text-xs md:text-sm"
+              className="text-[11px] sm:text-xs md:text-sm font-mono font-normal uppercase tracking-wider"
             >
               {formatDate(studentStory.startDate)}
             </Badge>
@@ -90,20 +90,20 @@ export default function PrototypePage() {
             </span>
             <Badge
               variant="outline"
-              className="text-[11px] sm:text-xs md:text-sm"
+              className="text-[11px] sm:text-xs md:text-sm font-mono font-normal uppercase tracking-wider"
             >
               {formatDate(studentStory.lastSessionDate)}
             </Badge>
             <span className="text-[#111827]/20">|</span>
             <Badge
               variant="outline"
-              className="text-[11px] sm:text-xs md:text-sm"
+              className="text-[11px] sm:text-xs md:text-sm font-mono font-normal uppercase tracking-wider"
             >
               {studentStory.sessionsCompleted} sessions
             </Badge>
             {studentStory.status === "scheduled" && (
-              <Badge className="text-[11px] sm:text-xs md:text-sm bg-[#a7f3d0] text-[#111827] hover:bg-[#a7f3d0]/90">
-                Ongoing
+              <Badge className="text-[11px] sm:text-xs md:text-sm bg-[#a7f3d0] text-[#111827] font-mono font-normal uppercase tracking-wider shadow-none">
+                Active
               </Badge>
             )}
           </div>
@@ -115,6 +115,8 @@ export default function PrototypePage() {
           <div>
             <NextLink
               href={studentStory.learningPlanUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-[#111827]"
             >
               <Link className="h-4 w-4 text-[#111827]" />
@@ -131,7 +133,7 @@ export default function PrototypePage() {
               <User className="h-5 w-5" />
               The Student
             </h2>
-            <div className="flex items-start gap-4">
+            <div className="flex items-center gap-4">
               <div className="h-24 w-24 rounded-full bg-gray-200 flex-shrink-0">
                 {studentStory.studentProfileImage && (
                   <img
@@ -144,7 +146,7 @@ export default function PrototypePage() {
                   />
                 )}
               </div>
-              <div className="space-y-1">
+              <div>
                 <div className="font-medium">{studentStory.studentName}</div>
                 <div className="space-y-0.5 text-sm text-muted-foreground">
                   <div>{studentStory.studentSchool}</div>
@@ -160,7 +162,7 @@ export default function PrototypePage() {
               <GraduationCap className="h-5 w-5" />
               The Mentor
             </h2>
-            <div className="flex items-start gap-4">
+            <div className="flex items-center gap-4">
               <div className="h-24 w-24 rounded-full bg-gray-200 flex-shrink-0">
                 {studentStory.mentorProfileImage && (
                   <img
@@ -173,7 +175,7 @@ export default function PrototypePage() {
                   />
                 )}
               </div>
-              <div className="space-y-1">
+              <div>
                 <div className="font-medium">{studentStory.mentorName}</div>
                 <div className="space-y-0.5 text-sm text-muted-foreground">
                   <div>{studentStory.mentorSchool}</div>

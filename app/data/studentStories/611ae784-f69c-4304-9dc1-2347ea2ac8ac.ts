@@ -1,7 +1,7 @@
 export const studentStory = {
   id: "611ae784-f69c-4304-9dc1-2347ea2ac8ac",
   headline:
-    "Building a Self-Driving Robot: A Journey in Engineering and Innovation",
+    "From Robotics to NASA: A Young Innovator's Journey in Engineering and Entrepreneurship",
   discipline: "Science, Engineering & Technology",
   topic: "Robotics / Electronics / CAD",
   status: "scheduled",
@@ -17,7 +17,7 @@ export const studentStory = {
   studentSchool: "Avenues The World School",
   mentorName: "Skye H",
   mentorSchool: "Stanford University",
-  mentorMajor: "Aerospace Engineering and Product Design",
+  mentorMajor: "Aerospace Engineering & Product Design",
   learningPlanUrl:
     "https://cc-proposals.vercel.app/proposals/f99fcca0-2e03-47af-9a85-cae4b1fe2c21",
   timeline: {
