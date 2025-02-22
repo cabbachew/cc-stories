@@ -12,16 +12,7 @@ import {
   TimelineTitle,
   TimelineDescription,
 } from "@/components/ui/timeline";
-import {
-  Link,
-  User,
-  GraduationCap,
-  Compass,
-  Zap,
-  Rocket,
-  Dice6,
-  ShoppingBag,
-} from "lucide-react";
+import { Link, Compass, Zap, Rocket, Dice6, ShoppingBag } from "lucide-react";
 import NextLink from "next/link";
 import Image from "next/image";
 
@@ -338,9 +329,9 @@ export default function PrototypePage() {
               <div className="space-y-2">
                 <h3 className="font-medium text-[#111827]">Shared Vision</h3>
                 <p className="text-sm text-muted-foreground">
-                  Skye's aerospace aspirations and hands-on engineering approach
-                  perfectly align with Jack's innovative robotics and space
-                  exploration projects
+                  Skye&apos;s aerospace aspirations and hands-on engineering
+                  approach perfectly align with Jack&apos;s innovative robotics
+                  and space exploration projects
                 </p>
               </div>
               <div className="space-y-2">
@@ -348,9 +339,9 @@ export default function PrototypePage() {
                   Technical + Creative
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  Skye's Stanford engineering expertise and artistic background
-                  complement Jack's diverse interests in robotics, game design,
-                  and entrepreneurship
+                  Skye&apos;s Stanford engineering expertise and artistic
+                  background complement Jack&apos;s diverse interests in
+                  robotics, game design, and entrepreneurship
                 </p>
               </div>
               <div className="space-y-2">
@@ -359,7 +350,7 @@ export default function PrototypePage() {
                 </h3>
                 <p className="text-sm text-muted-foreground">
                   Daily sessions provide the structure and guidance needed to
-                  transform Jack's ambitious ideas - from Mars rovers to
+                  transform Jack&apos;s ambitious ideas - from Mars rovers to
                   business ventures - into tangible achievements
                 </p>
               </div>
