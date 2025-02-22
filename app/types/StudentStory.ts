@@ -42,6 +42,9 @@ export interface StudentStoryProps {
   mentorMajor: string;
   backgroundBlurb: string;
   learningPlanUrl: string;
+  skillsDeveloped: string[];
+  challengesOvercome: string[];
+  futureGoals: string;
   timeline: {
     milestones: TimelineMilestone[];
   };

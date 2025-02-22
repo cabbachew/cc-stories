@@ -479,6 +479,47 @@ export default function PrototypePage() {
             ))}
           </Timeline>
         </div>
+
+        <div className="border-t border-[#111827]/5" />
+
+        {/* Skills and Challenges Section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Skills Developed */}
+          <div className="space-y-4">
+            <h2 className="text-xl font-semibold text-[#111827]">
+              Skills Developed
+            </h2>
+            <ul className="list-disc list-inside text-sm text-muted-foreground space-y-2">
+              {studentStoryData.skillsDeveloped.map((skill, index) => (
+                <li key={index}>{skill}</li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Challenges Overcome */}
+          <div className="space-y-4">
+            <h2 className="text-xl font-semibold text-[#111827]">
+              Challenges Overcome
+            </h2>
+            <ul className="list-disc list-inside text-sm text-muted-foreground space-y-2">
+              {studentStoryData.challengesOvercome.map((challenge, index) => (
+                <li key={index}>{challenge}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div className="border-t border-[#111827]/5" />
+
+        {/* What's Next Section */}
+        <div className="space-y-4">
+          <h2 className="text-xl font-semibold text-[#111827]">
+            What&apos;s Next?
+          </h2>
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            {studentStoryData.futureGoals}
+          </p>
+        </div>
       </div>
     </div>
   );

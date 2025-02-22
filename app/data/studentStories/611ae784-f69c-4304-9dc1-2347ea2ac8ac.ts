@@ -24,6 +24,25 @@ export const studentStory: StudentStoryProps = {
     "A bright 7th grader with a passion for robotics and engineering, Jack sought expert guidance to develop his technical skills and bring his innovative ideas to life. This neurodivergent innovator's determination to attend MIT and create advanced robotics drove him to seek daily mentorship, focusing on functional projects and expanding his technical capabilities.",
   learningPlanUrl:
     "https://cc-proposals.vercel.app/proposals/f99fcca0-2e03-47af-9a85-cae4b1fe2c21",
+  skillsDeveloped: [
+    "Advanced CAD modeling using Shapr3D",
+    "Technical documentation and presentation",
+    "Engineering design principles",
+    "Project management",
+    "Business communication",
+    "Website development",
+    "Social media content creation",
+    "Entrepreneurial thinking",
+  ],
+  challengesOvercome: [
+    "Evolved from basic to independent CAD designer",
+    "Progressed from concepts to multiple concrete projects",
+    "Developed from seeking validation to trusting creative instincts",
+    "Advanced from ideas to practical implementation",
+    "Moved from individual work to professional outreach",
+  ],
+  futureGoals:
+    "Jack aims to scale his Mini Munchies business concept through local manufacturer partnerships while continuing to develop his engineering projects. He plans to deepen his CAD and robotics skills through hands-on prototyping, with a focus on bringing his innovative mechanical designs to life. Long-term goals include expanding his understanding of materials science and advanced fabrication techniques while nurturing his growing interests in both technical design and entrepreneurship.",
   timeline: {
     milestones: [
       {
