@@ -4,10 +4,12 @@ export const studentStory = {
     "Building a Self-Driving Robot: A Journey in Engineering and Innovation",
   discipline: "Science, Engineering & Technology",
   topic: "Robotics / Electronics / CAD",
-  startDate: "2024-02",
-  lastSessionDate: "2024-07-15",
-  sessionsCompleted: 12,
-  studentProfileImage: "",
+  status: "scheduled",
+  startDate: "2024-12-29",
+  lastSessionDate: "2025-02-21",
+  sessionsCompleted: 77,
+  studentProfileImage:
+    "https://ucarecdn.com/baa598ef-84e3-4af6-94aa-bf5cf5003a19/-/preview/1000x879/",
   mentorProfileImage:
     "https://ucarecdn.com/3b65f0ed-2c5c-4da1-a34a-a1356aa36d1b/",
   studentName: "Jack Z",

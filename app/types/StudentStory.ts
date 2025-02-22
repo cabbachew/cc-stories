@@ -15,6 +15,7 @@ interface Gallery {
 
 export interface StudentStoryProps {
   headline: string;
+  status?: "scheduled" | "complete" | "paused" | "proposed";
   studentInfo: {
     name: string;
     photoUrl: string;
