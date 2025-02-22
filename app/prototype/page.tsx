@@ -26,11 +26,19 @@ import NextLink from "next/link";
 import Image from "next/image";
 
 function formatDate(dateString: string) {
-  const date = new Date(dateString);
+  // Handle both YYYY-MM and YYYY-MM-DD formats
+  const [year, month] = dateString.split("-").map(Number);
+  const date = new Date(year, month - 1, 1); // Subtract 1 from month since JS months are 0-based
   return new Intl.DateTimeFormat("en-US", {
     month: "long",
     year: "numeric",
   }).format(date);
+}
+
+function formatDateRange(startDate: string, endDate: string) {
+  const start = formatDate(startDate);
+  const end = formatDate(endDate);
+  return start === end ? start : `${start} - ${end}`;
 }
 
 const iconMap = {
@@ -214,7 +222,7 @@ export default function PrototypePage() {
                       {milestone.title}
                     </TimelineTitle>
                     <span className="text-sm text-muted-foreground">
-                      {formatDate(milestone.startDate)}
+                      {formatDateRange(milestone.startDate, milestone.endDate)}
                     </span>
                   </div>
                   <TimelineDescription className="text-[#111827]/70">
