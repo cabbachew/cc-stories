@@ -73,13 +73,13 @@ export default function PrototypePage() {
           <div className="flex flex-wrap gap-1.5 sm:gap-2 md:gap-3 items-center">
             <Badge
               variant="secondary"
-              className="text-[11px] sm:text-xs md:text-sm font-mono font-normal uppercase tracking-wider"
+              className="text-[11px] sm:text-xs md:text-sm font-normal tracking-wider"
             >
               {studentStory.discipline}
             </Badge>
             <Badge
               variant="secondary"
-              className="text-[11px] sm:text-xs md:text-sm font-mono font-normal uppercase tracking-wider"
+              className="text-[11px] sm:text-xs md:text-sm font-normal tracking-wider"
             >
               {studentStory.topic}
             </Badge>
@@ -89,7 +89,7 @@ export default function PrototypePage() {
           <div className="flex flex-wrap gap-1.5 sm:gap-2 md:gap-3 items-center">
             <Badge
               variant="outline"
-              className="text-[11px] sm:text-xs md:text-sm font-mono font-normal uppercase tracking-wider"
+              className="text-[11px] sm:text-xs md:text-sm font-normal tracking-wider"
             >
               {formatDate(studentStory.startDate)}
             </Badge>
@@ -98,19 +98,19 @@ export default function PrototypePage() {
             </span>
             <Badge
               variant="outline"
-              className="text-[11px] sm:text-xs md:text-sm font-mono font-normal uppercase tracking-wider"
+              className="text-[11px] sm:text-xs md:text-sm font-normal tracking-wider"
             >
               {formatDate(studentStory.lastSessionDate)}
             </Badge>
             <span className="text-[#111827]/20">|</span>
             <Badge
               variant="outline"
-              className="text-[11px] sm:text-xs md:text-sm font-mono font-normal uppercase tracking-wider"
+              className="text-[11px] sm:text-xs md:text-sm font-normal tracking-wider"
             >
               {studentStory.sessionsCompleted} sessions
             </Badge>
             {studentStory.status === "scheduled" && (
-              <Badge className="text-[11px] sm:text-xs md:text-sm bg-[#a7f3d0] text-[#111827] font-mono font-normal uppercase tracking-wider shadow-none">
+              <Badge className="text-[11px] sm:text-xs md:text-sm bg-[#a7f3d0] text-[#111827] font-normal tracking-wider shadow-none">
                 Active
               </Badge>
             )}
@@ -133,72 +133,241 @@ export default function PrototypePage() {
           </div>
         </div>
 
+        <div className="border-t border-[#111827]/5" />
+
         {/* Student and Mentor Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Student Column */}
-          <div className="space-y-4">
-            <h2 className="text-xl font-semibold text-[#111827] flex items-center gap-2">
-              <User className="h-5 w-5" />
-              The Student
-            </h2>
-            <div className="flex items-center gap-4">
-              <div className="h-24 w-24 rounded-full bg-gray-200 flex-shrink-0">
-                {studentStory.studentProfileImage && (
-                  <Image
-                    src={studentStory.studentProfileImage}
-                    alt={`${studentStory.studentName}'s profile`}
-                    width={96}
-                    height={96}
-                    className="h-full w-full rounded-full object-cover"
-                    unoptimized
-                    onError={(e) => {
-                      e.currentTarget.style.display = "none";
-                    }}
-                  />
-                )}
+        <div className="bg-white rounded-none pl-0 pr-6 pb-6 space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Student Column */}
+            <div className="space-y-4">
+              <h2 className="text-xl font-semibold text-[#111827]">
+                The Student
+              </h2>
+              <div className="space-y-4">
+                <div className="flex items-center gap-4">
+                  <div className="h-24 w-24 rounded-full bg-gray-200 flex-shrink-0 shadow-md ring-1 ring-[#111827]/10">
+                    {studentStory.studentProfileImage && (
+                      <Image
+                        src={studentStory.studentProfileImage}
+                        alt={`${studentStory.studentName}'s profile`}
+                        width={96}
+                        height={96}
+                        className="h-full w-full rounded-full object-cover"
+                        unoptimized
+                        onError={(e) => {
+                          e.currentTarget.style.display = "none";
+                        }}
+                      />
+                    )}
+                  </div>
+                  <div>
+                    <div className="font-medium">
+                      {studentStory.studentName}
+                    </div>
+                    <div className="space-y-0.5 text-sm text-muted-foreground">
+                      <div>{studentStory.studentSchool}</div>
+                      <div>Grade {studentStory.studentGrade}</div>
+                    </div>
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <div className="flex flex-wrap gap-1">
+                    <Badge
+                      variant="secondary"
+                      className="text-[11px] font-normal"
+                    >
+                      Innovative
+                    </Badge>
+                    <Badge
+                      variant="secondary"
+                      className="text-[11px] font-normal"
+                    >
+                      Curious
+                    </Badge>
+                    <Badge
+                      variant="secondary"
+                      className="text-[11px] font-normal"
+                    >
+                      Creative
+                    </Badge>
+                    <Badge
+                      variant="secondary"
+                      className="text-[11px] font-normal"
+                    >
+                      Enthusiastic
+                    </Badge>
+                  </div>
+                  <div className="flex flex-wrap gap-1">
+                    <Badge
+                      variant="outline"
+                      className="text-[11px] font-normal"
+                    >
+                      Robotics
+                    </Badge>
+                    <Badge
+                      variant="outline"
+                      className="text-[11px] font-normal"
+                    >
+                      3D Printing
+                    </Badge>
+                    <Badge
+                      variant="outline"
+                      className="text-[11px] font-normal"
+                    >
+                      Engineering
+                    </Badge>
+                    <Badge
+                      variant="outline"
+                      className="text-[11px] font-normal"
+                    >
+                      Chess
+                    </Badge>
+                    <Badge
+                      variant="outline"
+                      className="text-[11px] font-normal"
+                    >
+                      Space Exploration
+                    </Badge>
+                    <Badge
+                      variant="outline"
+                      className="text-[11px] font-normal"
+                    >
+                      Gaming
+                    </Badge>
+                  </div>
+                </div>
               </div>
-              <div>
-                <div className="font-medium">{studentStory.studentName}</div>
-                <div className="space-y-0.5 text-sm text-muted-foreground">
-                  <div>{studentStory.studentSchool}</div>
-                  <div>Grade {studentStory.studentGrade}</div>
+            </div>
+
+            {/* Mentor Column */}
+            <div className="space-y-4">
+              <h2 className="text-xl font-semibold text-[#111827]">
+                The Mentor
+              </h2>
+              <div className="space-y-4">
+                <div className="flex items-center gap-4">
+                  <div className="h-24 w-24 rounded-full bg-gray-200 flex-shrink-0 shadow-md ring-1 ring-[#111827]/10">
+                    {studentStory.mentorProfileImage && (
+                      <Image
+                        src={studentStory.mentorProfileImage}
+                        alt={`${studentStory.mentorName}'s profile`}
+                        width={96}
+                        height={96}
+                        className="h-full w-full rounded-full object-cover"
+                        unoptimized
+                        onError={(e) => {
+                          e.currentTarget.style.display = "none";
+                        }}
+                      />
+                    )}
+                  </div>
+                  <div>
+                    <div className="font-medium">{studentStory.mentorName}</div>
+                    <div className="space-y-0.5 text-sm text-muted-foreground">
+                      <div>{studentStory.mentorSchool}</div>
+                      <div>{studentStory.mentorMajor}</div>
+                    </div>
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <div className="flex flex-wrap gap-1">
+                    <Badge
+                      variant="secondary"
+                      className="text-[11px] font-normal"
+                    >
+                      Patient
+                    </Badge>
+                    <Badge
+                      variant="secondary"
+                      className="text-[11px] font-normal"
+                    >
+                      Encouraging
+                    </Badge>
+                    <Badge
+                      variant="secondary"
+                      className="text-[11px] font-normal"
+                    >
+                      Enthusiastic
+                    </Badge>
+                    <Badge
+                      variant="secondary"
+                      className="text-[11px] font-normal"
+                    >
+                      Goal-Oriented
+                    </Badge>
+                  </div>
+                  <div className="flex flex-wrap gap-1">
+                    <Badge
+                      variant="outline"
+                      className="text-[11px] font-normal"
+                    >
+                      Aerospace Engineering
+                    </Badge>
+                    <Badge
+                      variant="outline"
+                      className="text-[11px] font-normal"
+                    >
+                      Product Design
+                    </Badge>
+                    <Badge
+                      variant="outline"
+                      className="text-[11px] font-normal"
+                    >
+                      Technical Projects
+                    </Badge>
+                    <Badge
+                      variant="outline"
+                      className="text-[11px] font-normal"
+                    >
+                      Creative Arts
+                    </Badge>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Mentor Column */}
-          <div className="space-y-4">
-            <h2 className="text-xl font-semibold text-[#111827] flex items-center gap-2">
-              <GraduationCap className="h-5 w-5" />
-              The Mentor
+          <div className="border-t border-[#111827]/5" />
+
+          {/* The Perfect Match Section */}
+          <div className="space-y-6">
+            <h2 className="text-xl font-semibold text-[#111827]">
+              The Perfect Match
             </h2>
-            <div className="flex items-center gap-4">
-              <div className="h-24 w-24 rounded-full bg-gray-200 flex-shrink-0">
-                {studentStory.mentorProfileImage && (
-                  <Image
-                    src={studentStory.mentorProfileImage}
-                    alt={`${studentStory.mentorName}'s profile`}
-                    width={96}
-                    height={96}
-                    className="h-full w-full rounded-full object-cover"
-                    unoptimized
-                    onError={(e) => {
-                      e.currentTarget.style.display = "none";
-                    }}
-                  />
-                )}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="space-y-2">
+                <h3 className="font-medium text-[#111827]">Shared Vision</h3>
+                <p className="text-sm text-muted-foreground">
+                  Skye's aerospace aspirations and hands-on engineering approach
+                  perfectly align with Jack's innovative robotics and space
+                  exploration projects
+                </p>
               </div>
-              <div>
-                <div className="font-medium">{studentStory.mentorName}</div>
-                <div className="space-y-0.5 text-sm text-muted-foreground">
-                  <div>{studentStory.mentorSchool}</div>
-                  <div>{studentStory.mentorMajor}</div>
-                </div>
+              <div className="space-y-2">
+                <h3 className="font-medium text-[#111827]">
+                  Technical + Creative
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Skye's Stanford engineering expertise and artistic background
+                  complement Jack's diverse interests in robotics, game design,
+                  and entrepreneurship
+                </p>
+              </div>
+              <div className="space-y-2">
+                <h3 className="font-medium text-[#111827]">
+                  Project Development
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Daily sessions provide the structure and guidance needed to
+                  transform Jack's ambitious ideas - from Mars rovers to
+                  business ventures - into tangible achievements
+                </p>
               </div>
             </div>
           </div>
         </div>
+
+        <div className="border-t border-[#111827]/5" />
 
         {/* Timeline Section */}
         <div className="space-y-4">
@@ -213,7 +382,7 @@ export default function PrototypePage() {
                     {iconMap[milestone.icon as keyof typeof iconMap]}
                   </TimelineDot>
                   {index < studentStory.timeline.milestones.length - 1 && (
-                    <TimelineConnector className="bg-[#111827]/10" />
+                    <TimelineConnector className="bg-[#111827]/5" />
                   )}
                 </TimelineSeparator>
                 <TimelineContent>
