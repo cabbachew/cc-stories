@@ -46,46 +46,63 @@ export default function PrototypePage() {
     <div className="min-h-screen p-4 md:p-6 text-[#111827]">
       <div className="mx-auto max-w-7xl space-y-8">
         {/* Header Row */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3 md:gap-4">
           <Image
             src="/images/cc-logo.png"
             alt="CC Stories Logo"
-            width={48}
-            height={48}
-            className="rounded-lg"
+            width={40}
+            height={40}
+            className="rounded-lg md:w-12 md:h-12"
           />
-          <h1 className="text-2xl md:text-3xl font-bold text-[#111827] flex-grow">
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#111827] flex-grow">
             {studentStory.headline}
           </h1>
         </div>
 
         {/* Metadata Section */}
-        <div className="space-y-3">
+        <div className="space-y-1.5 sm:space-y-2 md:space-y-3">
           {/* First Row: Discipline and Topic */}
-          <div className="flex flex-wrap gap-3 items-center">
-            <Badge variant="secondary" className="text-sm">
+          <div className="flex flex-wrap gap-1.5 sm:gap-2 md:gap-3 items-center">
+            <Badge
+              variant="secondary"
+              className="text-[11px] sm:text-xs md:text-sm"
+            >
               {studentStory.discipline}
             </Badge>
-            <Badge variant="secondary" className="text-sm">
+            <Badge
+              variant="secondary"
+              className="text-[11px] sm:text-xs md:text-sm"
+            >
               {studentStory.topic}
             </Badge>
           </div>
 
           {/* Second Row: Dates and Status */}
-          <div className="flex flex-wrap gap-3 items-center">
-            <Badge variant="outline" className="text-sm">
+          <div className="flex flex-wrap gap-1.5 sm:gap-2 md:gap-3 items-center">
+            <Badge
+              variant="outline"
+              className="text-[11px] sm:text-xs md:text-sm"
+            >
               {formatDate(studentStory.startDate)}
             </Badge>
-            <span className="text-muted-foreground">–</span>
-            <Badge variant="outline" className="text-sm">
+            <span className="text-muted-foreground text-[11px] sm:text-xs md:text-sm">
+              –
+            </span>
+            <Badge
+              variant="outline"
+              className="text-[11px] sm:text-xs md:text-sm"
+            >
               {formatDate(studentStory.lastSessionDate)}
             </Badge>
             <span className="text-[#111827]/20">|</span>
-            <Badge variant="outline" className="text-sm">
+            <Badge
+              variant="outline"
+              className="text-[11px] sm:text-xs md:text-sm"
+            >
               {studentStory.sessionsCompleted} sessions
             </Badge>
             {studentStory.status === "scheduled" && (
-              <Badge className="text-sm bg-[#a7f3d0] text-[#111827] hover:bg-[#a7f3d0]/90">
+              <Badge className="text-[11px] sm:text-xs md:text-sm bg-[#a7f3d0] text-[#111827] hover:bg-[#a7f3d0]/90">
                 Ongoing
               </Badge>
             )}
