@@ -14,13 +14,13 @@ import {
 } from "@/components/ui/timeline";
 import {
   Link,
-  Pencil,
-  Cpu,
-  Radio,
-  Navigation,
-  TestTube,
   User,
   GraduationCap,
+  Compass,
+  Zap,
+  Rocket,
+  Dice6,
+  ShoppingBag,
 } from "lucide-react";
 import NextLink from "next/link";
 import Image from "next/image";
@@ -33,13 +33,13 @@ function formatDate(dateString: string) {
   }).format(date);
 }
 
-const milestoneIcons = [
-  <Pencil className="h-4 w-4 text-[#111827]" key="pencil" />,
-  <Cpu className="h-4 w-4 text-[#111827]" key="cpu" />,
-  <Radio className="h-4 w-4 text-[#111827]" key="radio" />,
-  <Navigation className="h-4 w-4 text-[#111827]" key="navigation" />,
-  <TestTube className="h-4 w-4 text-[#111827]" key="test" />,
-];
+const iconMap = {
+  compass: <Compass className="h-4 w-4 text-[#111827]" />,
+  zap: <Zap className="h-4 w-4 text-[#111827]" />,
+  rocket: <Rocket className="h-4 w-4 text-[#111827]" />,
+  "dice-6": <Dice6 className="h-4 w-4 text-[#111827]" />,
+  "shopping-bag": <ShoppingBag className="h-4 w-4 text-[#111827]" />,
+};
 
 export default function PrototypePage() {
   return (
@@ -136,10 +136,13 @@ export default function PrototypePage() {
             <div className="flex items-center gap-4">
               <div className="h-24 w-24 rounded-full bg-gray-200 flex-shrink-0">
                 {studentStory.studentProfileImage && (
-                  <img
+                  <Image
                     src={studentStory.studentProfileImage}
                     alt={`${studentStory.studentName}'s profile`}
+                    width={96}
+                    height={96}
                     className="h-full w-full rounded-full object-cover"
+                    unoptimized
                     onError={(e) => {
                       e.currentTarget.style.display = "none";
                     }}
@@ -165,10 +168,13 @@ export default function PrototypePage() {
             <div className="flex items-center gap-4">
               <div className="h-24 w-24 rounded-full bg-gray-200 flex-shrink-0">
                 {studentStory.mentorProfileImage && (
-                  <img
+                  <Image
                     src={studentStory.mentorProfileImage}
                     alt={`${studentStory.mentorName}'s profile`}
+                    width={96}
+                    height={96}
                     className="h-full w-full rounded-full object-cover"
+                    unoptimized
                     onError={(e) => {
                       e.currentTarget.style.display = "none";
                     }}
@@ -196,7 +202,7 @@ export default function PrototypePage() {
               <TimelineItem key={milestone.id}>
                 <TimelineSeparator>
                   <TimelineDot className="flex h-8 w-8 items-center justify-center">
-                    {milestoneIcons[index]}
+                    {iconMap[milestone.icon as keyof typeof iconMap]}
                   </TimelineDot>
                   {index < studentStory.timeline.milestones.length - 1 && (
                     <TimelineConnector className="bg-[#111827]/10" />
