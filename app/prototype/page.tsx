@@ -463,11 +463,11 @@ export default function PrototypePage() {
                   )}
                 </TimelineSeparator>
                 <TimelineContent>
-                  <div className="flex items-baseline gap-2">
+                  <div className="flex flex-col sm:flex-row sm:items-baseline sm:gap-2">
                     <TimelineTitle className="text-[#111827]">
                       {milestone.title}
                     </TimelineTitle>
-                    <span className="text-sm text-muted-foreground">
+                    <span className="text-sm text-muted-foreground mt-1 sm:mt-0">
                       {formatDateRange(milestone.startDate, milestone.endDate)}
                     </span>
                   </div>
