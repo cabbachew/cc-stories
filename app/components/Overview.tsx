@@ -1,4 +1,4 @@
-import { StudentStoryProps } from "@/app/types/StudentStory";
+import { LegacyStudentStoryProps } from "@/app/types/StudentStory";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
@@ -28,7 +28,7 @@ import {
 export default function Overview({
   studentStory,
 }: {
-  studentStory: StudentStoryProps;
+  studentStory: LegacyStudentStoryProps;
 }) {
   return (
     <div className="space-y-6">

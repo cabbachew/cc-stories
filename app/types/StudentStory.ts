@@ -13,9 +13,45 @@ interface Gallery {
   assets: GalleryAsset[];
 }
 
+interface TimelineMilestone {
+  id: number;
+  startDate: string;
+  endDate: string;
+  title: string;
+  summary: string;
+  icon: string;
+}
+
+// Type for the new implementation (prototype)
 export interface StudentStoryProps {
+  id: string;
   headline: string;
-  status?: "scheduled" | "complete" | "paused" | "proposed";
+  discipline: string;
+  topic: string;
+  status: string;
+  startDate: string;
+  lastSessionDate: string;
+  sessionsCompleted: number;
+  studentProfileImage: string;
+  mentorProfileImage: string;
+  studentName: string;
+  studentGrade: number;
+  studentSchool: string;
+  mentorName: string;
+  mentorSchool: string;
+  mentorMajor: string;
+  backgroundBlurb: string;
+  learningPlanUrl: string;
+  timeline: {
+    milestones: TimelineMilestone[];
+  };
+  gallery?: Gallery;
+}
+
+// Type for the legacy implementation (engagement)
+export interface LegacyStudentStoryProps {
+  id: string;
+  headline: string;
   studentInfo: {
     name: string;
     photoUrl: string;
@@ -63,6 +99,7 @@ export interface StudentStoryProps {
   impactSummary: string;
   futureGoals: string;
   timeline: {
+    milestones: TimelineMilestone[];
     sessions: {
       id: string;
       date: string;

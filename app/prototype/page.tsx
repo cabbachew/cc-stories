@@ -1,6 +1,7 @@
 "use client";
 
 import { studentStory } from "@/app/data/studentStories/611ae784-f69c-4304-9dc1-2347ea2ac8ac";
+import { StudentStoryProps } from "@/app/types/StudentStory";
 import { Badge } from "@/components/ui/badge";
 import {
   Timeline,
@@ -12,9 +13,24 @@ import {
   TimelineTitle,
   TimelineDescription,
 } from "@/components/ui/timeline";
-import { Link, Compass, Zap, Rocket, Dice6, ShoppingBag } from "lucide-react";
+import {
+  Link,
+  Compass,
+  Zap,
+  Rocket,
+  Dice6,
+  ShoppingBag,
+  ImageIcon,
+} from "lucide-react";
 import NextLink from "next/link";
 import Image from "next/image";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from "@/components/ui/carousel";
 
 function formatDate(dateString: string) {
   // Handle both YYYY-MM and YYYY-MM-DD formats
@@ -40,6 +56,8 @@ const iconMap = {
   "shopping-bag": <ShoppingBag className="h-4 w-4 text-[#111827]" />,
 };
 
+const studentStoryData: StudentStoryProps = studentStory;
+
 export default function PrototypePage() {
   return (
     <div className="min-h-screen p-4 md:p-6 text-[#111827]">
@@ -54,7 +72,7 @@ export default function PrototypePage() {
             className="rounded-lg md:w-12 md:h-12"
           />
           <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#111827] flex-grow">
-            {studentStory.headline}
+            {studentStoryData.headline}
           </h1>
         </div>
 
@@ -66,13 +84,13 @@ export default function PrototypePage() {
               variant="secondary"
               className="text-[11px] sm:text-xs md:text-sm font-normal tracking-wider"
             >
-              {studentStory.discipline}
+              {studentStoryData.discipline}
             </Badge>
             <Badge
               variant="secondary"
               className="text-[11px] sm:text-xs md:text-sm font-normal tracking-wider"
             >
-              {studentStory.topic}
+              {studentStoryData.topic}
             </Badge>
           </div>
 
@@ -82,7 +100,7 @@ export default function PrototypePage() {
               variant="outline"
               className="text-[11px] sm:text-xs md:text-sm font-normal tracking-wider"
             >
-              {formatDate(studentStory.startDate)}
+              {formatDate(studentStoryData.startDate)}
             </Badge>
             <span className="text-muted-foreground text-[11px] sm:text-xs md:text-sm">
               –
@@ -91,16 +109,16 @@ export default function PrototypePage() {
               variant="outline"
               className="text-[11px] sm:text-xs md:text-sm font-normal tracking-wider"
             >
-              {formatDate(studentStory.lastSessionDate)}
+              {formatDate(studentStoryData.lastSessionDate)}
             </Badge>
             <span className="text-[#111827]/20">|</span>
             <Badge
               variant="outline"
               className="text-[11px] sm:text-xs md:text-sm font-normal tracking-wider"
             >
-              {studentStory.sessionsCompleted} sessions
+              {studentStoryData.sessionsCompleted} sessions
             </Badge>
-            {studentStory.status === "scheduled" && (
+            {studentStoryData.status === "scheduled" && (
               <Badge className="text-[11px] sm:text-xs md:text-sm bg-[#a7f3d0] text-[#111827] font-normal tracking-wider shadow-none">
                 Active
               </Badge>
@@ -113,7 +131,7 @@ export default function PrototypePage() {
           <h2 className="text-xl font-semibold text-[#111827]">Assets</h2>
           <div>
             <NextLink
-              href={studentStory.learningPlanUrl}
+              href={studentStoryData.learningPlanUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-[#111827]"
@@ -121,6 +139,67 @@ export default function PrototypePage() {
               <Link className="h-4 w-4 text-[#111827]" />
               <span>Initial Learning Plan</span>
             </NextLink>
+          </div>
+        </div>
+
+        <div className="border-t border-[#111827]/5" />
+
+        {/* Gallery Section */}
+        <div className="space-y-4">
+          <h2 className="text-xl font-semibold text-[#111827]">Gallery</h2>
+          <div className="relative mx-auto max-w-[calc(100vw-8rem)]">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+                slidesToScroll: 1,
+              }}
+              className="w-full max-w-4xl mx-auto"
+            >
+              <CarouselContent className="-ml-2 md:-ml-4">
+                {studentStoryData.gallery?.images?.map((image, index) => (
+                  <CarouselItem
+                    key={index}
+                    className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3"
+                  >
+                    <div className="p-1">
+                      <div className="overflow-hidden rounded-lg bg-muted aspect-square">
+                        {image.url ? (
+                          <Image
+                            src={image.url}
+                            alt={image.caption || "Gallery image"}
+                            width={400}
+                            height={400}
+                            unoptimized
+                            className="h-full w-full object-cover transition-all hover:scale-105"
+                          />
+                        ) : (
+                          <div className="h-full w-full flex items-center justify-center">
+                            <ImageIcon
+                              className="h-10 w-10 text-muted-foreground/50"
+                              aria-hidden="true"
+                            />
+                          </div>
+                        )}
+                      </div>
+                      {image.caption && (
+                        <p className="mt-2 text-sm text-center text-muted-foreground">
+                          {image.caption}
+                        </p>
+                      )}
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <div className="hidden lg:block">
+                <CarouselPrevious className="absolute -left-10 top-[calc(50%-24px)]" />
+                <CarouselNext className="absolute -right-10 top-[calc(50%-24px)]" />
+              </div>
+              <div className="block lg:hidden mt-4 flex justify-center gap-2">
+                <CarouselPrevious />
+                <CarouselNext />
+              </div>
+            </Carousel>
           </div>
         </div>
 
@@ -137,10 +216,10 @@ export default function PrototypePage() {
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
                   <div className="h-24 w-24 rounded-full bg-gray-200 flex-shrink-0 shadow-md ring-1 ring-[#111827]/10">
-                    {studentStory.studentProfileImage && (
+                    {studentStoryData.studentProfileImage && (
                       <Image
-                        src={studentStory.studentProfileImage}
-                        alt={`${studentStory.studentName}'s profile`}
+                        src={studentStoryData.studentProfileImage}
+                        alt={`${studentStoryData.studentName}'s profile`}
                         width={96}
                         height={96}
                         className="h-full w-full rounded-full object-cover"
@@ -153,11 +232,11 @@ export default function PrototypePage() {
                   </div>
                   <div>
                     <div className="font-medium">
-                      {studentStory.studentName}
+                      {studentStoryData.studentName}
                     </div>
                     <div className="space-y-0.5 text-sm text-muted-foreground">
-                      <div>{studentStory.studentSchool}</div>
-                      <div>Grade {studentStory.studentGrade}</div>
+                      <div>{studentStoryData.studentSchool}</div>
+                      <div>Grade {studentStoryData.studentGrade}</div>
                     </div>
                   </div>
                 </div>
@@ -238,10 +317,10 @@ export default function PrototypePage() {
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
                   <div className="h-24 w-24 rounded-full bg-gray-200 flex-shrink-0 shadow-md ring-1 ring-[#111827]/10">
-                    {studentStory.mentorProfileImage && (
+                    {studentStoryData.mentorProfileImage && (
                       <Image
-                        src={studentStory.mentorProfileImage}
-                        alt={`${studentStory.mentorName}'s profile`}
+                        src={studentStoryData.mentorProfileImage}
+                        alt={`${studentStoryData.mentorName}'s profile`}
                         width={96}
                         height={96}
                         className="h-full w-full rounded-full object-cover"
@@ -253,10 +332,12 @@ export default function PrototypePage() {
                     )}
                   </div>
                   <div>
-                    <div className="font-medium">{studentStory.mentorName}</div>
+                    <div className="font-medium">
+                      {studentStoryData.mentorName}
+                    </div>
                     <div className="space-y-0.5 text-sm text-muted-foreground">
-                      <div>{studentStory.mentorSchool}</div>
-                      <div>{studentStory.mentorMajor}</div>
+                      <div>{studentStoryData.mentorSchool}</div>
+                      <div>{studentStoryData.mentorMajor}</div>
                     </div>
                   </div>
                 </div>
@@ -320,7 +401,7 @@ export default function PrototypePage() {
 
           {/* Student Background Blurb */}
           <div className="text-sm text-muted-foreground leading-relaxed pl-4 border-l-2 border-[#fbc012]">
-            {studentStory.backgroundBlurb}
+            {studentStoryData.backgroundBlurb}
           </div>
 
           <div className="border-t border-[#111827]/5" />
@@ -371,13 +452,13 @@ export default function PrototypePage() {
             Project Milestones
           </h2>
           <Timeline>
-            {studentStory.timeline.milestones.map((milestone, index) => (
+            {studentStoryData.timeline.milestones.map((milestone, index) => (
               <TimelineItem key={milestone.id}>
                 <TimelineSeparator>
                   <TimelineDot className="flex h-8 w-8 items-center justify-center">
                     {iconMap[milestone.icon as keyof typeof iconMap]}
                   </TimelineDot>
-                  {index < studentStory.timeline.milestones.length - 1 && (
+                  {index < studentStoryData.timeline.milestones.length - 1 && (
                     <TimelineConnector className="bg-[#111827]/5" />
                   )}
                 </TimelineSeparator>

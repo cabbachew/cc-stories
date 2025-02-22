@@ -1,6 +1,7 @@
-import { StudentStoryProps } from "@/app/types/StudentStory";
+import { LegacyStudentStoryProps } from "@/app/types/StudentStory";
 
-export const studentStory: StudentStoryProps = {
+export const studentStory: LegacyStudentStoryProps = {
+  id: "bca78955-2e42-44b6-84a3-cb31dfa64a7f",
   headline:
     "From Startup to Success: How a 9th Grader Built a $3,000+ Jewelry Business",
   studentInfo: {
@@ -124,6 +125,53 @@ export const studentStory: StudentStoryProps = {
   futureGoals:
     "Rose aims to expand IYK Jewels' charitable initiatives through the Every Mother Counts partnership, develop new seasonal collections, and explore additional retail partnerships. She plans to scale her business while maintaining academic excellence, with a focus on sustainable growth and social impact. Long-term goals include establishing IYK Jewels as a recognized brand in the youth jewelry market while inspiring other young entrepreneurs.",
   timeline: {
+    milestones: [
+      {
+        id: 1,
+        startDate: "2024-04",
+        endDate: "2024-05",
+        title: "Brand Launch and Initial Success",
+        summary:
+          "Launched IYK Jewels brand, establishing core products and achieving first major sales milestone of $1,300 in two days.",
+        icon: "rocket",
+      },
+      {
+        id: 2,
+        startDate: "2024-06",
+        endDate: "2024-07",
+        title: "First Major Partnership and E-commerce Development",
+        summary:
+          "Secured Love Shack Fancy partnership, developed e-commerce presence, and surpassed $2,000 in sales.",
+        icon: "shopping-bag",
+      },
+      {
+        id: 3,
+        startDate: "2024-08",
+        endDate: "2024-09",
+        title: "Business Scaling and Brand Growth",
+        summary:
+          "Successfully executed pop-up events, enhanced online presence, and reached $3,000 in revenue milestone.",
+        icon: "zap",
+      },
+      {
+        id: 4,
+        startDate: "2024-10",
+        endDate: "2024-12",
+        title: "Seasonal Collections and Holiday Strategy",
+        summary:
+          "Launched fall and holiday collections, executed successful promotional campaigns including Black Friday and Cyber Monday.",
+        icon: "compass",
+      },
+      {
+        id: 5,
+        startDate: "2025-01",
+        endDate: "2025-02",
+        title: "Social Impact and Business Expansion",
+        summary:
+          "Developed Every Mother Counts partnership, approached $4,000 in total revenue, and launched Valentine's collection.",
+        icon: "heart",
+      },
+    ],
     sessions: [
       {
         id: "s1",

@@ -1,4 +1,6 @@
-export const studentStory = {
+import { StudentStoryProps } from "@/app/types/StudentStory";
+
+export const studentStory: StudentStoryProps = {
   id: "611ae784-f69c-4304-9dc1-2347ea2ac8ac",
   headline:
     "From Robotics to NASA: A Young Innovator's Journey in Engineering and Entrepreneurship",
@@ -68,6 +70,44 @@ export const studentStory = {
         summary:
           "Initiated food business venture, developed branding, and began outreach to manufacturers.",
         icon: "shopping-bag",
+      },
+    ],
+  },
+  gallery: {
+    images: [
+      {
+        url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e2e8f0'/%3E%3C/svg%3E",
+        caption: "Bug Killer Bot CAD Model",
+      },
+      {
+        url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e2e8f0'/%3E%3C/svg%3E",
+        caption: "Mars Rover Protection System",
+      },
+      {
+        url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e2e8f0'/%3E%3C/svg%3E",
+        caption: "Murder Wizardry Game Design",
+      },
+      {
+        url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e2e8f0'/%3E%3C/svg%3E",
+        caption: "Mini Munchies Brand Assets",
+      },
+      {
+        url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e2e8f0'/%3E%3C/svg%3E",
+        caption: "NASA Presentation Demo",
+      },
+      {
+        url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e2e8f0'/%3E%3C/svg%3E",
+        caption: "Project Development Workshop",
+      },
+    ],
+    assets: [
+      {
+        title: "Project Portfolio",
+        url: "https://cc-proposals.vercel.app/proposals/f99fcca0-2e03-47af-9a85-cae4b1fe2c21",
+      },
+      {
+        title: "NASA Presentation",
+        url: "https://cc-proposals.vercel.app/proposals/f99fcca0-2e03-47af-9a85-cae4b1fe2c21",
       },
     ],
   },

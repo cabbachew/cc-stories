@@ -5,7 +5,7 @@ import { Label } from "@/components/ui/label";
 import Overview from "./Overview";
 import MilestonesTimeline from "./timeline/MilestonesTimeline";
 import SessionsTimeline from "./timeline/SessionsTimeline";
-import { StudentStoryProps } from "@/app/types/StudentStory";
+import { LegacyStudentStoryProps } from "@/app/types/StudentStory";
 import { TimelineSession, TimelineChapter } from "@/app/types/timeline";
 
 export default function TimelineTabs({
@@ -13,7 +13,7 @@ export default function TimelineTabs({
   sessions,
   chapters,
 }: {
-  studentStory: StudentStoryProps;
+  studentStory: LegacyStudentStoryProps;
   sessions: TimelineSession[];
   chapters: TimelineChapter[];
 }) {
