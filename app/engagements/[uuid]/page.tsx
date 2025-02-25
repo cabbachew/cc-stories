@@ -199,6 +199,7 @@ export default function StudentStory() {
         {/* Gallery Section */}
         <div className="space-y-4">
           <h2 className="text-xl font-semibold text-[#111827]">Gallery</h2>
+          {/* <div className="relative w-full"> */}
           <div className="relative mx-auto max-w-[calc(100vw-8rem)]">
             <Carousel
               opts={{
@@ -206,13 +207,13 @@ export default function StudentStory() {
                 loop: true,
                 slidesToScroll: 1,
               }}
-              className="w-full max-w-4xl mx-auto"
+              className="w-full mx-auto"
             >
               <CarouselContent className="-ml-2 md:-ml-4">
                 {studentStoryData.gallery?.images?.map((image, index) => (
                   <CarouselItem
                     key={index}
-                    className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3"
+                    className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3"
                   >
                     <div className="p-1">
                       <div className="overflow-hidden rounded-lg bg-muted aspect-square">
@@ -220,8 +221,8 @@ export default function StudentStory() {
                           <Image
                             src={image.url}
                             alt={image.caption || "Gallery image"}
-                            width={400}
-                            height={400}
+                            width={500}
+                            height={500}
                             unoptimized
                             className="h-full w-full object-cover transition-all hover:scale-105"
                           />

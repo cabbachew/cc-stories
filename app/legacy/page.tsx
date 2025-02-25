@@ -1,7 +1,7 @@
 "use client";
 
 import { studentStory } from "@/app/data/studentStories/legacy";
-import TimelineTabs from "@/app/components/TimelineTabs";
+import TimelineTabs from "@/app/legacy/components/TimelineTabs";
 
 export default function LegacyStudentStory() {
   return (

@@ -2,9 +2,9 @@ import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
-import Overview from "./Overview";
-import MilestonesTimeline from "./timeline/MilestonesTimeline";
-import SessionsTimeline from "./timeline/SessionsTimeline";
+import Overview from "@/app/legacy/components/Overview";
+import MilestonesTimeline from "@/app/legacy/components/timeline/MilestonesTimeline";
+import SessionsTimeline from "@/app/legacy/components/timeline/SessionsTimeline";
 import { LegacyStudentStoryProps } from "@/app/types/StudentStory";
 import { TimelineSession, TimelineChapter } from "@/app/types/timeline";
 
