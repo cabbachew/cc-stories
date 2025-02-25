@@ -36,9 +36,15 @@ export interface StudentStoryProps {
   studentName: string;
   studentGrade: number;
   studentSchool: string;
+  // Student personality and interests
+  studentPersonality: string[];
+  studentInterests: string[];
   mentorName: string;
   mentorSchool: string;
   mentorMajor: string;
+  // Mentor teaching style and expertise
+  mentorTeachingStyle: string[];
+  mentorExpertise: string[];
   backgroundBlurb: string;
   learningPlanUrl: string;
   assets?: Asset[];
@@ -74,6 +80,7 @@ export interface LegacyStudentStoryProps {
       university: string;
       major: string;
     };
+    teachingStyle?: string[];
   };
   mentorshipMatch: {
     relationship: string;

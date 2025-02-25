@@ -294,68 +294,30 @@ export default function StudentStory() {
                 </div>
                 <div className="space-y-2">
                   <div className="flex flex-wrap gap-1">
-                    <Badge
-                      variant="secondary"
-                      className="text-[11px] font-normal"
-                    >
-                      Innovative
-                    </Badge>
-                    <Badge
-                      variant="secondary"
-                      className="text-[11px] font-normal"
-                    >
-                      Curious
-                    </Badge>
-                    <Badge
-                      variant="secondary"
-                      className="text-[11px] font-normal"
-                    >
-                      Creative
-                    </Badge>
-                    <Badge
-                      variant="secondary"
-                      className="text-[11px] font-normal"
-                    >
-                      Enthusiastic
-                    </Badge>
+                    {studentStoryData.studentPersonality?.map(
+                      (trait, index) => (
+                        <Badge
+                          key={index}
+                          variant="secondary"
+                          className="text-[11px] font-normal"
+                        >
+                          {trait}
+                        </Badge>
+                      )
+                    )}
                   </div>
                   <div className="flex flex-wrap gap-1">
-                    <Badge
-                      variant="outline"
-                      className="text-[11px] font-normal"
-                    >
-                      Robotics
-                    </Badge>
-                    <Badge
-                      variant="outline"
-                      className="text-[11px] font-normal"
-                    >
-                      3D Printing
-                    </Badge>
-                    <Badge
-                      variant="outline"
-                      className="text-[11px] font-normal"
-                    >
-                      Engineering
-                    </Badge>
-                    <Badge
-                      variant="outline"
-                      className="text-[11px] font-normal"
-                    >
-                      Chess
-                    </Badge>
-                    <Badge
-                      variant="outline"
-                      className="text-[11px] font-normal"
-                    >
-                      Space Exploration
-                    </Badge>
-                    <Badge
-                      variant="outline"
-                      className="text-[11px] font-normal"
-                    >
-                      Gaming
-                    </Badge>
+                    {studentStoryData.studentInterests?.map(
+                      (interest, index) => (
+                        <Badge
+                          key={index}
+                          variant="outline"
+                          className="text-[11px] font-normal"
+                        >
+                          {interest}
+                        </Badge>
+                      )
+                    )}
                   </div>
                 </div>
               </div>
@@ -395,56 +357,30 @@ export default function StudentStory() {
                 </div>
                 <div className="space-y-2">
                   <div className="flex flex-wrap gap-1">
-                    <Badge
-                      variant="secondary"
-                      className="text-[11px] font-normal"
-                    >
-                      Patient
-                    </Badge>
-                    <Badge
-                      variant="secondary"
-                      className="text-[11px] font-normal"
-                    >
-                      Encouraging
-                    </Badge>
-                    <Badge
-                      variant="secondary"
-                      className="text-[11px] font-normal"
-                    >
-                      Enthusiastic
-                    </Badge>
-                    <Badge
-                      variant="secondary"
-                      className="text-[11px] font-normal"
-                    >
-                      Goal-Oriented
-                    </Badge>
+                    {studentStoryData.mentorTeachingStyle?.map(
+                      (style, index) => (
+                        <Badge
+                          key={index}
+                          variant="secondary"
+                          className="text-[11px] font-normal"
+                        >
+                          {style}
+                        </Badge>
+                      )
+                    )}
                   </div>
                   <div className="flex flex-wrap gap-1">
-                    <Badge
-                      variant="outline"
-                      className="text-[11px] font-normal"
-                    >
-                      Aerospace Engineering
-                    </Badge>
-                    <Badge
-                      variant="outline"
-                      className="text-[11px] font-normal"
-                    >
-                      Product Design
-                    </Badge>
-                    <Badge
-                      variant="outline"
-                      className="text-[11px] font-normal"
-                    >
-                      Technical Projects
-                    </Badge>
-                    <Badge
-                      variant="outline"
-                      className="text-[11px] font-normal"
-                    >
-                      Creative Arts
-                    </Badge>
+                    {studentStoryData.mentorExpertise?.map(
+                      (expertise, index) => (
+                        <Badge
+                          key={index}
+                          variant="outline"
+                          className="text-[11px] font-normal"
+                        >
+                          {expertise}
+                        </Badge>
+                      )
+                    )}
                   </div>
                 </div>
               </div>

@@ -18,11 +18,11 @@ export const studentStory: StudentStoryProps = {
     "https://cc-proposals.vercel.app/proposals/f99fcca0-2e03-47af-9a85-cae4b1fe2c21",
   assets: [
     {
-      title: "Project Portfolio",
+      title: "[Project Portfolio]",
       url: "https://cc-proposals.vercel.app/proposals/f99fcca0-2e03-47af-9a85-cae4b1fe2c21",
     },
     {
-      title: "NASA Presentation",
+      title: "[NASA Presentation]",
       url: "https://cc-proposals.vercel.app/proposals/f99fcca0-2e03-47af-9a85-cae4b1fe2c21",
     },
   ],
@@ -63,6 +63,16 @@ export const studentStory: StudentStoryProps = {
   studentName: "Jack Zitterman",
   studentSchool: "Avenues The World School",
   studentGrade: 7,
+  // Student personality and interests
+  studentPersonality: ["Innovative", "Curious", "Creative", "Enthusiastic"],
+  studentInterests: [
+    "Robotics",
+    "3D Printing",
+    "Engineering",
+    "Chess",
+    "Space Exploration",
+    "Gaming",
+  ],
 
   // Mentor section
   mentorProfileImage:
@@ -70,6 +80,20 @@ export const studentStory: StudentStoryProps = {
   mentorName: "Skye Horiguchi",
   mentorSchool: "Stanford University",
   mentorMajor: "Aerospace Engineering & Product Design",
+  // Mentor teaching style and expertise
+  mentorTeachingStyle: [
+    "Patient",
+    "Encouraging",
+    "Enthusiastic",
+    "Goal-Oriented",
+  ],
+  mentorExpertise: [
+    "Aerospace Engineering",
+    "Product Design",
+    "CAD Modeling",
+    "Robotics",
+    "Space Technology",
+  ],
 
   // Background section
   backgroundBlurb:

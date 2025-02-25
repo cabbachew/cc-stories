@@ -38,11 +38,34 @@ export const studentStory: StudentStoryProps = {
   studentName: "Rose Cornell",
   studentSchool: "Riverdale",
   studentGrade: 9,
+  studentPersonality: ["Determined", "Curious", "Funny", "Positive"],
+  studentInterests: [
+    "Jewelry Design",
+    "Fashion",
+    "Interior Design",
+    "Tennis",
+    "Volleyball",
+    "Community Service",
+  ],
   mentorProfileImage:
     "https://ucarecdn.com/08f96ed3-792b-4bbb-8995-a0f61f514151/-/crop/797x797/0,3/-/preview/",
   mentorName: "Phoebe Dragseth",
   mentorSchool: "Brown University",
   mentorMajor: "Political Science & Math",
+  mentorTeachingStyle: [
+    "Encouraging",
+    "Structured",
+    "Practical",
+    "Goal-oriented",
+  ],
+  mentorExpertise: [
+    "Business Development",
+    "E-commerce",
+    "Digital Marketing",
+    "Fashion and Design",
+    "Female Entrepreneurship",
+    "Social Impact",
+  ],
   backgroundBlurb:
     "Rose has always been passionate about design, fashion, and interior design. In 9th grade, she developed an interest in jewelry making, creating charm necklaces that received enthusiastic feedback from peers. With entrepreneurial ambition, she sought mentorship to transform her creative hobby into a sustainable business that could generate profit while making a positive impact through charitable giving.",
   timeline: {
