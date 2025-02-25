@@ -8,20 +8,28 @@ export default function Home() {
         <div className="space-y-4">
           <div className="p-4 border rounded-lg hover:bg-muted/50 transition-colors">
             <Link
-              href="/engagements/bca78955-2e42-44b6-84a3-cb31dfa64a7f"
+              href="/engagements/611ae784-f69c-4304-9dc1-2347ea2ac8ac"
               className="block space-y-2"
             >
-              <h2 className="text-lg font-semibold">Prototype v1.0</h2>
+              <h2 className="text-lg font-semibold">Student Story</h2>
               <p className="text-sm text-muted-foreground">
-                bca78955-2e42-44b6-84a3-cb31dfa64a7f
+                611ae784-f69c-4304-9dc1-2347ea2ac8ac
+              </p>
+            </Link>
+          </div>
+          <div className="p-4 border rounded-lg hover:bg-muted/50 transition-colors">
+            <Link href="/legacy" className="block space-y-2">
+              <h2 className="text-lg font-semibold">Legacy View</h2>
+              <p className="text-sm text-muted-foreground">
+                Timeline-based view of student story
               </p>
             </Link>
           </div>
           <div className="p-4 border rounded-lg hover:bg-muted/50 transition-colors">
             <Link href="/prototype" className="block space-y-2">
-              <h2 className="text-lg font-semibold">Prototype v1.1</h2>
+              <h2 className="text-lg font-semibold">Prototype</h2>
               <p className="text-sm text-muted-foreground">
-                611ae784-f69c-4304-9dc1-2347ea2ac8ac
+                Prototype page for student story
               </p>
             </Link>
           </div>
