@@ -3,14 +3,13 @@ interface GalleryImage {
   caption: string;
 }
 
-interface GalleryAsset {
+interface Asset {
   title: string;
   url: string;
 }
 
 interface Gallery {
   images: GalleryImage[];
-  assets: GalleryAsset[];
 }
 
 interface TimelineMilestone {
@@ -42,6 +41,7 @@ export interface StudentStoryProps {
   mentorMajor: string;
   backgroundBlurb: string;
   learningPlanUrl: string;
+  assets?: Asset[];
   skillsDeveloped: string[];
   challengesOvercome: string[];
   futureGoals: string;
@@ -101,6 +101,7 @@ export interface LegacyStudentStoryProps {
   };
   impactSummary: string;
   futureGoals: string;
+  assets?: Asset[];
   timeline: {
     milestones: TimelineMilestone[];
     sessions: {

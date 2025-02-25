@@ -129,7 +129,7 @@ export default function PrototypePage() {
         {/* Assets Section */}
         <div className="space-y-3">
           <h2 className="text-xl font-semibold text-[#111827]">Assets</h2>
-          <div>
+          <div className="space-y-2">
             <NextLink
               href={studentStoryData.learningPlanUrl}
               target="_blank"
@@ -139,6 +139,20 @@ export default function PrototypePage() {
               <Link className="h-4 w-4 text-[#111827]" />
               <span>Initial Learning Plan</span>
             </NextLink>
+
+            {studentStoryData.assets?.map((asset, index) => (
+              <div key={index}>
+                <NextLink
+                  href={asset.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-[#111827]"
+                >
+                  <Link className="h-4 w-4 text-[#111827]" />
+                  <span>{asset.title}</span>
+                </NextLink>
+              </div>
+            ))}
           </div>
         </div>
 

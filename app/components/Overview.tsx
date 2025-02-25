@@ -304,7 +304,7 @@ export default function Overview({
             <div>
               <h4 className="font-semibold mb-3">Project Assets</h4>
               <div className="space-y-2">
-                {studentStory.gallery?.assets?.map((asset, index) => (
+                {studentStory.assets?.map((asset, index) => (
                   <a
                     key={index}
                     href={asset.url}

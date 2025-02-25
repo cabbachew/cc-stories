@@ -636,6 +636,16 @@ export const studentStory: LegacyStudentStoryProps = {
       },
     ],
   },
+  assets: [
+    {
+      title: "IYKYK Shop",
+      url: "https://iykyk.shop/",
+    },
+    {
+      title: "IYKYK Instagram",
+      url: "https://www.instagram.com/iykyk_co/f",
+    },
+  ],
   gallery: {
     images: [
       {
@@ -659,16 +669,6 @@ export const studentStory: LegacyStudentStoryProps = {
         caption: "The Art of Evolving",
       },
       // Add more images as needed
-    ],
-    assets: [
-      {
-        title: "IYKYK Shop",
-        url: "https://iykyk.shop/",
-      },
-      {
-        title: "IYKYK Instagram",
-        url: "https://www.instagram.com/iykyk_co/f",
-      },
     ],
   },
 };
