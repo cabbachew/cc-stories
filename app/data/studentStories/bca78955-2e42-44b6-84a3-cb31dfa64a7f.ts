@@ -1,0 +1,148 @@
+import { StudentStoryProps } from "@/app/types/StudentStory";
+
+export const studentStory: StudentStoryProps = {
+  id: "bca78955-2e42-44b6-84a3-cb31dfa64a7f",
+  headline:
+    "From Startup to Success: How a 9th Grader Built a $3,000+ Jewelry Business",
+  discipline: "Business, Finance & Entrepreneurship",
+  topic: "Business / Entrepreneurship",
+  startDate: "2024-04-20",
+  lastSessionDate: "2025-02-22",
+  sessionsCompleted: 37,
+  status: "scheduled",
+  learningPlanUrl: "https://curioucardinals.com/plans/jewelry-business",
+  assets: [
+    {
+      title: "Business Pitch Deck",
+      url: "https://docs.example.com/iyk-jewels-pitch",
+    },
+    {
+      title: "Sales Tracking Spreadsheet",
+      url: "https://docs.google.com/spreadsheets/d/1F-20wkLpagxSEq0UUKNnTMV-MnQCx7__n6HsbDPJgkg",
+    },
+  ],
+  gallery: {
+    images: [
+      {
+        url: "https://example.com/iyk-jewels-collection",
+        caption: "IYK Jewels Fall Collection",
+      },
+      {
+        url: "https://example.com/love-shack-fancy-popup",
+        caption: "Pop-up shop at Love Shack Fancy",
+      },
+    ],
+  },
+  studentProfileImage:
+    "https://ucarecdn.com/9cc608ec-aeae-450a-bd20-5c3a54059c9e/-/scale_crop/480x480/",
+  studentName: "Rose Cornell",
+  studentSchool: "Riverdale",
+  studentGrade: 9,
+  mentorProfileImage:
+    "https://ucarecdn.com/08f96ed3-792b-4bbb-8995-a0f61f514151/-/crop/797x797/0,3/-/preview/",
+  mentorName: "Phoebe Dragseth",
+  mentorSchool: "Brown University",
+  mentorMajor: "Political Science & Math",
+  backgroundBlurb:
+    "Rose has always been passionate about design, fashion, and interior design. In 9th grade, she developed an interest in jewelry making, creating charm necklaces that received enthusiastic feedback from peers. With entrepreneurial ambition, she sought mentorship to transform her creative hobby into a sustainable business that could generate profit while making a positive impact through charitable giving.",
+  timeline: {
+    milestones: [
+      {
+        id: 1,
+        startDate: "2024-04",
+        endDate: "2024-05",
+        title: "Business Concept Development",
+        summary:
+          "Developed initial business plan for charm necklace brand, including target market analysis, pricing strategy, and production timeline.",
+        icon: "lightbulb",
+      },
+      {
+        id: 2,
+        startDate: "2024-05",
+        endDate: "2024-05",
+        title: "Brand Launch on Instagram",
+        summary:
+          "Created IYK (If You Know) Jewels brand identity, designed logo, and launched Instagram business account for initial marketing and sales.",
+        icon: "instagram",
+      },
+      {
+        id: 3,
+        startDate: "2024-05",
+        endDate: "2024-06",
+        title: "First Sales Success",
+        summary:
+          "Generated $1,300 in sales within first two days of launching, completely selling out initial inventory through Instagram direct sales.",
+        icon: "trending-up",
+      },
+      {
+        id: 4,
+        startDate: "2024-07",
+        endDate: "2024-08",
+        title: "First Retail Partnership",
+        summary:
+          "Secured and executed a successful pop-up trunk show with Love Shack Fancy, expanding brand exposure to new customer base.",
+        icon: "shopping-bag",
+      },
+      {
+        id: 5,
+        startDate: "2024-07",
+        endDate: "2024-09",
+        title: "E-Commerce Website Development",
+        summary:
+          "Designed and launched full e-commerce website using Squarespace, enabling direct online sales beyond Instagram.",
+        icon: "globe",
+      },
+      {
+        id: 6,
+        startDate: "2024-10",
+        endDate: "2024-10",
+        title: "Fall Collection Launch",
+        summary:
+          "Created, marketed, and launched seasonal collection with coordinated social media strategy and online store update.",
+        icon: "palette",
+      },
+      {
+        id: 7,
+        startDate: "2024-11",
+        endDate: "2024-12",
+        title: "Holiday Sales Strategy",
+        summary:
+          "Implemented successful Black Friday and Cyber Monday campaigns, with strategic discounts and promotional content.",
+        icon: "gift",
+      },
+      {
+        id: 8,
+        startDate: "2025-01",
+        endDate: "2025-02",
+        title: "Charity Partnership Development",
+        summary:
+          "Established partnership with Every Mother Counts organization, creating special collection with 40% of proceeds donated to maternal health initiatives.",
+        icon: "heart",
+      },
+    ],
+  },
+  skillsDeveloped: [
+    "Entrepreneurship fundamentals",
+    "Brand development and identity",
+    "Social media marketing",
+    "E-commerce website management",
+    "Product photography",
+    "Inventory tracking and management",
+    "Pricing strategy and financial planning",
+    "Sales negotiation",
+    "Event planning for pop-up shops",
+    "Corporate partnership development",
+    "Cause marketing",
+  ],
+  challengesOvercome: [
+    "Following through on business ideas to completion",
+    "Balancing academic responsibilities with business development",
+    "Scaling production to meet unexpected demand",
+    "Managing time between school, sports, and entrepreneurship",
+    "Building confidence in professional communications",
+    "Developing product photography skills",
+    "Creating consistent social media content",
+  ],
+  futureGoals:
+    "Rose aims to grow IYK Jewels' impact by expanding her charity partnerships beyond Every Mother Counts, with a target of donating over $10,000 to maternal health and other causes by the end of 2025. She plans to develop seasonal collections with dedicated charity components, explore wholesale opportunities with boutique retailers, and build a sustainable business model that combines profit with purpose.",
+};

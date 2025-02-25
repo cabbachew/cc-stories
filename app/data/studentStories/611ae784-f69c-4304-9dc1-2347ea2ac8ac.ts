@@ -60,14 +60,14 @@ export const studentStory: StudentStoryProps = {
   // Student section
   studentProfileImage:
     "https://ucarecdn.com/baa598ef-84e3-4af6-94aa-bf5cf5003a19/-/preview/1000x879/",
-  studentName: "Jack Z",
+  studentName: "Jack Zitterman",
   studentSchool: "Avenues The World School",
   studentGrade: 7,
 
   // Mentor section
   mentorProfileImage:
     "https://ucarecdn.com/3b65f0ed-2c5c-4da1-a34a-a1356aa36d1b/",
-  mentorName: "Skye H",
+  mentorName: "Skye Horiguchi",
   mentorSchool: "Stanford University",
   mentorMajor: "Aerospace Engineering & Product Design",
 
