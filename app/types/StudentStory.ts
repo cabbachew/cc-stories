@@ -21,7 +21,7 @@ interface TimelineMilestone {
   icon: string;
 }
 
-// Type for the new implementation (prototype)
+// Main student story type for the engagements route
 export interface StudentStoryProps {
   id: string;
   headline: string;
@@ -51,7 +51,7 @@ export interface StudentStoryProps {
   gallery?: Gallery;
 }
 
-// Type for the legacy implementation (engagement)
+// Type for the legacy implementation (timeline view)
 export interface LegacyStudentStoryProps {
   id: string;
   headline: string;
