@@ -21,6 +21,11 @@ interface TimelineMilestone {
   icon: string;
 }
 
+interface MatchQuality {
+  title: string;
+  description: string;
+}
+
 // Main student story type for the engagements route
 export interface StudentStoryProps {
   id: string;
@@ -51,6 +56,9 @@ export interface StudentStoryProps {
   skillsDeveloped: string[];
   challengesOvercome: string[];
   futureGoals: string;
+  match?: {
+    qualities: MatchQuality[];
+  };
   timeline: {
     milestones: TimelineMilestone[];
   };

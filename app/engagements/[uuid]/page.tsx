@@ -395,41 +395,32 @@ export default function StudentStory() {
           <div className="border-t border-[#111827]/5" />
 
           {/* The Perfect Match Section */}
-          <div className="space-y-6">
-            <h2 className="text-xl font-semibold text-[#111827]">
-              The Perfect Match
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="space-y-2">
-                <h3 className="font-medium text-[#111827]">Shared Vision</h3>
-                <p className="text-sm text-muted-foreground">
-                  Skye&apos;s aerospace aspirations and hands-on engineering
-                  approach perfectly align with Jack&apos;s innovative robotics
-                  and space exploration projects
-                </p>
+          {studentStoryData.match &&
+          studentStoryData.match.qualities &&
+          studentStoryData.match.qualities.length > 0 ? (
+            <>
+              <div className="space-y-6">
+                <h2 className="text-xl font-semibold text-[#111827]">
+                  The Perfect Match
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {studentStoryData.match.qualities.map((quality, index) => (
+                    <div key={index} className="space-y-2">
+                      <h3 className="font-medium text-[#111827]">
+                        {quality.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground">
+                        {quality.description}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <div className="space-y-2">
-                <h3 className="font-medium text-[#111827]">
-                  Technical + Creative
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Skye&apos;s Stanford engineering expertise and artistic
-                  background complement Jack&apos;s diverse interests in
-                  robotics, game design, and entrepreneurship
-                </p>
-              </div>
-              <div className="space-y-2">
-                <h3 className="font-medium text-[#111827]">
-                  Project Development
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Daily sessions provide the structure and guidance needed to
-                  transform Jack&apos;s ambitious ideas - from Mars rovers to
-                  business ventures - into tangible achievements
-                </p>
-              </div>
-            </div>
-          </div>
+              <div className="border-t border-[#111827]/5" />
+            </>
+          ) : (
+            <div className="border-t border-[#111827]/5" />
+          )}
         </div>
 
         <div className="border-t border-[#111827]/5" />

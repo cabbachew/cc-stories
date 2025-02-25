@@ -95,6 +95,27 @@ export const studentStory: StudentStoryProps = {
     "Space Technology",
   ],
 
+  // Match section
+  match: {
+    qualities: [
+      {
+        title: "Shared Vision",
+        description:
+          "Skye's aerospace aspirations and hands-on engineering approach perfectly align with Jack's innovative robotics and space exploration projects",
+      },
+      {
+        title: "Technical + Creative",
+        description:
+          "Skye's Stanford engineering expertise and artistic background complement Jack's diverse interests in robotics, game design, and entrepreneurship",
+      },
+      {
+        title: "Project Development",
+        description:
+          "Daily sessions provide the structure and guidance needed to transform Jack's ambitious ideas - from Mars rovers to business ventures - into tangible achievements",
+      },
+    ],
+  },
+
   // Background section
   backgroundBlurb:
     "A bright 7th grader with a passion for robotics and engineering, Jack sought expert guidance to develop his technical skills and bring his innovative ideas to life. This neurodivergent innovator's determination to attend MIT and create advanced robotics drove him to seek daily mentorship, focusing on functional projects and expanding his technical capabilities.",

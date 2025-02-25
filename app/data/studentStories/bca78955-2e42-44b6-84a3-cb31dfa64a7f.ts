@@ -66,6 +66,25 @@ export const studentStory: StudentStoryProps = {
     "Female Entrepreneurship",
     "Social Impact",
   ],
+  match: {
+    qualities: [
+      {
+        title: "Relationship",
+        description:
+          "Phoebe's business expertise and encouraging mentorship style perfectly complemented Rose's creative vision and entrepreneurial spirit",
+      },
+      {
+        title: "Expertise Alignment",
+        description:
+          "Combined Phoebe's business acumen with Rose's design talent to create a successful jewelry brand",
+      },
+      {
+        title: "Accountability",
+        description:
+          "Weekly sessions provided structure and support for transforming ideas into actionable business steps",
+      },
+    ],
+  },
   backgroundBlurb:
     "Rose has always been passionate about design, fashion, and interior design. In 9th grade, she developed an interest in jewelry making, creating charm necklaces that received enthusiastic feedback from peers. With entrepreneurial ambition, she sought mentorship to transform her creative hobby into a sustainable business that could generate profit while making a positive impact through charitable giving.",
   timeline: {
