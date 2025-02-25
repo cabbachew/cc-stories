@@ -26,6 +26,11 @@ import {
 import { useEffect, useState } from "react";
 import { DynamicIcon } from "@/app/utils/icons";
 
+// Utility function to extract first name
+function getFirstName(fullName: string): string {
+  return fullName.split(" ")[0];
+}
+
 function formatDate(dateString: string) {
   // Handle both YYYY-MM and YYYY-MM-DD formats
   const [year, month] = dateString.split("-").map(Number);
@@ -272,7 +277,9 @@ export default function StudentStory() {
                     {studentStoryData.studentProfileImage && (
                       <Image
                         src={studentStoryData.studentProfileImage}
-                        alt={`${studentStoryData.studentName}'s profile`}
+                        alt={`${getFirstName(
+                          studentStoryData.studentName
+                        )}'s profile`}
                         width={96}
                         height={96}
                         className="h-full w-full rounded-full object-cover"
@@ -285,7 +292,7 @@ export default function StudentStory() {
                   </div>
                   <div>
                     <div className="font-medium">
-                      {studentStoryData.studentName}
+                      {getFirstName(studentStoryData.studentName)}
                     </div>
                     <div className="space-y-0.5 text-sm text-muted-foreground">
                       <div>{studentStoryData.studentSchool}</div>
@@ -335,7 +342,9 @@ export default function StudentStory() {
                     {studentStoryData.mentorProfileImage && (
                       <Image
                         src={studentStoryData.mentorProfileImage}
-                        alt={`${studentStoryData.mentorName}'s profile`}
+                        alt={`${getFirstName(
+                          studentStoryData.mentorName
+                        )}'s profile`}
                         width={96}
                         height={96}
                         className="h-full w-full rounded-full object-cover"
@@ -348,7 +357,7 @@ export default function StudentStory() {
                   </div>
                   <div>
                     <div className="font-medium">
-                      {studentStoryData.mentorName}
+                      {getFirstName(studentStoryData.mentorName)}
                     </div>
                     <div className="space-y-0.5 text-sm text-muted-foreground">
                       <div>{studentStoryData.mentorSchool}</div>
