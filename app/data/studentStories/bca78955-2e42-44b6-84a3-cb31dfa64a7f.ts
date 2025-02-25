@@ -82,19 +82,19 @@ export const studentStory: StudentStoryProps = {
   match: {
     qualities: [
       {
-        title: "Relationship",
+        title: "Design Meets Business Expertise",
         description:
-          "Phoebe's business expertise and encouraging mentorship style perfectly complemented Rose's creative vision and entrepreneurial spirit",
+          "Rose's creative jewelry passion perfectly aligned with Phoebe's unique combination of business knowledge and fashion design experience from working with designers in New York",
       },
       {
-        title: "Expertise Alignment",
+        title: "Purpose-Driven Work",
         description:
-          "Combined Phoebe's business acumen with Rose's design talent to create a successful jewelry brand",
+          "Rose's desire to create a business that could donate to causes she cared about matched Phoebe's experience with social impact projects and community engagement",
       },
       {
-        title: "Accountability",
+        title: "Creative Yet Structured",
         description:
-          "Weekly sessions provided structure and support for transforming ideas into actionable business steps",
+          "Rose needed guidance to transform her many creative ideas into completed projects, which aligned perfectly with Phoebe's goal-oriented teaching style and experience helping students follow through on design concepts",
       },
     ],
   },
