@@ -152,7 +152,9 @@ export default function StudentStory() {
               variant="outline"
               className="text-[11px] sm:text-xs md:text-sm font-normal tracking-wider"
             >
-              {formatDate(studentStoryData.lastSessionDate)}
+              {studentStoryData.status === "scheduled"
+                ? "Ongoing"
+                : formatDate(studentStoryData.lastSessionDate)}
             </Badge>
             <span className="text-[#111827]/20">|</span>
             <Badge
@@ -161,11 +163,6 @@ export default function StudentStory() {
             >
               {studentStoryData.sessionsCompleted} sessions
             </Badge>
-            {studentStoryData.status === "scheduled" && (
-              <Badge className="text-[11px] sm:text-xs md:text-sm bg-[#a7f3d0] text-[#111827] font-normal tracking-wider shadow-none">
-                Active
-              </Badge>
-            )}
           </div>
         </div>
 
