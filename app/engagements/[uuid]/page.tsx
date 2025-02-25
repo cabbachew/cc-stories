@@ -437,7 +437,7 @@ export default function StudentStory() {
                   <TimelineDot className="flex h-8 w-8 items-center justify-center">
                     <DynamicIcon
                       name={milestone.icon}
-                      className="h-4 w-4 text-[#111827]"
+                      className="h-4 w-4 text-[#059669]"
                     />
                   </TimelineDot>
                   {index < studentStoryData.timeline.milestones.length - 1 && (
@@ -474,7 +474,7 @@ export default function StudentStory() {
             <ul className="space-y-2 text-sm text-muted-foreground">
               {studentStoryData.skillsDeveloped.map((skill, index) => (
                 <li key={index} className="flex items-start">
-                  <span className="mr-2">✓</span>
+                  <span className="mr-2 text-[#059669]">✓</span>
                   <span>{skill}</span>
                 </li>
               ))}
@@ -489,7 +489,7 @@ export default function StudentStory() {
             <ul className="space-y-2 text-sm text-muted-foreground">
               {studentStoryData.challengesOvercome.map((challenge, index) => (
                 <li key={index} className="flex items-start">
-                  <span className="mr-2">✓</span>
+                  <span className="mr-2 text-[#059669]">✓</span>
                   <span>{challenge}</span>
                 </li>
               ))}
