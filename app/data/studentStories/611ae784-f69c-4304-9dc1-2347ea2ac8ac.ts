@@ -59,7 +59,7 @@ export const studentStory: StudentStoryProps = {
 
   // Student section
   studentProfileImage:
-    "https://ucarecdn.com/baa598ef-84e3-4af6-94aa-bf5cf5003a19/-/preview/1000x879/",
+    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e2e8f0'/%3E%3C/svg%3E",
   studentName: "Jack Zitterman",
   studentSchool: "Avenues The World School",
   studentGrade: 7,
