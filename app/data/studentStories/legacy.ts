@@ -637,13 +637,10 @@ export const studentStory: LegacyStudentStoryProps = {
     ],
   },
   assets: [
+    { title: "IYK Jewels Website", url: "https://www.iykjewels.com/" },
     {
-      title: "IYKYK Shop",
-      url: "https://iykyk.shop/",
-    },
-    {
-      title: "IYKYK Instagram",
-      url: "https://www.instagram.com/iykyk_co/f",
+      title: "IYK Jewels Instagram",
+      url: "https://www.instagram.com/iykjewels/",
     },
   ],
   gallery: {

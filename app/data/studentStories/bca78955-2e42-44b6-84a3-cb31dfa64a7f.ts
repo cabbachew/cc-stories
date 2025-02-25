@@ -12,24 +12,37 @@ export const studentStory: StudentStoryProps = {
   status: "scheduled",
   learningPlanUrl: "https://curioucardinals.com/plans/jewelry-business",
   assets: [
+    { title: "IYK Jewels Website", url: "https://www.iykjewels.com/" },
     {
-      title: "Business Pitch Deck",
-      url: "https://docs.example.com/iyk-jewels-pitch",
-    },
-    {
-      title: "Sales Tracking Spreadsheet",
-      url: "https://docs.google.com/spreadsheets/d/1F-20wkLpagxSEq0UUKNnTMV-MnQCx7__n6HsbDPJgkg",
+      title: "IYK Jewels Instagram",
+      url: "https://www.instagram.com/iykjewels/",
     },
   ],
   gallery: {
     images: [
       {
-        url: "https://example.com/iyk-jewels-collection",
-        caption: "IYK Jewels Fall Collection",
+        url: "https://ucarecdn.com/0b477dd7-0833-474c-ba8c-0c152b7e7ade/",
+        caption: "One Charm Bracelet",
       },
       {
-        url: "https://example.com/love-shack-fancy-popup",
-        caption: "Pop-up shop at Love Shack Fancy",
+        url: "https://ucarecdn.com/ddfbd863-d16f-48d1-b80e-1b59834f5b25/",
+        caption: "One Charm Necklace",
+      },
+      {
+        url: "https://ucarecdn.com/4488b0a1-3808-46e4-a33d-a374eef1668f/",
+        caption: "One Charm Necklace (Valentine's Collection)",
+      },
+      {
+        url: "https://ucarecdn.com/72213ead-410e-4d77-a808-67b051b65981/",
+        caption: "Five Charm Necklace",
+      },
+      {
+        url: "https://ucarecdn.com/933d039c-14b4-4d4d-aa89-0d3a6f485d8b/-/scale_crop/1024x1024/bottom/",
+        caption: "",
+      },
+      {
+        url: "https://ucarecdn.com/b11c1cfa-bc07-487a-87cd-0a25fdc18059/",
+        caption: "",
       },
     ],
   },
