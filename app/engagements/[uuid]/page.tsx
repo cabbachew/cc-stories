@@ -471,9 +471,12 @@ export default function StudentStory() {
             <h2 className="text-xl font-semibold text-[#111827]">
               Skills Developed
             </h2>
-            <ul className="list-disc list-inside text-sm text-muted-foreground space-y-2">
+            <ul className="space-y-2 text-sm text-muted-foreground">
               {studentStoryData.skillsDeveloped.map((skill, index) => (
-                <li key={index}>{skill}</li>
+                <li key={index} className="flex items-start">
+                  <span className="mr-2">✓</span>
+                  <span>{skill}</span>
+                </li>
               ))}
             </ul>
           </div>
@@ -483,9 +486,12 @@ export default function StudentStory() {
             <h2 className="text-xl font-semibold text-[#111827]">
               Challenges Overcome
             </h2>
-            <ul className="list-disc list-inside text-sm text-muted-foreground space-y-2">
+            <ul className="space-y-2 text-sm text-muted-foreground">
               {studentStoryData.challengesOvercome.map((challenge, index) => (
-                <li key={index}>{challenge}</li>
+                <li key={index} className="flex items-start">
+                  <span className="mr-2">✓</span>
+                  <span>{challenge}</span>
+                </li>
               ))}
             </ul>
           </div>
