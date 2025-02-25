@@ -94,7 +94,7 @@ export const studentStory: StudentStoryProps = {
         title: "Bug Killer Bot Development",
         summary:
           "Evolved design from laser-based to automated salt gun system, completed CAD models and servo motor integration.",
-        icon: "zap",
+        icon: "bug",
       },
       {
         id: 3,
@@ -121,7 +121,7 @@ export const studentStory: StudentStoryProps = {
         title: "Mini Munchies Business Launch",
         summary:
           "Initiated food business venture, developed branding, and began outreach to manufacturers.",
-        icon: "shopping-bag",
+        icon: "briefcase",
       },
     ],
   },

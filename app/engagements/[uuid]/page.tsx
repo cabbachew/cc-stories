@@ -13,15 +13,7 @@ import {
   TimelineTitle,
   TimelineDescription,
 } from "@/components/ui/timeline";
-import {
-  Link,
-  Compass,
-  Zap,
-  Rocket,
-  Dice6,
-  ShoppingBag,
-  ImageIcon,
-} from "lucide-react";
+import { Link, ImageIcon } from "lucide-react";
 import NextLink from "next/link";
 import Image from "next/image";
 import {
@@ -32,6 +24,7 @@ import {
   CarouselNext,
 } from "@/components/ui/carousel";
 import { useEffect, useState } from "react";
+import { DynamicIcon } from "@/app/utils/icons";
 
 function formatDate(dateString: string) {
   // Handle both YYYY-MM and YYYY-MM-DD formats
@@ -48,14 +41,6 @@ function formatDateRange(startDate: string, endDate: string) {
   const end = formatDate(endDate);
   return start === end ? start : `${start} - ${end}`;
 }
-
-const iconMap = {
-  compass: <Compass className="h-4 w-4 text-[#111827]" />,
-  zap: <Zap className="h-4 w-4 text-[#111827]" />,
-  rocket: <Rocket className="h-4 w-4 text-[#111827]" />,
-  "dice-6": <Dice6 className="h-4 w-4 text-[#111827]" />,
-  "shopping-bag": <ShoppingBag className="h-4 w-4 text-[#111827]" />,
-};
 
 export default function StudentStory() {
   const params = useParams();
@@ -523,7 +508,10 @@ export default function StudentStory() {
               <TimelineItem key={milestone.id}>
                 <TimelineSeparator>
                   <TimelineDot className="flex h-8 w-8 items-center justify-center">
-                    {iconMap[milestone.icon as keyof typeof iconMap]}
+                    <DynamicIcon
+                      name={milestone.icon}
+                      className="h-4 w-4 text-[#111827]"
+                    />
                   </TimelineDot>
                   {index < studentStoryData.timeline.milestones.length - 1 && (
                     <TimelineConnector className="bg-[#111827]/5" />
