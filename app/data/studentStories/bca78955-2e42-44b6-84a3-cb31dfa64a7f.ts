@@ -10,7 +10,8 @@ export const studentStory: StudentStoryProps = {
   lastSessionDate: "2025-02-22",
   sessionsCompleted: 37,
   status: "scheduled",
-  learningPlanUrl: "https://curioucardinals.com/plans/jewelry-business",
+  learningPlanUrl:
+    "https://cc-proposals.vercel.app/proposals/bca78955-2e42-44b6-84a3-cb31dfa64a7f",
   assets: [
     { title: "IYK Jewels Website", url: "https://www.iykjewels.com/" },
     {
