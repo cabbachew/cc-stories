@@ -2,6 +2,7 @@ import { StudentStoryProps } from "@/app/types/StudentStory";
 
 export const studentStory: StudentStoryProps = {
   // Header section
+  showLearningPlan: true,
   showAssets: false,
   showGallery: false,
   headline:

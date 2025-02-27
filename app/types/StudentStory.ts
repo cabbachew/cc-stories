@@ -36,6 +36,7 @@ export interface StudentStoryProps {
   startDate: string;
   lastSessionDate: string;
   sessionsCompleted: number;
+  showLearningPlan?: boolean;
   showAssets?: boolean;
   showGallery?: boolean;
   studentProfileImage: string;

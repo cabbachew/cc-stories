@@ -2,6 +2,7 @@ import { StudentStoryProps } from "@/app/types/StudentStory";
 
 export const studentStory: StudentStoryProps = {
   id: "bca78955-2e42-44b6-84a3-cb31dfa64a7f",
+  showLearningPlan: true,
   showAssets: true,
   showGallery: true,
   headline:
