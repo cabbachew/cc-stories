@@ -17,10 +17,9 @@ export async function getDynamicStudentStories(): Promise<StudentStoryProps[]> {
     // Import and collect all stories
     const stories = await Promise.all(
       storyFiles.map(async (file) => {
-        const filePath = path.join(STORIES_DIR, file);
         // Dynamic import of the story file
-        const module = await import(`@/app/data/studentStories/${file}`);
-        return module.studentStory as StudentStoryProps;
+        const storyModule = await import(`@/app/data/studentStories/${file}`);
+        return storyModule.studentStory as StudentStoryProps;
       })
     );
 
