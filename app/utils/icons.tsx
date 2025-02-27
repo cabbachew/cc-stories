@@ -21,6 +21,10 @@ import {
   Globe,
   Gift,
   Heart,
+  Target,
+  Users,
+  LayoutGrid,
+  Puzzle,
   type LucideProps,
 } from "lucide-react";
 
@@ -74,7 +78,6 @@ export function DynamicIcon({ name, ...props }: IconProps) {
     case "graduation":
     case "graduation-cap":
       return <GraduationCap {...props} />;
-    // Added icons for Rose Cornell's timeline
     case "instagram":
       return <Instagram {...props} />;
     case "trending-up":
@@ -86,6 +89,14 @@ export function DynamicIcon({ name, ...props }: IconProps) {
       return <Gift {...props} />;
     case "heart":
       return <Heart {...props} />;
+    case "target":
+      return <Target {...props} />;
+    case "users":
+      return <Users {...props} />;
+    case "layout-grid":
+      return <LayoutGrid {...props} />;
+    case "puzzle":
+      return <Puzzle {...props} />;
     default:
       console.warn(`Icon "${name}" not found, using Circle as fallback`);
       return <Circle {...props} />;
