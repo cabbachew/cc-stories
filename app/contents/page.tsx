@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { useEffect, useState } from "react";
 import { StudentStoryProps } from "@/app/types/StudentStory";
+import { Route, Link as LinkIcon, Image } from "lucide-react";
 
 export default function ContentsPage() {
   const [studentStories, setStudentStories] = useState<StudentStoryProps[]>([]);
@@ -71,9 +72,31 @@ export default function ContentsPage() {
                     <p className="text-sm text-muted-foreground">
                       {story.headline}
                     </p>
-                    <p className="text-sm">
-                      {story.studentName} • {story.mentorName}
-                    </p>
+                    <div className="text-sm flex items-center">
+                      <span>
+                        {story.studentName} • {story.mentorName}
+                      </span>
+                      <div className="flex items-center gap-1 mx-2 [color:#fbc012]">
+                        {story.showLearningPlan && (
+                          <Route
+                            className="h-4 w-4"
+                            aria-label="Learning plan available"
+                          />
+                        )}
+                        {story.showAssets && (
+                          <LinkIcon
+                            className="h-4 w-4"
+                            aria-label="Assets available"
+                          />
+                        )}
+                        {story.showGallery && (
+                          <Image
+                            className="h-4 w-4"
+                            aria-label="Gallery available"
+                          />
+                        )}
+                      </div>
+                    </div>
                   </div>
                   <div className="flex flex-col gap-1.5 sm:items-end mt-2 sm:mt-0">
                     <Badge
