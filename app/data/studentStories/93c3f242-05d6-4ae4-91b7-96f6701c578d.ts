@@ -107,7 +107,7 @@ export const studentStory: StudentStoryProps = {
         endDate: "2024-08",
         title: "Project Launch and Research Foundation",
         summary:
-          "Sloane outlined goals for her astronomy research project and AP4E educational platform, selecting space debris collection as her research focus. She began developing research methodology and website structure while expanding her network with space industry professionals.",
+          "Sloane outlined goals for her astronomy research project and Astronomy Project for Education (AP4E) educational platform, selecting space debris collection as her research focus. She began developing research methodology and website structure while expanding her network with space industry professionals.",
         icon: "rocket",
       },
       {
