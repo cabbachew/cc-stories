@@ -2,6 +2,8 @@ import { StudentStoryProps } from "@/app/types/StudentStory";
 
 export const studentStory: StudentStoryProps = {
   // Header section
+  showAssets: false,
+  showGallery: false,
   headline:
     "From Robotics to NASA: A Young Innovator's Journey in Engineering and Entrepreneurship",
 

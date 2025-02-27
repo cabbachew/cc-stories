@@ -180,85 +180,89 @@ export default function StudentStory() {
               <span>Initial Learning Plan</span>
             </NextLink>
 
-            {studentStoryData.assets?.map((asset, index) => (
-              <div key={index}>
-                <NextLink
-                  href={asset.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-[#111827]"
-                >
-                  <Link className="h-4 w-4 text-[#111827]" />
-                  <span>{asset.title}</span>
-                </NextLink>
-              </div>
-            ))}
+            {studentStoryData.showAssets !== false &&
+              studentStoryData.assets?.map((asset, index) => (
+                <div key={index}>
+                  <NextLink
+                    href={asset.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-[#111827]"
+                  >
+                    <Link className="h-4 w-4 text-[#111827]" />
+                    <span>{asset.title}</span>
+                  </NextLink>
+                </div>
+              ))}
           </div>
         </div>
 
         <div className="border-t border-[#111827]/5" />
 
         {/* Gallery Section */}
-        <div className="space-y-4">
-          <h2 className="text-xl font-semibold text-[#111827]">Gallery</h2>
-          {/* <div className="relative w-full"> */}
-          <div className="relative mx-auto max-w-[calc(100vw-8rem)]">
-            <Carousel
-              opts={{
-                align: "start",
-                loop: true,
-                slidesToScroll: 1,
-              }}
-              className="w-full mx-auto"
-            >
-              <CarouselContent className="-ml-2 md:-ml-4">
-                {studentStoryData.gallery?.images?.map((image, index) => (
-                  <CarouselItem
-                    key={index}
-                    className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3"
-                  >
-                    <div className="p-1">
-                      <div className="overflow-hidden rounded-lg bg-muted aspect-square">
-                        {image.url ? (
-                          <Image
-                            src={image.url}
-                            alt={image.caption || "Gallery image"}
-                            width={500}
-                            height={500}
-                            unoptimized
-                            className="h-full w-full object-cover transition-all hover:scale-105"
-                          />
-                        ) : (
-                          <div className="h-full w-full flex items-center justify-center">
-                            <ImageIcon
-                              className="h-10 w-10 text-muted-foreground/50"
-                              aria-hidden="true"
-                            />
+        {studentStoryData.showGallery !== false && (
+          <>
+            <div className="space-y-4">
+              <h2 className="text-xl font-semibold text-[#111827]">Gallery</h2>
+              {/* <div className="relative w-full"> */}
+              <div className="relative mx-auto max-w-[calc(100vw-8rem)]">
+                <Carousel
+                  opts={{
+                    align: "start",
+                    loop: true,
+                    slidesToScroll: 1,
+                  }}
+                  className="w-full mx-auto"
+                >
+                  <CarouselContent className="-ml-2 md:-ml-4">
+                    {studentStoryData.gallery?.images?.map((image, index) => (
+                      <CarouselItem
+                        key={index}
+                        className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3"
+                      >
+                        <div className="p-1">
+                          <div className="overflow-hidden rounded-lg bg-muted aspect-square">
+                            {image.url ? (
+                              <Image
+                                src={image.url}
+                                alt={image.caption || "Gallery image"}
+                                width={500}
+                                height={500}
+                                unoptimized
+                                className="h-full w-full object-cover transition-all hover:scale-105"
+                              />
+                            ) : (
+                              <div className="h-full w-full flex items-center justify-center">
+                                <ImageIcon
+                                  className="h-10 w-10 text-muted-foreground/50"
+                                  aria-hidden="true"
+                                />
+                              </div>
+                            )}
                           </div>
-                        )}
-                      </div>
-                      {image.caption && (
-                        <p className="mt-2 text-sm text-center text-muted-foreground">
-                          {image.caption}
-                        </p>
-                      )}
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <div className="hidden lg:block">
-                <CarouselPrevious className="absolute -left-10 top-[calc(50%-24px)]" />
-                <CarouselNext className="absolute -right-10 top-[calc(50%-24px)]" />
+                          {image.caption && (
+                            <p className="mt-2 text-sm text-center text-muted-foreground">
+                              {image.caption}
+                            </p>
+                          )}
+                        </div>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <div className="hidden lg:block">
+                    <CarouselPrevious className="absolute -left-10 top-[calc(50%-24px)]" />
+                    <CarouselNext className="absolute -right-10 top-[calc(50%-24px)]" />
+                  </div>
+                  <div className="block lg:hidden mt-4 flex justify-center gap-2">
+                    <CarouselPrevious />
+                    <CarouselNext />
+                  </div>
+                </Carousel>
               </div>
-              <div className="block lg:hidden mt-4 flex justify-center gap-2">
-                <CarouselPrevious />
-                <CarouselNext />
-              </div>
-            </Carousel>
-          </div>
-        </div>
-
-        <div className="border-t border-[#111827]/5" />
+            </div>
+            <div className="border-t border-[#111827]/5" />
+          </>
+        )}
 
         {/* Student and Mentor Section */}
         <div className="bg-white rounded-none pl-0 pr-6 pb-6 space-y-6">
@@ -405,29 +409,24 @@ export default function StudentStory() {
           {studentStoryData.match &&
           studentStoryData.match.qualities &&
           studentStoryData.match.qualities.length > 0 ? (
-            <>
-              <div className="space-y-6">
-                <h2 className="text-xl font-semibold text-[#111827]">
-                  The Perfect Match
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {studentStoryData.match.qualities.map((quality, index) => (
-                    <div key={index} className="space-y-2">
-                      <h3 className="font-medium text-[#111827]">
-                        {quality.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground">
-                        {quality.description}
-                      </p>
-                    </div>
-                  ))}
-                </div>
+            <div className="space-y-6">
+              <h2 className="text-xl font-semibold text-[#111827]">
+                The Perfect Match
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {studentStoryData.match.qualities.map((quality, index) => (
+                  <div key={index} className="space-y-2">
+                    <h3 className="font-medium text-[#111827]">
+                      {quality.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground">
+                      {quality.description}
+                    </p>
+                  </div>
+                ))}
               </div>
-              <div className="border-t border-[#111827]/5" />
-            </>
-          ) : (
-            <div className="border-t border-[#111827]/5" />
-          )}
+            </div>
+          ) : null}
         </div>
 
         <div className="border-t border-[#111827]/5" />

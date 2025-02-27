@@ -2,6 +2,8 @@ import { StudentStoryProps } from "@/app/types/StudentStory";
 
 export const studentStory: StudentStoryProps = {
   id: "bca78955-2e42-44b6-84a3-cb31dfa64a7f",
+  showAssets: true,
+  showGallery: true,
   headline:
     "From Startup to Success: How a 9th Grader Built a $3,000+ Jewelry Business",
   discipline: "Business, Finance & Entrepreneurship",
