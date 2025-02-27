@@ -1,123 +1,45 @@
 import React from "react";
-import {
-  Circle,
-  Compass,
-  Zap,
-  Rocket,
-  Dice6,
-  ShoppingBag,
-  Bug,
-  Lightbulb,
-  Briefcase,
-  Gamepad2,
-  Palette,
-  Presentation,
-  Microscope,
-  Code,
-  BookOpen,
-  GraduationCap,
-  Instagram,
-  TrendingUp,
-  Globe,
-  Gift,
-  Heart,
-  Target,
-  Users,
-  LayoutGrid,
-  Puzzle,
-  Pencil,
-  Book,
-  Calendar,
-  Check,
-  Link,
-  Image,
-  type LucideProps,
-} from "lucide-react";
+import * as LucideIcons from "lucide-react";
+import type { LucideProps } from "lucide-react";
 
 // Define a type for the props we'll accept
 interface IconProps extends Omit<LucideProps, "ref"> {
   name: string;
 }
 
+// Type to represent a React component that accepts LucideProps
+type IconComponent = React.ComponentType<LucideProps>;
+
 /**
- * A component that renders a Lucide icon by name
- * Supports common icon names used in the application
+ * A component that renders any Lucide icon by name
+ * Dynamically renders icons based on the name provided
  */
 export function DynamicIcon({ name, ...props }: IconProps) {
-  // Convert name to lowercase for case-insensitive matching
-  const iconName = name.toLowerCase();
-
-  // Return the appropriate icon based on name
-  switch (iconName) {
-    case "compass":
-      return <Compass {...props} />;
-    case "zap":
-      return <Zap {...props} />;
-    case "rocket":
-      return <Rocket {...props} />;
-    case "dice-6":
-    case "dice6":
-      return <Dice6 {...props} />;
-    case "shopping-bag":
-    case "shoppingbag":
-      return <ShoppingBag {...props} />;
-    case "bug":
-      return <Bug {...props} />;
-    case "lightbulb":
-      return <Lightbulb {...props} />;
-    case "briefcase":
-      return <Briefcase {...props} />;
-    case "gamepad":
-    case "gamepad-2":
-    case "gamepad2":
-      return <Gamepad2 {...props} />;
-    case "palette":
-      return <Palette {...props} />;
-    case "presentation":
-      return <Presentation {...props} />;
-    case "microscope":
-      return <Microscope {...props} />;
-    case "code":
-      return <Code {...props} />;
-    case "book":
-    case "book-open":
-      return <BookOpen {...props} />;
-    case "graduation":
-    case "graduation-cap":
-      return <GraduationCap {...props} />;
-    case "instagram":
-      return <Instagram {...props} />;
-    case "trending-up":
-    case "trendingup":
-      return <TrendingUp {...props} />;
-    case "globe":
-      return <Globe {...props} />;
-    case "gift":
-      return <Gift {...props} />;
-    case "heart":
-      return <Heart {...props} />;
-    case "target":
-      return <Target {...props} />;
-    case "users":
-      return <Users {...props} />;
-    case "layout-grid":
-      return <LayoutGrid {...props} />;
-    case "puzzle":
-      return <Puzzle {...props} />;
-    case "pencil":
-      return <Pencil {...props} />;
-    case "calendar":
-      return <Calendar {...props} />;
-    case "check":
-    case "checkmark":
-      return <Check {...props} />;
-    case "link":
-      return <Link {...props} />;
-    case "image":
-    case "imageicon":
-      return <Image {...props} />;
-    default:
-      console.warn(`Icon "${name}" not found, using Circle as fallback`);
-      return <Circle {...props} />;
+  if (!name) {
+    console.warn("Icon name is undefined or empty, using Circle as fallback");
+    return <LucideIcons.Circle {...props} />;
   }
+
+  // Handle different naming formats (kebab-case, camelCase, spaces, etc.)
+  // and convert to PascalCase format that Lucide uses for component names
+  const formattedName = name
+    .split(/[-_\s]/)
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join("");
+
+  // Get the icon component from Lucide icons
+  // Use a safer approach than 'any' for TypeScript
+  const icons = LucideIcons as unknown as Record<
+    string,
+    IconComponent | undefined
+  >;
+  const IconComponent = icons[formattedName];
+
+  if (IconComponent) {
+    return <IconComponent {...props} />;
+  }
+
+  // Provide fallback for icons not found
+  console.warn(`Icon "${name}" not found, using Circle as fallback`);
+  return <LucideIcons.Circle {...props} />;
 }
