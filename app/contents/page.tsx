@@ -1,12 +1,57 @@
+"use client";
+
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
-import { studentStory as story1 } from "@/app/data/studentStories/611ae784-f69c-4304-9dc1-2347ea2ac8ac";
-import { studentStory as story2 } from "@/app/data/studentStories/bca78955-2e42-44b6-84a3-cb31dfa64a7f";
-
-// Collect all student stories in an array (excluding legacy)
-const studentStories = [story1, story2];
+import { useEffect, useState } from "react";
+import { StudentStoryProps } from "@/app/types/StudentStory";
 
 export default function ContentsPage() {
+  const [studentStories, setStudentStories] = useState<StudentStoryProps[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    async function fetchStudentStories() {
+      try {
+        setLoading(true);
+        const response = await fetch("/api/studentStories");
+        if (!response.ok) {
+          throw new Error("Failed to fetch student stories");
+        }
+        const data = await response.json();
+        setStudentStories(data);
+        setLoading(false);
+      } catch (err) {
+        console.error("Error fetching student stories:", err);
+        setError("Failed to load student stories. Please try again later.");
+        setLoading(false);
+      }
+    }
+
+    fetchStudentStories();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen p-4 md:p-6 flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-lg">Loading student stories...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen p-4 md:p-6 flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-red-500">Error</h1>
+          <p className="mt-2">{error}</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen p-4 md:p-6">
       <div className="mx-auto max-w-7xl space-y-6">

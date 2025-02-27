@@ -59,9 +59,13 @@ export default function StudentStory() {
     async function loadStudentStory() {
       try {
         setLoading(true);
-        // Dynamically import the student story based on the UUID
-        const storyModule = await import(`@/app/data/studentStories/${uuid}`);
-        setStudentStoryData(storyModule.studentStory);
+        // Use the API route to fetch the student story by ID
+        const response = await fetch(`/api/studentStories?id=${uuid}`);
+        if (!response.ok) {
+          throw new Error("Failed to fetch student story");
+        }
+        const data = await response.json();
+        setStudentStoryData(data);
         setLoading(false);
       } catch (err) {
         console.error("Failed to load student story:", err);
