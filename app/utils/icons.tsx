@@ -25,6 +25,12 @@ import {
   Users,
   LayoutGrid,
   Puzzle,
+  Pencil,
+  Book,
+  Calendar,
+  Check,
+  Link,
+  Image,
   type LucideProps,
 } from "lucide-react";
 
@@ -62,6 +68,7 @@ export function DynamicIcon({ name, ...props }: IconProps) {
     case "briefcase":
       return <Briefcase {...props} />;
     case "gamepad":
+    case "gamepad-2":
     case "gamepad2":
       return <Gamepad2 {...props} />;
     case "palette":
@@ -97,6 +104,18 @@ export function DynamicIcon({ name, ...props }: IconProps) {
       return <LayoutGrid {...props} />;
     case "puzzle":
       return <Puzzle {...props} />;
+    case "pencil":
+      return <Pencil {...props} />;
+    case "calendar":
+      return <Calendar {...props} />;
+    case "check":
+    case "checkmark":
+      return <Check {...props} />;
+    case "link":
+      return <Link {...props} />;
+    case "image":
+    case "imageicon":
+      return <Image {...props} />;
     default:
       console.warn(`Icon "${name}" not found, using Circle as fallback`);
       return <Circle {...props} />;

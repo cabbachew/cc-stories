@@ -13,7 +13,6 @@ import {
   TimelineTitle,
   TimelineDescription,
 } from "@/components/ui/timeline";
-import { Link, ImageIcon } from "lucide-react";
 import NextLink from "next/link";
 import Image from "next/image";
 import {
@@ -183,7 +182,7 @@ export default function StudentStory() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-[#111827]"
                 >
-                  <Link className="h-4 w-4 text-[#111827]" />
+                  <DynamicIcon name="link" className="h-4 w-4 text-[#111827]" />
                   <span>Initial Learning Plan</span>
                 </NextLink>
               )}
@@ -197,7 +196,10 @@ export default function StudentStory() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-[#111827]"
                     >
-                      <Link className="h-4 w-4 text-[#111827]" />
+                      <DynamicIcon
+                        name="link"
+                        className="h-4 w-4 text-[#111827]"
+                      />
                       <span>{asset.title}</span>
                     </NextLink>
                   </div>
@@ -248,7 +250,8 @@ export default function StudentStory() {
                               />
                             ) : (
                               <div className="h-full w-full flex items-center justify-center">
-                                <ImageIcon
+                                <DynamicIcon
+                                  name="image"
                                   className="h-10 w-10 text-muted-foreground/50"
                                   aria-hidden="true"
                                 />
@@ -495,7 +498,10 @@ export default function StudentStory() {
             <ul className="space-y-2 text-sm text-muted-foreground">
               {studentStoryData.skillsDeveloped.map((skill, index) => (
                 <li key={index} className="flex items-start">
-                  <span className="mr-2 text-[#059669]">✓</span>
+                  <DynamicIcon
+                    name="check"
+                    className="h-4 w-4 mr-2 text-[#059669] flex-shrink-0 mt-0.5"
+                  />
                   <span>{skill}</span>
                 </li>
               ))}
@@ -510,7 +516,10 @@ export default function StudentStory() {
             <ul className="space-y-2 text-sm text-muted-foreground">
               {studentStoryData.challengesOvercome.map((challenge, index) => (
                 <li key={index} className="flex items-start">
-                  <span className="mr-2 text-[#059669]">✓</span>
+                  <DynamicIcon
+                    name="check"
+                    className="h-4 w-4 mr-2 text-[#059669] flex-shrink-0 mt-0.5"
+                  />
                   <span>{challenge}</span>
                 </li>
               ))}

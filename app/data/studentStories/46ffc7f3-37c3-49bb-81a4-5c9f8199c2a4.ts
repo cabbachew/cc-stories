@@ -5,10 +5,9 @@ export const studentStory: StudentStoryProps = {
   showLearningPlan: false,
   showAssets: false,
   showGallery: false,
-  headline:
-    "Drake's Journey in Business, Finance & Entrepreneurship: From Comic Fan to Game Designer",
-  discipline: "Business, Finance & Entrepreneurship",
-  topic: "Business / Entrepreneurship",
+  headline: "From Character Sketches to Game Design: A Young Creator's Journey",
+  discipline: "Science, Engineering & Technology",
+  topic: "Game Design",
   startDate: "2024-11-05",
   lastSessionDate: "2025-02-21",
   sessionsCompleted: 12,
@@ -16,142 +15,121 @@ export const studentStory: StudentStoryProps = {
   learningPlanUrl: "#",
   assets: [
     {
-      title: "Animal-Inspired Game Design Document",
-      url: "#",
-    },
-    {
-      title: "Character Abilities Spreadsheet",
+      title: "Animal-Themed Board Game Prototype",
       url: "#",
     },
   ],
   gallery: {
     images: [
       {
-        url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23e2e8f0'/%3E%3C/svg%3E",
-        caption:
-          "Drake's animal-inspired character designs showing the blue-ringed octopus, harpy eagle, and komodo dragon characters",
+        url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e2e8f0'/%3E%3C/svg%3E",
+        caption: "Character designs for animal-themed board game",
       },
       {
-        url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23e2e8f0'/%3E%3C/svg%3E",
+        url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e2e8f0'/%3E%3C/svg%3E",
         caption:
-          "Game board prototype with various terrain types affecting gameplay mechanics",
+          "Game mechanics spreadsheet showing character abilities and terrain effects",
       },
       {
-        url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23e2e8f0'/%3E%3C/svg%3E",
-        caption:
-          "Drake playtesting his game design with balanced character abilities and gameplay mechanics",
+        url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e2e8f0'/%3E%3C/svg%3E",
+        caption: "Prototype game board design with different terrain types",
       },
     ],
   },
   studentProfileImage:
     "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e2e8f0'/%3E%3C/svg%3E",
   studentName: "Drake Wong",
-  studentSchool: "St. Bernard's School",
-  studentGrade: 11,
+  studentSchool: "St. Bernard's",
+  studentGrade: 6,
   studentPersonality: [
-    "Naturally Creative",
-    "Charming",
-    "Popular",
-    "Class President",
+    "Creative Thinker",
+    "Naturally Curious",
+    "Detail-Oriented",
   ],
   studentInterests: [
-    "Anime & Manga",
+    "Manga and Comics",
     "Game Design",
-    "Character Development",
-    "Storytelling",
+    "Animal Biology",
+    "Strategic Games",
   ],
   mentorProfileImage:
     "https://ucarecdn.com/3b65f0ed-2c5c-4da1-a34a-a1356aa36d1b/",
   mentorName: "Skye Horiguchi",
   mentorSchool: "Stanford University",
   mentorMajor: "Astronautics and Product Design",
-  mentorTeachingStyle: [
-    "Enthusiastic",
-    "Creative",
-    "Adaptable",
-    "Project-Based Learning",
-  ],
+  mentorTeachingStyle: ["Encouraging", "Creative", "Project-Based", "Adaptive"],
   mentorExpertise: [
-    "Music (50+ Classical Competition Prizes)",
-    "Visual Arts (50+ Competition Prizes)",
-    "Engineering (Built a Motorcycle in High School)",
-    "Martial Arts (4th Degree Black Belt)",
+    "Game Design",
+    "Product Development",
+    "Visual Arts",
+    "Creative Writing",
+    "STEM Education",
   ],
   match: {
     qualities: [
       {
-        title: "Shared Passion for Creativity",
+        title: "Creative Passion",
         description:
-          "Both Drake and Skye share a natural creative mindset, allowing for meaningful collaboration on artistic projects.",
+          "Skye's artistic background and Drake's love for manga created an immediate connection, allowing them to collaborate effectively on creative storytelling projects.",
       },
       {
-        title: "Learning Should Be Fun",
+        title: "Structured Creativity",
         description:
-          "Skye's teaching philosophy of making learning enjoyable aligns perfectly with Drake's need for engaging educational experiences.",
+          "Skye's engineering background complemented Drake's imaginative thinking, helping transform abstract ideas into organized, actionable game design concepts.",
       },
       {
-        title: "Project-Based Approach",
+        title: "Multi-disciplinary Approach",
         description:
-          "Skye's experience with hands-on projects complements Drake's interest in creating tangible creative works.",
+          "Their shared interest in combining art, storytelling, and systematic thinking led to a natural evolution from comic book creation to strategic board game design.",
       },
     ],
   },
   backgroundBlurb:
-    "Drake began his mentorship journey with a desire to excel in Advanced Math and an interest in creating a comic book or manga. As an avid manga reader who would read his favorites hundreds of times, he had the passion but needed guidance on the creative process. While initially focused on academic goals, Drake's natural creativity flourished when his project evolved from a simple comic book concept into a sophisticated board game design with complex character abilities and gameplay mechanics.",
+    "Drake, an enthusiastic 11-year-old with a passion for manga and comics, began his mentorship journey looking to improve his writing skills and explore creative storytelling. Initially pursuing two parallel goals—preparing for the SSAT to enter advanced math classes and creating a comic book—Drake and his mentor Skye soon discovered that game design offered a perfect blend of creative expression and systematic thinking that deeply engaged Drake's interest in both storytelling and strategic planning.",
   timeline: {
     milestones: [
       {
         id: 1,
         startDate: "2024-11",
         endDate: "2024-11",
-        title: "Project Foundation",
+        title: "Project Definition and Character Development",
         summary:
-          "Established SMART goals for both academic growth and comic book development.",
-        icon: "target",
+          "Drake established initial goals, including comic book creation and SSAT preparation. After evaluating his strengths and interests, the focus shifted to developing original characters with unique abilities based on animal traits, combining Drake's interest in biology with storytelling.",
+        icon: "pencil",
       },
       {
         id: 2,
         startDate: "2024-12",
         endDate: "2024-12",
-        title: "Character Development",
+        title: "Storytelling Evolution",
         summary:
-          "Created detailed animal-inspired characters with unique abilities.",
-        icon: "users",
+          "The project evolved from a comic book to a narrative with illustrations as Drake developed characters inspired by animals like the blue-ringed octopus, king cobra, and Komodo dragon. This period saw growth in connecting animal biology with creative character abilities.",
+        icon: "book",
       },
       {
         id: 3,
         startDate: "2025-01",
-        endDate: "2025-01",
-        title: "Game Design Transition",
-        summary:
-          "Evolved project from comic book to strategic board game design.",
-        icon: "layout-grid",
-      },
-      {
-        id: 4,
-        startDate: "2025-02",
         endDate: "2025-02",
-        title: "Game Testing & Refinement",
+        title: "Game Design Implementation",
         summary:
-          "Balanced gameplay mechanics and character abilities through playtesting.",
-        icon: "puzzle",
+          "The project transformed into a strategic board game design, incorporating terrain effects, character abilities, and balanced gameplay mechanics. Drake created spreadsheets documenting game rules and successfully playtested prototype versions, demonstrating significant growth in systems thinking and game balance concepts.",
+        icon: "gamepad-2",
       },
     ],
   },
   skillsDeveloped: [
-    "Game Design Fundamentals",
-    "Creative Character Development",
-    "Strategic Thinking & Balancing",
-    "Project Documentation",
-    "Storytelling Through Gameplay",
-    "System Design",
+    "Strategic Game Design and Balancing",
+    "Character Development",
+    "Systems Thinking",
+    "Documentation Skills",
+    "Creative Problem-Solving",
   ],
   challengesOvercome: [
-    "Decision-making when choosing between creative options",
-    "Time management and avoiding procrastination",
-    "Transitioning from concept to documented game rules",
-    "Balancing character abilities for fair gameplay",
+    "Transitioning from abstract ideas to structured documentation",
+    "Learning to balance game mechanics for fair play",
+    "Developing writing confidence through journal entries",
+    "Organizing and tracking complex game elements",
   ],
   futureGoals:
-    "Drake plans to continue developing his board game by refining the character balance, creating healing-focused characters to complement the existing damage-dealing roster, and organizing comprehensive documentation of the game's mechanics. His experience in game design has sparked interest in potentially expanding his creative endeavors into digital game development while continuing to strengthen his writing skills through journal entries about his creative process.",
+    "Drake plans to continue refining his board game, focusing on healing character development to balance the combat mechanics and creating physical prototypes to play-test with family. He's exploring ways to document his game development process and has shown interest in expanding his creative portfolio with additional game ideas. Drake's growing confidence in writing through journal entries also suggests potential for further storytelling projects.",
 };
