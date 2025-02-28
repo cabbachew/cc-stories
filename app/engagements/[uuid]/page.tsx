@@ -222,7 +222,7 @@ export default function StudentStory() {
             <div className="space-y-4">
               <h2 className="text-xl font-semibold text-[#111827]">Gallery</h2>
               {/* <div className="relative w-full"> */}
-              <div className="relative mx-auto max-w-[calc(100vw-8rem)]">
+              <div className="relative mx-auto w-full lg:max-w-[calc(100vw-8rem)]">
                 <Carousel
                   opts={{
                     align: "start",
