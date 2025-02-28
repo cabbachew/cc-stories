@@ -94,7 +94,12 @@ export default function ContentsPage() {
                 key={story.id}
                 className="p-4 border rounded-lg hover:bg-muted/50 transition-colors"
               >
-                <Link href={`/engagements/${story.id}`} className="block">
+                <Link
+                  href={`/engagements/${story.id}`}
+                  className="block"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
                     <div className="space-y-2">
                       <h2 className="text-lg font-semibold text-gray-700 font-mono">
