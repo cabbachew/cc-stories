@@ -4,12 +4,14 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { useEffect, useState } from "react";
 import { StudentStoryProps } from "@/app/types/StudentStory";
-import { Route, Link as LinkIcon, Image } from "lucide-react";
+import { Route, Link as LinkIcon, Image, Search } from "lucide-react";
+import { Input } from "@/components/ui/input";
 
 export default function ContentsPage() {
   const [studentStories, setStudentStories] = useState<StudentStoryProps[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     async function fetchStudentStories() {
@@ -31,6 +33,18 @@ export default function ContentsPage() {
 
     fetchStudentStories();
   }, []);
+
+  const filteredStories = studentStories.filter((story) => {
+    const searchLower = searchQuery.toLowerCase();
+    return (
+      story.headline.toLowerCase().includes(searchLower) ||
+      story.discipline.toLowerCase().includes(searchLower) ||
+      story.topic.toLowerCase().includes(searchLower) ||
+      story.studentName.toLowerCase().includes(searchLower) ||
+      story.mentorName.toLowerCase().includes(searchLower) ||
+      story.id.toLowerCase().includes(searchLower)
+    );
+  });
 
   if (loading) {
     return (
@@ -56,72 +70,90 @@ export default function ContentsPage() {
   return (
     <div className="min-h-screen p-4 md:p-6">
       <div className="mx-auto max-w-7xl space-y-6">
-        <h1 className="text-2xl md:text-3xl font-bold">Student Stories</h1>
+        <div className="flex flex-col space-y-4">
+          <h1 className="text-2xl md:text-3xl font-bold">Student Stories</h1>
+          <div className="relative">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            <Input
+              type="text"
+              placeholder="Search stories..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="pl-9"
+            />
+          </div>
+        </div>
         <div className="space-y-4">
-          {studentStories.map((story) => (
-            <div
-              key={story.id}
-              className="p-4 border rounded-lg hover:bg-muted/50 transition-colors"
-            >
-              <Link href={`/engagements/${story.id}`} className="block">
-                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
-                  <div className="space-y-2">
-                    <h2 className="text-lg font-semibold text-gray-700 font-mono">
-                      {story.id}
-                    </h2>
-                    <p className="text-sm text-muted-foreground">
-                      {story.headline}
-                    </p>
-                    <div className="text-sm flex items-center">
-                      <span>
-                        {story.studentName} • {story.mentorName}
-                      </span>
-                      <div className="flex items-center gap-1 mx-2 [color:#fbc012]">
-                        {story.showLearningPlan && (
-                          <Route
-                            className="h-4 w-4"
-                            aria-label="Learning plan available"
-                          />
-                        )}
-                        {story.showAssets && (
-                          <LinkIcon
-                            className="h-4 w-4"
-                            aria-label="Assets available"
-                          />
-                        )}
-                        {story.showGallery && (
-                          <Image
-                            className="h-4 w-4"
-                            aria-label="Gallery available"
-                          />
-                        )}
+          {filteredStories.length === 0 ? (
+            <p className="text-center text-muted-foreground py-8">
+              No stories found matching your search.
+            </p>
+          ) : (
+            filteredStories.map((story) => (
+              <div
+                key={story.id}
+                className="p-4 border rounded-lg hover:bg-muted/50 transition-colors"
+              >
+                <Link href={`/engagements/${story.id}`} className="block">
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+                    <div className="space-y-2">
+                      <h2 className="text-lg font-semibold text-gray-700 font-mono">
+                        {story.id}
+                      </h2>
+                      <p className="text-sm text-muted-foreground">
+                        {story.headline}
+                      </p>
+                      <div className="text-sm flex items-center">
+                        <span>
+                          {story.studentName} • {story.mentorName}
+                        </span>
+                        <div className="flex items-center gap-1 mx-2 [color:#fbc012]">
+                          {story.showLearningPlan && (
+                            <Route
+                              className="h-4 w-4"
+                              aria-label="Learning plan available"
+                            />
+                          )}
+                          {story.showAssets && (
+                            <LinkIcon
+                              className="h-4 w-4"
+                              aria-label="Assets available"
+                            />
+                          )}
+                          {story.showGallery && (
+                            <Image
+                              className="h-4 w-4"
+                              aria-label="Gallery available"
+                            />
+                          )}
+                        </div>
                       </div>
                     </div>
+                    <div className="flex flex-col gap-1.5 sm:items-end mt-2 sm:mt-0">
+                      <Badge
+                        variant="secondary"
+                        className="text-xs whitespace-nowrap"
+                      >
+                        {story.discipline}
+                      </Badge>
+                      <Badge
+                        variant="secondary"
+                        className="text-xs whitespace-nowrap"
+                      >
+                        {story.topic}
+                      </Badge>
+                      <Badge
+                        variant="outline"
+                        className="text-xs whitespace-nowrap"
+                      >
+                        Grade {story.studentGrade}
+                      </Badge>
+                    </div>
                   </div>
-                  <div className="flex flex-col gap-1.5 sm:items-end mt-2 sm:mt-0">
-                    <Badge
-                      variant="secondary"
-                      className="text-xs whitespace-nowrap"
-                    >
-                      {story.discipline}
-                    </Badge>
-                    <Badge
-                      variant="secondary"
-                      className="text-xs whitespace-nowrap"
-                    >
-                      {story.topic}
-                    </Badge>
-                    <Badge
-                      variant="outline"
-                      className="text-xs whitespace-nowrap"
-                    >
-                      Grade {story.studentGrade}
-                    </Badge>
-                  </div>
-                </div>
-              </Link>
-            </div>
-          ))}
+                </Link>
+              </div>
+            ))
+          )}
         </div>
       </div>
     </div>
