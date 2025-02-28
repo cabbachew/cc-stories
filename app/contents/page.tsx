@@ -6,12 +6,28 @@ import { useEffect, useState } from "react";
 import { StudentStoryProps } from "@/app/types/StudentStory";
 import { Route, Link as LinkIcon, Image, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import { Checkbox } from "@/components/ui/checkbox";
+
+interface SchoolLevel {
+  id: string;
+  label: string;
+  grades: number[];
+}
+
+const schoolLevels: SchoolLevel[] = [
+  { id: "lower", label: "Lower School (K-5)", grades: [0, 1, 2, 3, 4, 5] },
+  { id: "middle", label: "Middle School (6-8)", grades: [6, 7, 8] },
+  { id: "high", label: "High School (9-12)", grades: [9, 10, 11, 12] },
+];
 
 export default function ContentsPage() {
   const [studentStories, setStudentStories] = useState<StudentStoryProps[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
+  const [selectedLevels, setSelectedLevels] = useState<string[]>(
+    schoolLevels.map((level) => level.id)
+  );
 
   useEffect(() => {
     async function fetchStudentStories() {
@@ -36,14 +52,21 @@ export default function ContentsPage() {
 
   const filteredStories = studentStories.filter((story) => {
     const searchLower = searchQuery.toLowerCase();
-    return (
+    const matchesSearch =
       story.headline.toLowerCase().includes(searchLower) ||
       story.discipline.toLowerCase().includes(searchLower) ||
       story.topic.toLowerCase().includes(searchLower) ||
       story.studentName.toLowerCase().includes(searchLower) ||
       story.mentorName.toLowerCase().includes(searchLower) ||
-      story.id.toLowerCase().includes(searchLower)
-    );
+      story.id.toLowerCase().includes(searchLower);
+
+    const studentGrade = story.studentGrade;
+    const matchesGrade = selectedLevels.some((levelId) => {
+      const level = schoolLevels.find((l) => l.id === levelId);
+      return level?.grades.includes(studentGrade);
+    });
+
+    return matchesSearch && matchesGrade;
   });
 
   if (loading) {
@@ -72,15 +95,40 @@ export default function ContentsPage() {
       <div className="mx-auto max-w-7xl space-y-6">
         <div className="flex flex-col space-y-4">
           <h1 className="text-2xl md:text-3xl font-bold">Student Stories</h1>
-          <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-            <Input
-              type="text"
-              placeholder="Search stories..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-9"
-            />
+          <div className="space-y-4">
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Input
+                type="text"
+                placeholder="Search stories..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="pl-9"
+              />
+            </div>
+            <div className="flex flex-wrap gap-4">
+              {schoolLevels.map((level) => (
+                <div key={level.id} className="flex items-center space-x-2">
+                  <Checkbox
+                    id={level.id}
+                    checked={selectedLevels.includes(level.id)}
+                    onCheckedChange={(checked) => {
+                      setSelectedLevels((prev) =>
+                        checked
+                          ? [...prev, level.id]
+                          : prev.filter((id) => id !== level.id)
+                      );
+                    }}
+                  />
+                  <label
+                    htmlFor={level.id}
+                    className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  >
+                    {level.label}
+                  </label>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
         <div className="space-y-4">
