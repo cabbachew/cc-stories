@@ -417,8 +417,13 @@ export default function StudentStory() {
           </div>
 
           {/* Student Background Blurb */}
-          <div className="text-sm text-muted-foreground leading-relaxed pl-4 border-l-2 border-[#fbc012]">
-            {studentStoryData.backgroundBlurb}
+          <div className="space-y-2">
+            <h3 className="font-medium text-[#111827]">
+              What They Set Out To Do
+            </h3>
+            <div className="text-sm text-muted-foreground leading-relaxed pl-4 border-l-2 border-[#fbc012]">
+              {studentStoryData.backgroundBlurb}
+            </div>
           </div>
 
           <div className="border-t border-[#111827]/5" />
