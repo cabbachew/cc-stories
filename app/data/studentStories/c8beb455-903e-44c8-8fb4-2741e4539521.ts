@@ -6,7 +6,7 @@ export const studentStory: StudentStoryProps = {
   showAssets: false,
   showGallery: false,
   headline:
-    "Carson Wolfe: Building a Voice in Financial Literacy & Entrepreneurship",
+    "From Blog to Business Building a Voice in Financial Literacy & Entrepreneurship",
   discipline: "Business, Finance & Entrepreneurship",
   topic: "Business / Entrepreneurship",
   startDate: "2024-05-30",

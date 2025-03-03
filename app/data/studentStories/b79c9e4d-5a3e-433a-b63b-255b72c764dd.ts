@@ -6,7 +6,7 @@ export const studentStory: StudentStoryProps = {
   showAssets: false,
   showGallery: false,
   headline:
-    "Empowering Change: How Josh Anderman is Advancing Global Health and Advocacy for Clubfoot Patients",
+    "Empowering Change: How Josh is Advancing Global Health and Advocacy for Clubfoot Patients",
   discipline: "Politics, Ethics & Social Justice",
   topic: "Global Health",
   startDate: "2023-04-15",
