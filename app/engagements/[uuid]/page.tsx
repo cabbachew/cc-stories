@@ -24,6 +24,7 @@ import {
 } from "@/components/ui/carousel";
 import { useEffect, useState } from "react";
 import { DynamicIcon } from "@/app/utils/icons";
+import ccLogo from "@/public/images/cc-logo.png";
 
 // Utility function to extract first name
 function getFirstName(fullName: string): string {
@@ -111,7 +112,7 @@ export default function StudentStory() {
         {/* Header Row */}
         <div className="flex items-center gap-3 md:gap-4">
           <Image
-            src="/images/cc-logo.png"
+            src={ccLogo}
             alt="CC Stories Logo"
             width={40}
             height={40}
@@ -301,11 +302,8 @@ export default function StudentStory() {
                         )}'s profile`}
                         width={96}
                         height={96}
-                        className="h-full w-full rounded-full object-cover"
                         unoptimized
-                        onError={(e) => {
-                          e.currentTarget.style.display = "none";
-                        }}
+                        className="h-full w-full rounded-full object-cover"
                       />
                     )}
                   </div>
@@ -366,11 +364,8 @@ export default function StudentStory() {
                         )}'s profile`}
                         width={96}
                         height={96}
-                        className="h-full w-full rounded-full object-cover"
                         unoptimized
-                        onError={(e) => {
-                          e.currentTarget.style.display = "none";
-                        }}
+                        className="h-full w-full rounded-full object-cover"
                       />
                     )}
                   </div>
