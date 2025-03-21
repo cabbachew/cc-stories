@@ -4,7 +4,7 @@ export const studentStory: StudentStoryProps = {
   id: "46ffc7f3-37c3-49bb-81a4-5c9f8199c2a4",
   showLearningPlan: false,
   showAssets: false,
-  showGallery: false,
+  showGallery: true,
   headline: "From Character Sketches to Game Design: A Young Creator's Journey",
   discipline: "Science, Engineering & Technology",
   topic: "Game Design",
@@ -22,22 +22,29 @@ export const studentStory: StudentStoryProps = {
   gallery: {
     images: [
       {
-        url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e2e8f0'/%3E%3C/svg%3E",
-        caption: "Character designs for animal-themed board game",
+        url: "https://ucarecdn.com/1f943126-991c-4017-aea5-4bd55e8449dc/-/preview/1000x666/",
+        caption: "",
       },
       {
-        url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e2e8f0'/%3E%3C/svg%3E",
-        caption:
-          "Game mechanics spreadsheet showing character abilities and terrain effects",
+        url: "https://ucarecdn.com/fa2611c4-6ced-4295-b261-f00103bf4520/-/preview/999x726/",
+        caption: "Board game prototype design",
       },
       {
-        url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e2e8f0'/%3E%3C/svg%3E",
-        caption: "Prototype game board design with different terrain types",
+        url: "https://ucarecdn.com/d9f27a0e-a1bd-4915-9e68-fc80e22e1478/-/preview/1000x1000/",
+        caption: "Board game prototype design",
+      },
+      {
+        url: "https://ucarecdn.com/ae0b02f7-4bee-4753-9460-66ae285225d4/-/preview/1000x1000/",
+        caption: "Trial and error iterations for character balancing",
+      },
+      {
+        url: "https://ucarecdn.com/990e77d8-2ab2-40de-b964-b782d1a0759f/-/preview/1000x1000/",
+        caption: "Preliminary character design specifications",
       },
     ],
   },
   studentProfileImage:
-    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e2e8f0'/%3E%3C/svg%3E",
+    "https://ucarecdn.com/a30670d6-f3fa-4ed8-9e0f-fe437638bd67/-/crop/1300x1200/20%25,10%25/-/preview/1000x666/",
   studentName: "Drake Wong",
   studentSchool: "St. Bernard's",
   studentGrade: 6,
