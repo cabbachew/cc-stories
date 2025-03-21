@@ -46,10 +46,7 @@ export const studentStory: StudentStoryProps = {
         caption:
           "First collaborative artwork to heighten product design skills",
       },
-      {
-        url: "https://ucarecdn.com/70aea16d-7616-4bcf-9a05-c49743810788/-/preview/1000x1000/",
-        caption: "Character designs for Wizertry",
-      },
+
       {
         url: "https://ucarecdn.com/1f805fb6-f292-421f-a1be-df744a71890b/-/preview/999x999/",
         caption: "Preliminary design for Dome project presented to NASA",
@@ -57,6 +54,10 @@ export const studentStory: StudentStoryProps = {
       {
         url: "https://ucarecdn.com/8ee34589-2fd2-46ec-a4f8-2ba17df40ad1/-/preview/1000x957/",
         caption: "NASA Rover Design",
+      },
+      {
+        url: "https://ucarecdn.com/70aea16d-7616-4bcf-9a05-c49743810788/-/preview/1000x1000/",
+        caption: "Character designs for Wizertry",
       },
       {
         url: "https://ucarecdn.com/ec175c41-11c5-41a2-aa77-0509057e5086/-/preview/1000x1000/",
@@ -67,7 +68,7 @@ export const studentStory: StudentStoryProps = {
 
   // Student section
   studentProfileImage:
-    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e2e8f0'/%3E%3C/svg%3E",
+    "https://ucarecdn.com/f31e1614-7307-4b7d-8078-08b032ad1bc2/-/crop/1300x1100/50%25,10%25/-/preview/1000x666/",
   studentName: "Jack Zitterman",
   studentSchool: "Avenues The World School",
   studentGrade: 7,
