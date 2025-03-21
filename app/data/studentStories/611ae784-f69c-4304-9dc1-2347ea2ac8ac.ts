@@ -42,6 +42,14 @@ export const studentStory: StudentStoryProps = {
         caption: "A fully 3D printable, multi-floored birdhouse design",
       },
       {
+        url: "https://ucarecdn.com/bcb5014a-7684-43e8-a0d1-d279dee038a6/-/preview/1000x666/",
+        caption: "",
+      },
+      {
+        url: "https://ucarecdn.com/8e9095f5-b426-4435-9cdd-737abee86665/-/preview/1000x666/",
+        caption: "",
+      },
+      {
         url: "https://ucarecdn.com/9e27f1e3-dcc9-4d80-b6a9-3005bbf154c2/-/preview/1000x1000/",
         caption:
           "First collaborative artwork to heighten product design skills",
@@ -54,6 +62,14 @@ export const studentStory: StudentStoryProps = {
       {
         url: "https://ucarecdn.com/8ee34589-2fd2-46ec-a4f8-2ba17df40ad1/-/preview/1000x957/",
         caption: "NASA Rover Design",
+      },
+      {
+        url: "https://ucarecdn.com/6581cb51-1e7a-499c-b2f8-c950c17e4110/-/preview/1000x666/",
+        caption: "",
+      },
+      {
+        url: "https://ucarecdn.com/e3d8ca31-aee7-4dd8-912e-c6a4bd18e548/-/preview/1000x666/",
+        caption: "",
       },
       {
         url: "https://ucarecdn.com/70aea16d-7616-4bcf-9a05-c49743810788/-/preview/1000x1000/",
