@@ -4,7 +4,7 @@ export const studentStory: StudentStoryProps = {
   // Header section
   showLearningPlan: true,
   showAssets: false,
-  showGallery: false,
+  showGallery: true,
   headline:
     "From Robotics to NASA: A Young Innovator's Journey in Engineering and Entrepreneurship",
 
@@ -34,28 +34,33 @@ export const studentStory: StudentStoryProps = {
   gallery: {
     images: [
       {
-        url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e2e8f0'/%3E%3C/svg%3E",
-        caption: "Bug Killer Bot CAD Model",
+        url: "https://ucarecdn.com/72fea418-799e-47fb-9e67-13c60dca589f/-/preview/1000x1000/",
+        caption: "A fully 3D printable, multi-floored birdhouse design",
       },
       {
-        url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e2e8f0'/%3E%3C/svg%3E",
-        caption: "Mars Rover Protection System",
+        url: "https://ucarecdn.com/d281d2d9-cb32-45c8-afe0-0c5efd684e7c/-/preview/1000x1000/",
+        caption: "A fully 3D printable, multi-floored birdhouse design",
       },
       {
-        url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e2e8f0'/%3E%3C/svg%3E",
-        caption: "Murder Wizardry Game Design",
+        url: "https://ucarecdn.com/9e27f1e3-dcc9-4d80-b6a9-3005bbf154c2/-/preview/1000x1000/",
+        caption:
+          "First collaborative artwork to heighten product design skills",
       },
       {
-        url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e2e8f0'/%3E%3C/svg%3E",
-        caption: "Mini Munchies Brand Assets",
+        url: "https://ucarecdn.com/70aea16d-7616-4bcf-9a05-c49743810788/-/preview/1000x1000/",
+        caption: "Character designs for Wizertry",
       },
       {
-        url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e2e8f0'/%3E%3C/svg%3E",
-        caption: "NASA Presentation Demo",
+        url: "https://ucarecdn.com/1f805fb6-f292-421f-a1be-df744a71890b/-/preview/999x999/",
+        caption: "Preliminary design for Dome project presented to NASA",
       },
       {
-        url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e2e8f0'/%3E%3C/svg%3E",
-        caption: "Project Development Workshop",
+        url: "https://ucarecdn.com/8ee34589-2fd2-46ec-a4f8-2ba17df40ad1/-/preview/1000x957/",
+        caption: "NASA Rover Design",
+      },
+      {
+        url: "https://ucarecdn.com/ec175c41-11c5-41a2-aa77-0509057e5086/-/preview/1000x1000/",
+        caption: "Snippet from Mini Munchies product line",
       },
     ],
   },
@@ -159,7 +164,7 @@ export const studentStory: StudentStoryProps = {
         endDate: "2025-02",
         title: "Board Game Creation",
         summary:
-          "Developed 'Murder Wizardry' board game concept, created character designs, and established social media presence.",
+          "Developed 'Wizertry' board game concept, created character designs, and established social media presence.",
         icon: "dice-6",
       },
       {
