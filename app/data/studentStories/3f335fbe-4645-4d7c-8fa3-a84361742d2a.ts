@@ -91,7 +91,7 @@ export const studentStory: StudentStoryProps = {
         title: "Developing a Short Thriller Film",
         summary:
           "Charlie worked on character sketches, scene breakdowns, and initial script drafts for her short thriller film, 'The Regular.'",
-        icon: "script",
+        icon: "scroll-text",
       },
       {
         id: 2,
