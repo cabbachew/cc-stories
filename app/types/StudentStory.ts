@@ -66,6 +66,33 @@ export interface StudentStoryProps {
     milestones: TimelineMilestone[];
   };
   gallery?: Gallery;
+  subjects?: SubjectDetail[];
+  categorizedSkills?: CategorizedSkill[];
+  keyDates?: KeyDate[];
+}
+
+// Define the types for the new subjects section
+interface TopicAction {
+  concept: string;
+  actions: string[];
+}
+
+interface SubjectDetail {
+  subject: string;
+  topics: TopicAction[];
+}
+
+// Define the types for the categorized skills section
+interface CategorizedSkill {
+  category: string;
+  skill: string;
+  description: string;
+}
+
+// Define the types for the key dates section
+interface KeyDate {
+  date: string;
+  event: string;
 }
 
 // Type for the legacy implementation (timeline view)
