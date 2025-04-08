@@ -452,7 +452,7 @@ export default function StudentStory() {
         {/* Timeline Section */}
         <div className="space-y-4">
           <h2 className="text-xl font-semibold text-[#111827]">
-            Project Milestones
+            Learning Milestones
           </h2>
           <Timeline>
             {studentStoryData.timeline.milestones.map((milestone, index) => (
