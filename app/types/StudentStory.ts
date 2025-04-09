@@ -84,9 +84,10 @@ interface SubjectDetail {
 
 // Define the types for the categorized skills section
 interface CategorizedSkill {
-  category: string;
   skill: string;
-  description: string;
+  explanation: string;
+  categories: string[];
+  sessions: string[];
 }
 
 // Define the types for the key dates section

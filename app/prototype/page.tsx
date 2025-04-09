@@ -30,6 +30,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 // Utility function to extract first name
 function getFirstName(fullName: string): string {
@@ -326,131 +327,131 @@ const studentStoryData: StudentStoryProps = {
   ],
   categorizedSkills: [
     {
-      category: "Critical Thinking",
-      skill: "Problem decomposition",
-      description: "Breaking down complex word problems into manageable parts",
+      skill: "Problem-solving methodology",
+      explanation:
+        "Talia excels at breaking down complex problems into manageable steps, particularly with word problems involving rates, distance, and mixtures. She systematically identifies key variables before solving.",
+      categories: ["Critical Thinking", "Mathematics", "Process Skills"],
+      sessions: [
+        "2024-10-02",
+        "2024-10-20",
+        "2025-01-28",
+        "2025-02-04",
+        "2025-02-12",
+      ],
     },
     {
-      category: "Critical Thinking",
-      skill: "Analytical reasoning",
-      description: "Identifying relationships between mathematical concepts",
+      skill: "Mathematical reasoning",
+      explanation:
+        "Talia can identify relationships between mathematical concepts, connecting slope calculations with perpendicular line properties. She's developing strong self-correction habits when dealing with negative numbers and sign errors.",
+      categories: ["Critical Thinking", "Mathematics", "Error Detection"],
+      sessions: [
+        "2024-10-09",
+        "2024-12-03",
+        "2024-12-09",
+        "2025-02-12",
+        "2025-02-18",
+      ],
     },
     {
-      category: "Critical Thinking",
-      skill: "Error detection",
-      description: "Self-correcting when making calculation mistakes",
+      skill: "Bilingual mathematical fluency",
+      explanation:
+        "Talia can discuss and solve complex math problems in both English and Spanish, making her truly bilingual in academic contexts. She comfortably explains exponential growth concepts and geometric applications in both languages.",
+      categories: ["Communication", "Language", "Technical Knowledge"],
+      sessions: [
+        "2024-10-02",
+        "2024-10-09",
+        "2024-10-20",
+        "2025-01-28",
+        "2025-02-04",
+        "2025-02-12",
+        "2025-02-18",
+      ],
     },
     {
-      category: "Critical Thinking",
-      skill: "Systematic approach",
-      description: "Developing step-by-step problem-solving methodologies",
+      skill: "Verbal process articulation",
+      explanation:
+        "Talia effectively verbalizes her thought processes while solving problems, which strengthens her understanding. She asks specific, targeted questions about concepts like irregular verbs and exponential expressions when she needs clarification.",
+      categories: ["Communication", "Metacognition", "Process Skills"],
+      sessions: ["2024-10-02", "2024-10-09", "2025-02-04", "2025-03-08"],
     },
     {
-      category: "Communication",
-      skill: "Bilingual proficiency",
-      description:
-        "Explaining mathematical concepts in both English and Spanish",
+      skill: "Strategic academic preparation",
+      explanation:
+        "Talia is developing strong preparation habits, completing homework before sessions (specifically noted on December 3rd) and effectively preparing for assessments, including back-to-back Spanish tests in March.",
+      categories: ["Self-Management", "Organization", "Time Management"],
+      sessions: [
+        "2024-12-03",
+        "2024-12-09",
+        "2025-02-04",
+        "2025-03-08",
+        "2025-03-09",
+      ],
     },
     {
-      category: "Communication",
-      skill: "Technical vocabulary",
-      description: "Building specialized language in multiple domains",
+      skill: "Attention to detail",
+      explanation:
+        "Talia is developing strategies to avoid rushing through problems and misreading instructions. She's learning to carefully manage positive and negative signs when moving terms between sides of equations.",
+      categories: ["Self-Management", "Metacognition", "Process Skills"],
+      sessions: ["2024-10-09", "2024-12-09", "2025-01-28", "2025-02-04"],
     },
     {
-      category: "Communication",
-      skill: "Articulation of process",
-      description: "Verbalizing thought processes when solving problems",
+      skill: "Learning style awareness",
+      explanation:
+        "Talia recognizes she learns best through visual aids like Desmos visualizations and has identified specific challenges with fraction operations and irregular verbs that require additional focus.",
+      categories: ["Metacognition", "Self-Assessment", "Adaptability"],
+      sessions: ["2024-12-09", "2025-02-12", "2025-02-18", "2025-03-09"],
     },
     {
-      category: "Communication",
-      skill: "Clarification seeking",
-      description: "Asking insightful questions when concepts aren't clear",
+      skill: "Technical tool proficiency",
+      explanation:
+        "Talia has progressed from basic calculator operations to more sophisticated applications like comparing savings strategies with graphs and plotting intersection points. She effectively uses graphical representations to understand abstract concepts.",
+      categories: ["Technical Knowledge", "Mathematics", "Digital Literacy"],
+      sessions: ["2024-10-20", "2024-11-13", "2025-01-28"],
     },
     {
-      category: "Self-Management",
-      skill: "Preparation",
-      description:
-        "Completing homework before sessions (noted on December 3rd)",
+      skill: "Cross-subject application",
+      explanation:
+        "Talia applies mathematical concepts to physics problems, particularly when calculating slopes from graphs and analyzing experimental error. She transfers language patterns between different contexts and disciplines.",
+      categories: [
+        "Technical Knowledge",
+        "Interdisciplinary Learning",
+        "Transfer Skills",
+      ],
+      sessions: ["2024-11-13", "2025-01-28", "2025-02-04"],
     },
     {
-      category: "Self-Management",
-      skill: "Test preparation strategies",
-      description: "Developing structured approaches to studying",
+      skill: "Perseverance with challenges",
+      explanation:
+        "Talia persists through difficult problems until resolution, showing a growth mindset. She's progressing from initial hesitation with unfamiliar problem types to greater independence and confidence.",
+      categories: ["Social-Emotional", "Adaptability", "Learning Approach"],
+      sessions: [
+        "2024-10-20",
+        "2024-12-03",
+        "2025-01-28",
+        "2025-02-18",
+        "2025-03-08",
+      ],
     },
     {
-      category: "Self-Management",
-      skill: "Focus improvement",
-      description: "Developing strategies to avoid rushing through problems",
+      skill: "Spanish cultural engagement",
+      explanation:
+        "Talia shows enthusiasm for Spanish beyond just academic requirements, engaging in conversational practice about everyday topics and demonstrating interest in contextual language usage.",
+      categories: ["Social-Emotional", "Language", "Cultural Appreciation"],
+      sessions: ["2024-10-20", "2025-02-25", "2025-03-09"],
     },
     {
-      category: "Self-Management",
-      skill: "Handling pressure",
-      description: "Preparing for assessments with tight timelines",
-    },
-    {
-      category: "Metacognition",
-      skill: "Learning awareness",
-      description:
-        "Recognizing her own learning preferences (e.g., visual aids)",
-    },
-    {
-      category: "Metacognition",
-      skill: "Self-assessment",
-      description: "Identifying areas where she needs more practice",
-    },
-    {
-      category: "Metacognition",
-      skill: "Adaptability",
-      description: "Working with different teaching approaches and tools",
-    },
-    {
-      category: "Metacognition",
-      skill: "Confidence building",
-      description: "Becoming more comfortable with unfamiliar problem types",
-    },
-    {
-      category: "Technical Knowledge",
-      skill: "Technology literacy",
-      description:
-        "Using graphing calculators and digital tools for mathematics",
-    },
-    {
-      category: "Technical Knowledge",
-      skill: "Cross-disciplinary application",
-      description: "Applying math concepts to physics problems",
-    },
-    {
-      category: "Technical Knowledge",
-      skill: "Language switching",
-      description:
-        "Developing the ability to think about technical concepts in multiple languages",
-    },
-    {
-      category: "Technical Knowledge",
-      skill: "Visualization techniques",
-      description:
-        "Using graphical representations to understand abstract concepts",
-    },
-    {
-      category: "Social-Emotional Learning",
-      skill: "Receptiveness to feedback",
-      description: "Implementing suggestions for improvement",
-    },
-    {
-      category: "Social-Emotional Learning",
-      skill: "Persistence",
-      description: "Working through challenging problems until resolution",
-    },
-    {
-      category: "Social-Emotional Learning",
-      skill: "Cultural appreciation",
-      description:
-        "Engaging with Spanish language beyond just academic requirements",
-    },
-    {
-      category: "Social-Emotional Learning",
-      skill: "Mentorship relationship building",
-      description: "Developing a productive working relationship with Mari",
+      skill: "Mentor relationship effectiveness",
+      explanation:
+        "Talia has established productive communication patterns with Mari, effectively implementing specific feedback about slowing down during problem-solving and developing a strong working relationship.",
+      categories: ["Social-Emotional", "Communication", "Interpersonal Skills"],
+      sessions: [
+        "2024-10-02",
+        "2024-10-09",
+        "2024-11-13",
+        "2025-01-28",
+        "2025-02-04",
+        "2025-02-12",
+      ],
     },
   ],
   keyDates: [
@@ -489,18 +490,6 @@ const studentStoryData: StudentStoryProps = {
 export default function StudentStory() {
   // Removed all dynamic data fetching logic, state, and effects.
   // The component now directly uses the hardcoded 'studentStoryData'.
-
-  // Group categorized skills by category
-  const groupedSkills = studentStoryData.categorizedSkills?.reduce(
-    (acc, skill) => {
-      if (!acc[skill.category]) {
-        acc[skill.category] = [];
-      }
-      acc[skill.category].push(skill);
-      return acc;
-    },
-    {} as Record<string, typeof studentStoryData.categorizedSkills>
-  );
 
   return (
     <div className="min-h-screen p-4 md:p-6 text-[#111827]">
@@ -925,83 +914,150 @@ export default function StudentStory() {
 
         <div className="border-t border-[#111827]/5" />
 
-        {/* Detailed Subject Breakdown Section */}
+        {/* Concepts Learned Section (Now Tabs) */}
         {studentStoryData.subjects && studentStoryData.subjects.length > 0 && (
           <>
-            <div className="space-y-6">
+            <div className="space-y-4">
               <h2 className="text-xl font-semibold text-[#111827]">
                 Concepts Learned
               </h2>
-              <Accordion type="single" collapsible className="w-full space-y-2">
-                {studentStoryData.subjects.flatMap(
-                  (subjectData, subjectIndex) =>
-                    subjectData.topics.map((topic, topicIndex) => (
-                      <AccordionItem
-                        key={`${subjectIndex}-${topicIndex}`}
-                        value={`item-${subjectIndex}-${topicIndex}`}
-                        className="border-b border-dotted border-[#111827]/10 py-1"
+              {/* Replaced Accordion with Tabs */}
+              <Tabs
+                defaultValue={
+                  studentStoryData.subjects.sort(
+                    (a, b) => (b.topics?.length || 0) - (a.topics?.length || 0)
+                  )[0]?.subject || "tab-0"
+                }
+                className="w-full"
+              >
+                <TabsList className="grid w-full grid-cols-3 mb-4">
+                  {[...(studentStoryData.subjects || [])]
+                    .sort(
+                      (a, b) =>
+                        (b.topics?.length || 0) - (a.topics?.length || 0)
+                    )
+                    .map((subjectData, index) => (
+                      <TabsTrigger
+                        key={index}
+                        value={subjectData.subject || `tab-${index}`}
                       >
-                        <AccordionTrigger className="text-left hover:no-underline py-3">
-                          <div className="flex items-center gap-2 w-full">
-                            <Badge
-                              variant="secondary"
-                              className="text-[10px] font-normal flex-shrink-0"
-                            >
-                              {subjectData.subject}
-                            </Badge>
-                            <span className="font-medium text-[#111827]">
+                        {subjectData.subject}
+                      </TabsTrigger>
+                    ))}
+                </TabsList>
+                {[...(studentStoryData.subjects || [])]
+                  .sort(
+                    (a, b) => (b.topics?.length || 0) - (a.topics?.length || 0)
+                  )
+                  .map((subjectData, index) => (
+                    <TabsContent
+                      key={index}
+                      value={subjectData.subject || `tab-${index}`}
+                    >
+                      <div className="space-y-4">
+                        {subjectData.topics.map((topic, topicIndex) => (
+                          <div key={topicIndex} className="space-y-2 py-2">
+                            <h4 className="font-medium text-[#111827]">
                               {topic.concept}
-                            </span>
+                            </h4>
+                            <ul className="space-y-1 text-sm text-muted-foreground">
+                              {topic.actions.map((action, actionIndex) => (
+                                <li
+                                  key={actionIndex}
+                                  className="flex items-start"
+                                >
+                                  <DynamicIcon
+                                    name="dot"
+                                    className="h-4 w-4 mr-2 text-[#059669] flex-shrink-0 mt-0.5"
+                                  />
+                                  <span>{action}</span>
+                                </li>
+                              ))}
+                            </ul>
                           </div>
-                        </AccordionTrigger>
-                        <AccordionContent className="pt-1 pb-3 pl-6">
-                          <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
-                            {topic.actions.map((action, actionIndex) => (
-                              <li key={actionIndex}>{action}</li>
-                            ))}
-                          </ul>
-                        </AccordionContent>
-                      </AccordionItem>
-                    ))
-                )}
-              </Accordion>
+                        ))}
+                      </div>
+                    </TabsContent>
+                  ))}
+              </Tabs>
             </div>
           </>
         )}
 
         <div className="border-t border-[#111827]/5" />
 
-        {/* Categorized Skills Section */}
-        {groupedSkills && Object.keys(groupedSkills).length > 0 && (
-          <>
-            <div className="space-y-6">
-              <h2 className="text-xl font-semibold text-[#111827]">
-                Skills Developed
-              </h2>
-              <div className="space-y-8">
-                {Object.entries(groupedSkills).map(([category, skills]) => (
-                  <div key={category} className="space-y-4">
-                    <h3 className="text-lg font-medium text-[#111827]">
-                      {category}
-                    </h3>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4">
-                      {skills?.map((skillDetail, index) => (
-                        <div key={index} className="space-y-1">
-                          <h4 className="font-medium text-[#111827] text-sm">
-                            {skillDetail.skill}
-                          </h4>
+        {studentStoryData.categorizedSkills &&
+          studentStoryData.categorizedSkills.length > 0 && (
+            <>
+              <div className="space-y-6">
+                <h2 className="text-xl font-semibold text-[#111827]">
+                  Skills Analysis
+                </h2>
+                {/* Replaced grid layout with Accordion */}
+                <Accordion
+                  type="single"
+                  collapsible
+                  className="w-full space-y-2"
+                >
+                  {[...(studentStoryData.categorizedSkills || [])]
+                    .sort(
+                      (a, b) =>
+                        (b.sessions?.length || 0) - (a.sessions?.length || 0)
+                    )
+                    .map((skillDetail, index) => (
+                      <AccordionItem
+                        key={index}
+                        value={`skill-item-${index}`}
+                        className="border-b border-dotted border-[#111827]/10 py-1"
+                      >
+                        <AccordionTrigger className="text-left hover:no-underline py-3">
+                          {/* Trigger contains skill name and session squares */}
+                          <div className="flex items-center justify-between gap-2 w-full pr-2">
+                            <span className="font-medium text-[#111827] text-base flex-1 mr-2">
+                              {skillDetail.skill}
+                            </span>
+                            {skillDetail.sessions &&
+                              skillDetail.sessions.length > 0 && (
+                                <div className="flex items-center gap-0.5 flex-shrink-0">
+                                  {skillDetail.sessions.map(
+                                    (_, sessionIndex) => (
+                                      <div
+                                        key={sessionIndex}
+                                        className="h-2.5 w-2.5 bg-green-500 rounded-sm"
+                                        title="Session where skill was observed"
+                                      ></div>
+                                    )
+                                  )}
+                                </div>
+                              )}
+                          </div>
+                        </AccordionTrigger>
+                        <AccordionContent className="pt-1 pb-3 space-y-2">
+                          {" "}
+                          {/* Content contains categories and explanation */}
+                          <div className="flex flex-wrap gap-1">
+                            {skillDetail.categories?.map(
+                              (category, catIndex) => (
+                                <Badge
+                                  key={catIndex}
+                                  variant="outline"
+                                  className="text-[10px] font-normal"
+                                >
+                                  {category}
+                                </Badge>
+                              )
+                            )}
+                          </div>
                           <p className="text-sm text-muted-foreground">
-                            {skillDetail.description}
+                            {skillDetail.explanation}
                           </p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ))}
+                        </AccordionContent>
+                      </AccordionItem>
+                    ))}
+                </Accordion>
               </div>
-            </div>
-          </>
-        )}
+            </>
+          )}
 
         <div className="border-t border-[#111827]/5" />
 
