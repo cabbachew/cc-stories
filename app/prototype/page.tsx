@@ -3,16 +3,16 @@
 // import { useParams } from "next/navigation";
 import { StudentStoryProps } from "@/app/types/StudentStory";
 import { Badge } from "@/components/ui/badge";
-import {
-  Timeline,
-  TimelineItem,
-  TimelineSeparator,
-  TimelineDot,
-  TimelineConnector,
-  TimelineContent,
-  TimelineTitle,
-  TimelineDescription,
-} from "@/components/ui/timeline";
+// import {
+//   Timeline,
+//   TimelineItem,
+//   TimelineSeparator,
+//   TimelineDot,
+//   TimelineConnector,
+//   TimelineContent,
+//   TimelineTitle,
+//   TimelineDescription,
+// } from "@/components/ui/timeline";
 import NextLink from "next/link";
 import Image from "next/image";
 import {
@@ -30,7 +30,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+// import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Flag, Heart } from "lucide-react";
 
@@ -49,11 +49,11 @@ function formatDate(dateString: string) {
   }).format(date);
 }
 
-function formatDateRange(startDate: string, endDate: string) {
-  const start = formatDate(startDate);
-  const end = formatDate(endDate);
-  return start === end ? start : `${start} - ${end}`;
-}
+// function formatDateRange(startDate: string, endDate: string) {
+//   const start = formatDate(startDate);
+//   const end = formatDate(endDate);
+//   return start === end ? start : `${start} - ${end}`;
+// }
 
 // Hardcoded student story data
 const studentStoryData: StudentStoryProps = {
