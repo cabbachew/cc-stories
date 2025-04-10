@@ -31,6 +31,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Flag, Heart } from "lucide-react";
 
 // Utility function to extract first name
 function getFirstName(fullName: string): string {
@@ -100,7 +102,7 @@ const studentStoryData: StudentStoryProps = {
   studentProfileImage:
     "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e2e8f0'/%3E%3C/svg%3E",
   studentName: "Talia Kirsch",
-  studentSchool: "n/a",
+  studentSchool: "",
   studentGrade: 10,
   studentPersonality: [
     "Analytical",
@@ -148,7 +150,7 @@ const studentStoryData: StudentStoryProps = {
     ],
   },
   backgroundBlurb:
-    "Talia sought mentorship to strengthen her skills in both mathematics and Spanish simultaneously. As a detail-oriented and analytical learner, she needed guidance that could help her connect concepts across different subjects while building confidence in her problem-solving abilities. Though she demonstrated strong foundational knowledge, Talia sometimes rushed through problems and needed support in developing systematic approaches to tackle unfamiliar question formats, especially in timed test situations.",
+    "Talia sought mentorship to strengthen her skills in both mathematics and Spanish simultaneously. As a detail-oriented and analytical learner, she needed guidance that could help her connect concepts across different subjects while building confidence in her problem-solving abilities.",
   timeline: {
     milestones: [
       {
@@ -456,33 +458,32 @@ const studentStoryData: StudentStoryProps = {
   ],
   keyDates: [
     {
-      date: "October 11, 2024",
+      date: "Oct 11, 2024",
       event: "Math test",
     },
     {
-      date: "December 3, 2024",
+      date: "Dec 3, 2024",
       event: "Completed homework before tutoring session",
     },
     {
-      date: "December 10, 2024",
+      date: "Dec 10, 2024",
       event: "Math exam",
     },
     {
-      date: "December 16-January 6, 2025",
-      event: "Winter break from school",
+      date: "Dec 16, 2024",
+      event: "Winter break begins",
     },
     {
-      date: "February 5, 2025",
+      date: "Jan 6, 2025",
+      event: "Winter break ends",
+    },
+    {
+      date: "Feb 5, 2025",
       event: "Spanish test on preterite and imperfect tenses",
     },
     {
-      date: "March 8-10, 2025",
-      event:
-        "Spanish test on verb conjugations (subjunctive, infinitive, indicative, and gerund forms)",
-    },
-    {
-      date: "March 10, 2025",
-      event: "Spanish test on imperative verb forms",
+      date: "Mar 10, 2025",
+      event: "Spanish test on verb conjugations",
     },
   ],
 };
@@ -559,7 +560,7 @@ export default function StudentStory() {
         {(studentStoryData.showLearningPlan !== false ||
           studentStoryData.showAssets !== false) && (
           <div className="space-y-3">
-            <h2 className="text-xl font-semibold text-[#111827]">Assets</h2>
+            <h2 className="text-lg font-semibold text-[#111827]">Assets</h2>
             <div className="space-y-2">
               {studentStoryData.showLearningPlan !== false && (
                 <NextLink
@@ -606,8 +607,7 @@ export default function StudentStory() {
         {studentStoryData.showGallery !== false && (
           <>
             <div className="space-y-4">
-              <h2 className="text-xl font-semibold text-[#111827]">Gallery</h2>
-              {/* <div className="relative w-full"> */}
+              <h2 className="text-lg font-semibold text-[#111827]">Gallery</h2>
               <div className="relative mx-auto w-full lg:max-w-[calc(100vw-8rem)]">
                 <Carousel
                   opts={{
@@ -669,429 +669,369 @@ export default function StudentStory() {
         )}
 
         {/* Student and Mentor Section */}
-        <div className="bg-white rounded-none pl-0 pr-6 pb-6 space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Student Column */}
-            <div className="space-y-4">
-              <h2 className="text-xl font-semibold text-[#111827]">
-                The Student
-              </h2>
+        {studentStoryData.match && (
+          <div className="space-y-6">
+            {/* <h2 className="text-xl font-semibold text-[#111827]">
+              The Perfect Match
+            </h2> */}
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Student Column */}
               <div className="space-y-4">
-                <div className="flex items-center gap-4">
-                  <div className="h-24 w-24 rounded-full bg-gray-200 flex-shrink-0 shadow-md ring-1 ring-[#111827]/10">
-                    {studentStoryData.studentProfileImage && (
-                      <Image
-                        src={studentStoryData.studentProfileImage}
-                        alt={`${getFirstName(
-                          studentStoryData.studentName
-                        )}'s profile`}
-                        width={96}
-                        height={96}
-                        unoptimized
-                        className="h-full w-full rounded-full object-cover"
-                      />
-                    )}
-                  </div>
-                  <div>
-                    <div className="font-medium">
-                      {getFirstName(studentStoryData.studentName)}
-                    </div>
-                    <div className="space-y-0.5 text-sm text-muted-foreground">
-                      <div>{studentStoryData.studentSchool}</div>
-                      <div>Grade {studentStoryData.studentGrade}</div>
-                    </div>
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <div className="flex flex-wrap gap-1">
-                    {studentStoryData.studentPersonality?.map(
-                      (trait, index) => (
-                        <Badge
-                          key={index}
-                          variant="secondary"
-                          className="text-[11px] font-normal"
-                        >
-                          {trait}
-                        </Badge>
-                      )
-                    )}
-                  </div>
-                  <div className="flex flex-wrap gap-1">
-                    {studentStoryData.studentInterests?.map(
-                      (interest, index) => (
-                        <Badge
-                          key={index}
-                          variant="outline"
-                          className="text-[11px] font-normal"
-                        >
-                          {interest}
-                        </Badge>
-                      )
-                    )}
-                  </div>
-                </div>
+                <h3 className="text-lg font-semibold text-[#111827]">
+                  The Student
+                </h3>
+                <Accordion type="single" collapsible className="w-full">
+                  <AccordionItem value="student-traits" className="border-0">
+                    <AccordionTrigger className="hover:no-underline">
+                      <div className="flex items-center gap-4">
+                        <div className="h-24 w-24 rounded-full bg-gray-200 flex-shrink-0 shadow-md ring-1 ring-[#111827]/10">
+                          {studentStoryData.studentProfileImage && (
+                            <Image
+                              src={studentStoryData.studentProfileImage}
+                              alt={`${getFirstName(
+                                studentStoryData.studentName
+                              )}'s profile`}
+                              width={96}
+                              height={96}
+                              unoptimized
+                              className="h-full w-full rounded-full object-cover"
+                            />
+                          )}
+                        </div>
+                        <div>
+                          <div className="font-medium text-base">
+                            {getFirstName(studentStoryData.studentName)}
+                          </div>
+                          <div className="space-y-0.5 text-sm text-muted-foreground">
+                            <div>{studentStoryData.studentSchool}</div>
+                            <div>Grade {studentStoryData.studentGrade}</div>
+                          </div>
+                        </div>
+                      </div>
+                    </AccordionTrigger>
+                    <AccordionContent className="pt-2">
+                      <div className="space-y-2">
+                        <div className="flex flex-wrap gap-1">
+                          {studentStoryData.studentPersonality?.map(
+                            (trait, index) => (
+                              <Badge
+                                key={index}
+                                variant="secondary"
+                                className="text-[11px] font-normal"
+                              >
+                                {trait}
+                              </Badge>
+                            )
+                          )}
+                        </div>
+                        <div className="flex flex-wrap gap-1">
+                          {studentStoryData.studentInterests?.map(
+                            (interest, index) => (
+                              <Badge
+                                key={index}
+                                variant="outline"
+                                className="text-[11px] font-normal"
+                              >
+                                {interest}
+                              </Badge>
+                            )
+                          )}
+                        </div>
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
               </div>
-            </div>
 
-            {/* Mentor Column */}
-            <div className="space-y-4">
-              <h2 className="text-xl font-semibold text-[#111827]">
-                The Mentor
-              </h2>
+              {/* Mentor Column */}
               <div className="space-y-4">
-                <div className="flex items-center gap-4">
-                  <div className="h-24 w-24 rounded-full bg-gray-200 flex-shrink-0 shadow-md ring-1 ring-[#111827]/10">
-                    {studentStoryData.mentorProfileImage && (
-                      <Image
-                        src={studentStoryData.mentorProfileImage}
-                        alt={`${getFirstName(
-                          studentStoryData.mentorName
-                        )}'s profile`}
-                        width={96}
-                        height={96}
-                        unoptimized
-                        className="h-full w-full rounded-full object-cover"
-                      />
-                    )}
-                  </div>
-                  <div>
-                    <div className="font-medium">
-                      {getFirstName(studentStoryData.mentorName)}
-                    </div>
-                    <div className="space-y-0.5 text-sm text-muted-foreground">
-                      <div>{studentStoryData.mentorSchool}</div>
-                      <div>{studentStoryData.mentorMajor}</div>
-                    </div>
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <div className="flex flex-wrap gap-1">
-                    {studentStoryData.mentorTeachingStyle?.map(
-                      (style, index) => (
-                        <Badge
-                          key={index}
-                          variant="secondary"
-                          className="text-[11px] font-normal"
-                        >
-                          {style}
-                        </Badge>
-                      )
-                    )}
-                  </div>
-                  <div className="flex flex-wrap gap-1">
-                    {studentStoryData.mentorExpertise?.map(
-                      (expertise, index) => (
-                        <Badge
-                          key={index}
-                          variant="outline"
-                          className="text-[11px] font-normal"
-                        >
-                          {expertise}
-                        </Badge>
-                      )
-                    )}
-                  </div>
-                </div>
+                <h3 className="text-lg font-semibold text-[#111827]">
+                  The Mentor
+                </h3>
+                <Accordion type="single" collapsible className="w-full">
+                  <AccordionItem value="mentor-traits" className="border-0">
+                    <AccordionTrigger className="hover:no-underline">
+                      <div className="flex items-center gap-4">
+                        <div className="h-24 w-24 rounded-full bg-gray-200 flex-shrink-0 shadow-md ring-1 ring-[#111827]/10">
+                          {studentStoryData.mentorProfileImage && (
+                            <Image
+                              src={studentStoryData.mentorProfileImage}
+                              alt={`${getFirstName(
+                                studentStoryData.mentorName
+                              )}'s profile`}
+                              width={96}
+                              height={96}
+                              unoptimized
+                              className="h-full w-full rounded-full object-cover"
+                            />
+                          )}
+                        </div>
+                        <div>
+                          <div className="font-medium text-base">
+                            {getFirstName(studentStoryData.mentorName)}
+                          </div>
+                          <div className="space-y-0.5 text-sm text-muted-foreground">
+                            <div>{studentStoryData.mentorSchool}</div>
+                            <div>{studentStoryData.mentorMajor}</div>
+                          </div>
+                        </div>
+                      </div>
+                    </AccordionTrigger>
+                    <AccordionContent className="pt-2">
+                      <div className="space-y-2">
+                        <div className="flex flex-wrap gap-1">
+                          {studentStoryData.mentorTeachingStyle?.map(
+                            (style, index) => (
+                              <Badge
+                                key={index}
+                                variant="secondary"
+                                className="text-[11px] font-normal"
+                              >
+                                {style}
+                              </Badge>
+                            )
+                          )}
+                        </div>
+                        <div className="flex flex-wrap gap-1">
+                          {studentStoryData.mentorExpertise?.map(
+                            (expertise, index) => (
+                              <Badge
+                                key={index}
+                                variant="outline"
+                                className="text-[11px] font-normal"
+                              >
+                                {expertise}
+                              </Badge>
+                            )
+                          )}
+                        </div>
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
               </div>
             </div>
-          </div>
 
-          {/* Student Background Blurb */}
-          <div className="space-y-2">
-            <h3 className="font-medium text-[#111827]">
-              What They Set Out To Do
-            </h3>
-            <div className="text-sm text-muted-foreground leading-relaxed pl-4 border-l-2 border-[#fbc012]">
-              {studentStoryData.backgroundBlurb}
-            </div>
-          </div>
-
-          <div className="border-t border-[#111827]/5" />
-
-          {/* The Perfect Match Section */}
-          {studentStoryData.match &&
-          studentStoryData.match.qualities &&
-          studentStoryData.match.qualities.length > 0 ? (
-            <div className="space-y-6">
-              <h2 className="text-xl font-semibold text-[#111827]">
-                The Perfect Match
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {studentStoryData.match.qualities.map((quality, index) => (
-                  <div key={index} className="space-y-2">
-                    <h3 className="font-medium text-[#111827]">
-                      {quality.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground">
-                      {quality.description}
-                    </p>
-                  </div>
-                ))}
+            {/* Student Background Blurb */}
+            <Card className="rounded-none border-2 border-[#34D399]">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <CardHeader>
+                    <CardTitle className="font-bold flex items-center gap-2">
+                      <Flag className="h-5 w-5 text-[#34D399]" />
+                      What {getFirstName(studentStoryData.studentName)} set out
+                      to do
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="text-sm text-muted-foreground leading-relaxed">
+                      {studentStoryData.backgroundBlurb}
+                    </div>
+                  </CardContent>
+                </div>
+                <div>
+                  <CardHeader>
+                    <CardTitle className="font-bold flex items-center gap-2">
+                      <Heart className="h-5 w-5 text-[#34D399]" />
+                      Why {getFirstName(studentStoryData.mentorName)} was the
+                      perfect match
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid grid-cols-1 gap-2 md:gap-4">
+                      <Accordion type="single" collapsible className="w-full">
+                        {studentStoryData.match.qualities.map(
+                          (quality, index) => (
+                            <AccordionItem
+                              key={index}
+                              value={`quality-${index}`}
+                              className="border-0"
+                            >
+                              <AccordionTrigger className="hover:no-underline py-2">
+                                <h3 className="font-medium text-[#111827]">
+                                  {quality.title}
+                                </h3>
+                              </AccordionTrigger>
+                              <AccordionContent className="pt-1 pb-2">
+                                <p className="text-sm text-muted-foreground">
+                                  {quality.description}
+                                </p>
+                              </AccordionContent>
+                            </AccordionItem>
+                          )
+                        )}
+                      </Accordion>
+                    </div>
+                  </CardContent>
+                </div>
               </div>
-            </div>
-          ) : null}
-        </div>
-
-        <div className="border-t border-[#111827]/5" />
-
-        {/* Timeline Section */}
-        <div className="space-y-4">
-          <h2 className="text-xl font-semibold text-[#111827]">
-            Learning Milestones
-          </h2>
-          <Timeline>
-            {studentStoryData.timeline.milestones.map((milestone, index) => (
-              <TimelineItem key={milestone.id}>
-                <TimelineSeparator>
-                  <TimelineDot className="flex h-8 w-8 items-center justify-center">
-                    <DynamicIcon
-                      name={milestone.icon}
-                      className="h-4 w-4 text-[#059669]"
-                    />
-                  </TimelineDot>
-                  {index < studentStoryData.timeline.milestones.length - 1 && (
-                    <TimelineConnector className="bg-[#111827]/5" />
-                  )}
-                </TimelineSeparator>
-                <TimelineContent>
-                  <div className="flex flex-col sm:flex-row sm:items-baseline sm:gap-2">
-                    <TimelineTitle className="text-[#111827]">
-                      {milestone.title}
-                    </TimelineTitle>
-                    <span className="text-sm text-muted-foreground mt-1 sm:mt-0">
-                      {formatDateRange(milestone.startDate, milestone.endDate)}
-                    </span>
-                  </div>
-                  <TimelineDescription className="text-[#111827]/70">
-                    {milestone.summary}
-                  </TimelineDescription>
-                </TimelineContent>
-              </TimelineItem>
-            ))}
-          </Timeline>
-        </div>
+            </Card>
+          </div>
+        )}
 
         <div className="border-t border-[#111827]/5" />
 
         {/* Skills and Challenges Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Skills Developed */}
+          {/* Concepts Learned */}
           <div className="space-y-4">
-            <h2 className="text-xl font-semibold text-[#111827]">
-              Skills Developed
+            <h2 className="text-lg font-semibold text-[#111827]">
+              Concepts Learned
             </h2>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              {studentStoryData.skillsDeveloped.map((skill, index) => (
-                <li key={index} className="flex items-start">
-                  <DynamicIcon
-                    name="check"
-                    className="h-4 w-4 mr-2 text-[#059669] flex-shrink-0 mt-0.5"
-                  />
-                  <span>{skill}</span>
-                </li>
-              ))}
+            <ul className="space-y-2">
+              {studentStoryData.subjects?.flatMap((subjectData) =>
+                subjectData.topics.map((topic, topicIndex) => (
+                  <li
+                    key={`${subjectData.subject}-${topicIndex}`}
+                    className="flex items-start gap-2 text-sm"
+                  >
+                    <DynamicIcon
+                      name="check"
+                      className="h-4 w-4 text-[#059669] flex-shrink-0 mt-0.5"
+                    />
+                    <span>
+                      <span className="text-muted-foreground">
+                        {subjectData.subject}
+                      </span>
+                      <span className="text-muted-foreground mx-1">/</span>
+                      <span className="text-[#111827]">{topic.concept}</span>
+                    </span>
+                  </li>
+                ))
+              )}
             </ul>
           </div>
 
-          {/* Challenges Overcome */}
-          <div className="space-y-4">
-            <h2 className="text-xl font-semibold text-[#111827]">
-              Challenges Overcome
-            </h2>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              {studentStoryData.challengesOvercome.map((challenge, index) => (
-                <li key={index} className="flex items-start">
-                  <DynamicIcon
-                    name="check"
-                    className="h-4 w-4 mr-2 text-[#059669] flex-shrink-0 mt-0.5"
-                  />
-                  <span>{challenge}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Key Events */}
+          {studentStoryData.keyDates &&
+            studentStoryData.keyDates.length > 0 && (
+              <div className="space-y-4">
+                <h2 className="text-lg font-semibold text-[#111827]">
+                  Key Events
+                  <span className="text-[10px] font-medium text-muted-foreground ml-1 align-super">
+                    beta
+                  </span>
+                </h2>
+                <ul className="space-y-2">
+                  {studentStoryData.keyDates.map((item, index) => (
+                    <li
+                      key={index}
+                      className="flex flex-col sm:flex-row gap-1 sm:gap-4 text-sm"
+                    >
+                      <span className="font-medium text-[#111827] sm:w-32 shrink-0">
+                        {item.date}
+                      </span>
+                      <span className="text-muted-foreground">
+                        {item.event}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
         </div>
 
         <div className="border-t border-[#111827]/5" />
 
-        {/* Concepts Learned Section (Now Tabs) */}
-        {studentStoryData.subjects && studentStoryData.subjects.length > 0 && (
-          <>
-            <div className="space-y-4">
-              <h2 className="text-xl font-semibold text-[#111827]">
-                Concepts Learned
-              </h2>
-              {/* Replaced Accordion with Tabs */}
-              <Tabs
-                defaultValue={
-                  studentStoryData.subjects.sort(
-                    (a, b) => (b.topics?.length || 0) - (a.topics?.length || 0)
-                  )[0]?.subject || "tab-0"
-                }
-                className="w-full"
-              >
-                <TabsList className="grid w-full grid-cols-3 mb-4">
-                  {[...(studentStoryData.subjects || [])]
-                    .sort(
-                      (a, b) =>
-                        (b.topics?.length || 0) - (a.topics?.length || 0)
-                    )
-                    .map((subjectData, index) => (
-                      <TabsTrigger
-                        key={index}
-                        value={subjectData.subject || `tab-${index}`}
-                      >
-                        {subjectData.subject}
-                      </TabsTrigger>
-                    ))}
-                </TabsList>
-                {[...(studentStoryData.subjects || [])]
-                  .sort(
-                    (a, b) => (b.topics?.length || 0) - (a.topics?.length || 0)
-                  )
-                  .map((subjectData, index) => (
-                    <TabsContent
-                      key={index}
-                      value={subjectData.subject || `tab-${index}`}
-                    >
-                      <div className="space-y-4">
-                        {subjectData.topics.map((topic, topicIndex) => (
-                          <div key={topicIndex} className="space-y-2 py-2">
-                            <h4 className="font-medium text-[#111827]">
-                              {topic.concept}
-                            </h4>
-                            <ul className="space-y-1 text-sm text-muted-foreground">
-                              {topic.actions.map((action, actionIndex) => (
-                                <li
-                                  key={actionIndex}
-                                  className="flex items-start"
-                                >
-                                  <DynamicIcon
-                                    name="dot"
-                                    className="h-4 w-4 mr-2 text-[#059669] flex-shrink-0 mt-0.5"
-                                  />
-                                  <span>{action}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        ))}
-                      </div>
-                    </TabsContent>
-                  ))}
-              </Tabs>
-            </div>
-          </>
-        )}
+        {/* Challenges Overcome Section */}
+        <div className="space-y-4">
+          <h2 className="text-lg font-semibold text-[#111827]">
+            Challenges Overcome
+          </h2>
+          <ul className="space-y-2 text-sm text-muted-foreground">
+            {studentStoryData.challengesOvercome.map((challenge, index) => (
+              <li key={index} className="flex items-start">
+                <DynamicIcon
+                  name="check"
+                  className="h-4 w-4 mr-2 text-[#059669] flex-shrink-0 mt-0.5"
+                />
+                <span>{challenge}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
 
         <div className="border-t border-[#111827]/5" />
 
+        {/* Skills Analysis Section */}
         {studentStoryData.categorizedSkills &&
           studentStoryData.categorizedSkills.length > 0 && (
             <>
-              <div className="space-y-6">
-                <h2 className="text-xl font-semibold text-[#111827]">
+              <div className="space-y-4">
+                <h2 className="text-lg font-semibold text-[#111827]">
                   Skills Analysis
                 </h2>
-                {/* Replaced grid layout with Accordion */}
-                <Accordion
-                  type="single"
-                  collapsible
-                  className="w-full space-y-2"
-                >
-                  {[...(studentStoryData.categorizedSkills || [])]
-                    .sort(
-                      (a, b) =>
-                        (b.sessions?.length || 0) - (a.sessions?.length || 0)
-                    )
-                    .map((skillDetail, index) => (
-                      <AccordionItem
-                        key={index}
-                        value={`skill-item-${index}`}
-                        className="border-b border-dotted border-[#111827]/10 py-1"
-                      >
-                        <AccordionTrigger className="text-left hover:no-underline py-3">
-                          {/* Trigger contains skill name and session squares */}
-                          <div className="flex items-center justify-between gap-2 w-full pr-2">
-                            <span className="font-medium text-[#111827] text-base flex-1 mr-2">
-                              {skillDetail.skill}
-                            </span>
-                            {skillDetail.sessions &&
-                              skillDetail.sessions.length > 0 && (
-                                <div className="flex items-center gap-0.5 flex-shrink-0">
-                                  {skillDetail.sessions.map(
-                                    (_, sessionIndex) => (
-                                      <div
-                                        key={sessionIndex}
-                                        className="h-2.5 w-2.5 bg-green-500 rounded-sm"
-                                        title="Session where skill was observed"
-                                      ></div>
-                                    )
-                                  )}
-                                </div>
+                <div className="h-[300px] overflow-y-auto pr-4">
+                  <Accordion
+                    type="single"
+                    collapsible
+                    className="w-full space-y-2"
+                  >
+                    {[...(studentStoryData.categorizedSkills || [])]
+                      .sort(
+                        (a, b) =>
+                          (b.sessions?.length || 0) - (a.sessions?.length || 0)
+                      )
+                      .map((skillDetail, index) => (
+                        <AccordionItem
+                          key={index}
+                          value={`skill-item-${index}`}
+                          className="border-b border-dotted border-[#111827]/10 py-1"
+                        >
+                          <AccordionTrigger className="text-left hover:no-underline py-2">
+                            {/* Trigger contains skill name and session squares */}
+                            <div className="flex items-center justify-between gap-2 w-full pr-2">
+                              <span className="text-sm text-[#111827] flex-1 mr-2">
+                                {skillDetail.skill}
+                              </span>
+                              {skillDetail.sessions &&
+                                skillDetail.sessions.length > 0 && (
+                                  <div className="flex items-center gap-0.5 flex-shrink-0">
+                                    {skillDetail.sessions.map(
+                                      (_, sessionIndex) => (
+                                        <div
+                                          key={sessionIndex}
+                                          className="h-2 w-2 bg-green-500 rounded-sm"
+                                          title="Session where skill was observed"
+                                        ></div>
+                                      )
+                                    )}
+                                  </div>
+                                )}
+                            </div>
+                          </AccordionTrigger>
+                          <AccordionContent className="pt-1 pb-2 space-y-2">
+                            <div className="flex flex-wrap gap-1">
+                              {skillDetail.categories?.map(
+                                (category, catIndex) => (
+                                  <Badge
+                                    key={catIndex}
+                                    variant="outline"
+                                    className="text-[10px] font-normal"
+                                  >
+                                    {category}
+                                  </Badge>
+                                )
                               )}
-                          </div>
-                        </AccordionTrigger>
-                        <AccordionContent className="pt-1 pb-3 space-y-2">
-                          {" "}
-                          {/* Content contains categories and explanation */}
-                          <div className="flex flex-wrap gap-1">
-                            {skillDetail.categories?.map(
-                              (category, catIndex) => (
-                                <Badge
-                                  key={catIndex}
-                                  variant="outline"
-                                  className="text-[10px] font-normal"
-                                >
-                                  {category}
-                                </Badge>
-                              )
-                            )}
-                          </div>
-                          <p className="text-sm text-muted-foreground">
-                            {skillDetail.explanation}
-                          </p>
-                        </AccordionContent>
-                      </AccordionItem>
-                    ))}
-                </Accordion>
+                            </div>
+                            <p className="text-sm text-muted-foreground">
+                              {skillDetail.explanation}
+                            </p>
+                          </AccordionContent>
+                        </AccordionItem>
+                      ))}
+                  </Accordion>
+                </div>
               </div>
             </>
           )}
 
         <div className="border-t border-[#111827]/5" />
 
-        {/* Key Dates & Events Section */}
-        {studentStoryData.keyDates && studentStoryData.keyDates.length > 0 && (
-          <>
-            <div className="space-y-4">
-              <h2 className="text-xl font-semibold text-[#111827]">
-                Key Events
-              </h2>
-              <ul className="space-y-2">
-                {studentStoryData.keyDates.map((item, index) => (
-                  <li
-                    key={index}
-                    className="flex flex-col sm:flex-row sm:items-center sm:gap-4 text-sm"
-                  >
-                    <span className="font-medium text-[#111827] w-48 shrink-0">
-                      {item.date}
-                    </span>
-                    <span className="text-muted-foreground mt-0.5 sm:mt-0">
-                      {item.event}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </>
-        )}
-
-        <div className="border-t border-[#111827]/5" />
-
         {/* What's Next Section */}
         <div className="space-y-4">
-          <h2 className="text-xl font-semibold text-[#111827]">
+          <h2 className="text-lg font-semibold text-[#111827]">
             What&apos;s Next?
           </h2>
           <p className="text-sm text-muted-foreground leading-relaxed">
