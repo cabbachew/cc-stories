@@ -1099,8 +1099,8 @@ export default function StudentStory() {
                   <h2 className="text-lg font-semibold text-[#111827]">
                     Skills Analysis
                   </h2>
-                  <div className="flex items-center gap-2">
-                    <span className="text-sm text-muted-foreground">
+                  <div className="flex items-center gap-1 sm:gap-2">
+                    <span className="text-xs sm:text-sm text-muted-foreground">
                       Sort by:
                     </span>
                     <Select
@@ -1109,12 +1109,22 @@ export default function StudentStory() {
                         setSortBy(value)
                       }
                     >
-                      <SelectTrigger className="w-[180px]">
+                      <SelectTrigger className="w-[120px] sm:w-[180px] h-8 sm:h-10 text-xs sm:text-sm">
                         <SelectValue placeholder="Select sort option" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="type">Skill Type</SelectItem>
-                        <SelectItem value="emphasis">Skill Emphasis</SelectItem>
+                        <SelectItem
+                          value="type"
+                          className="text-xs sm:text-sm py-1.5 sm:py-2"
+                        >
+                          Skill Type
+                        </SelectItem>
+                        <SelectItem
+                          value="emphasis"
+                          className="text-xs sm:text-sm py-1.5 sm:py-2"
+                        >
+                          Skill Emphasis
+                        </SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
@@ -1134,7 +1144,7 @@ export default function StudentStory() {
                         <AccordionTrigger className="text-left hover:no-underline py-2">
                           {/* Trigger contains badges and skill name */}
                           <div className="flex items-center gap-2 w-full pr-2">
-                            <div className="flex flex-wrap gap-1 flex-shrink-0">
+                            <div className="hidden sm:flex flex-wrap gap-1 flex-shrink-0">
                               {skillDetail.categories?.map(
                                 (category, catIndex) => (
                                   <Badge
@@ -1147,29 +1157,88 @@ export default function StudentStory() {
                                 )
                               )}
                             </div>
+                            {sortBy === "type" && (
+                              <div className="sm:hidden flex flex-wrap gap-1 flex-shrink-0">
+                                {skillDetail.categories?.map(
+                                  (category, catIndex) => (
+                                    <Badge
+                                      key={catIndex}
+                                      variant="outline"
+                                      className="text-[10px] font-normal"
+                                    >
+                                      {category}
+                                    </Badge>
+                                  )
+                                )}
+                              </div>
+                            )}
                             <span className="text-sm text-[#111827] flex-1">
                               {skillDetail.skill}
                             </span>
-                            {skillDetail.sessions &&
-                              skillDetail.sessions.length > 0 && (
-                                <div className="flex items-center gap-0.5 flex-shrink-0">
-                                  {skillDetail.sessions.map(
+                            <div className="hidden sm:flex items-center gap-0.5 flex-shrink-0">
+                              {skillDetail.sessions &&
+                                skillDetail.sessions.length > 0 &&
+                                skillDetail.sessions.map((_, sessionIndex) => (
+                                  <div
+                                    key={sessionIndex}
+                                    className="h-1.5 w-1.5 sm:h-2 sm:w-2 bg-green-500 rounded-sm"
+                                    title="Session where skill was observed"
+                                  ></div>
+                                ))}
+                            </div>
+                            {sortBy === "emphasis" && (
+                              <div className="sm:hidden flex items-center gap-0.5 flex-shrink-0">
+                                {skillDetail.sessions &&
+                                  skillDetail.sessions.length > 0 &&
+                                  skillDetail.sessions.map(
                                     (_, sessionIndex) => (
                                       <div
                                         key={sessionIndex}
-                                        className="h-2 w-2 bg-green-500 rounded-sm"
+                                        className="h-1.5 w-1.5 sm:h-2 sm:w-2 bg-green-500 rounded-sm"
                                         title="Session where skill was observed"
                                       ></div>
                                     )
                                   )}
-                                </div>
-                              )}
+                              </div>
+                            )}
                           </div>
                         </AccordionTrigger>
                         <AccordionContent className="pt-1 pb-2">
-                          <p className="text-sm text-muted-foreground">
-                            {skillDetail.explanation}
-                          </p>
+                          <div className="space-y-2">
+                            {sortBy === "emphasis" && (
+                              <div className="sm:hidden flex flex-wrap gap-1">
+                                {skillDetail.categories?.map(
+                                  (category, catIndex) => (
+                                    <Badge
+                                      key={catIndex}
+                                      variant="outline"
+                                      className="text-[10px] font-normal"
+                                    >
+                                      {category}
+                                    </Badge>
+                                  )
+                                )}
+                              </div>
+                            )}
+                            {sortBy === "type" && (
+                              <div className="sm:hidden flex items-center gap-0.5">
+                                {skillDetail.sessions &&
+                                  skillDetail.sessions.length > 0 &&
+                                  skillDetail.sessions.map(
+                                    (_, sessionIndex) => (
+                                      <div
+                                        key={sessionIndex}
+                                        className="h-1.5 w-1.5 sm:h-2 sm:w-2 bg-green-500 rounded-sm"
+                                        title="Session where skill was observed"
+                                      ></div>
+                                    )
+                                  )}
+                              </div>
+                            )}
+                            <p className="text-sm text-muted-foreground">
+                              {skillDetail.explanation}
+                            </p>
+                          </div>
                         </AccordionContent>
                       </AccordionItem>
                     ))}
