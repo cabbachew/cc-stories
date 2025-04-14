@@ -3,8 +3,8 @@ import { StudentStoryProps } from "@/app/types/StudentStory";
 export const studentStory: StudentStoryProps = {
   id: "70ea7cec-4303-457d-be4a-7caa1f15d698",
   showLearningPlan: false,
-  showAssets: false,
-  showGallery: false,
+  showAssets: true,
+  showGallery: true,
   headline:
     "From Exploration to Award-Winning App: Drew's Journey in Computer Science",
   discipline: "Science, Engineering & Technology",
@@ -17,35 +17,34 @@ export const studentStory: StudentStoryProps = {
   assets: [
     {
       title: "Congressional App Challenge Winner Announcement",
-      url: "#",
+      url: "https://www.congressionalappchallenge.us/24-ny12/",
     },
     {
       title: "Lyme-Aid Project Submission Video",
-      url: "#",
+      url: "https://www.youtube.com/watch?v=E4d2_j-c_xE",
     },
   ],
   gallery: {
     images: [
       {
-        url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e2e8f0'/%3E%3C/svg%3E",
-        caption: "Drew researching CS careers with Kaitlyn",
+        url: "https://ucarecdn.com/854d55b6-ff4d-4dd4-a237-cfa4867b4a19/-/preview/1000x752/",
+        caption: "Congressional App Challenge Winner Announcement",
       },
       {
-        url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e2e8f0'/%3E%3C/svg%3E",
-        caption: "Planning app features and wireframes with Kaitlyn",
+        url: "https://ucarecdn.com/bf600cd2-72d6-47ce-be19-9ff5bd11cdf9/-/preview/889x441/",
+        caption: "Lyme-Aid educational resources",
       },
       {
-        url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e2e8f0'/%3E%3C/svg%3E",
-        caption: "Debugging the Lyme-Aid symptom tracker with mentor Kaitlyn",
+        url: "https://ucarecdn.com/1f952358-c584-434c-91b4-59f3e0e49802/-/preview/876x432/",
+        caption: "Lyme-Aid symptom tracker",
       },
       {
-        url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e2e8f0'/%3E%3C/svg%3E",
-        caption: "Implementing the AI chatbot feature with Kaitlyn",
+        url: "https://ucarecdn.com/d5d16fc1-3ca2-4ac9-a0b2-9ed7307b8250/-/preview/886x442/",
+        caption: "Lyme-Aid AI chatbot",
       },
       {
-        url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e2e8f0'/%3E%3C/svg%3E",
-        caption:
-          "Celebrating Congressional App Challenge win in NY-12 District",
+        url: "https://ucarecdn.com/ecc2dad7-b8f3-4ce0-8c30-942ffaf54246/-/preview/999x569/",
+        caption: "Lyme-Aide codebase snippet",
       },
     ],
   },
