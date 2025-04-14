@@ -3,7 +3,7 @@ import { StudentStoryProps } from "@/app/types/StudentStory";
 export const studentStory: StudentStoryProps = {
   id: "dfc7a6db-b0e2-4ea1-be13-f0527e89ffec",
   showLearningPlan: false,
-  showAssets: false,
+  showAssets: true,
   showGallery: true,
   headline:
     "From Tokyo to DC: How a Nationally Ranked Fencer Built a Cross-Cultural Research Project on Criminal Justice",
@@ -16,13 +16,17 @@ export const studentStory: StudentStoryProps = {
   learningPlanUrl: "#",
   assets: [
     {
-      title: "Cross-Cultural Prison System Analysis Research Paper",
-      url: "#",
+      title: "Stanford Summer Humanities Institute",
+      url: "https://summerhumanities.spcs.stanford.edu/",
     },
-    {
-      title: "Interview Series: Perspectives on Justice Reform",
-      url: "#",
-    },
+    // {
+    //   title: "Cross-Cultural Prison System Analysis Research Paper",
+    //   url: "#",
+    // },
+    // {
+    //   title: "Interview Series: Perspectives on Justice Reform",
+    //   url: "#",
+    // },
   ],
   gallery: {
     images: [
