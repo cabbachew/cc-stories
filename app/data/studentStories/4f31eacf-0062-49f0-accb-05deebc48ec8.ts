@@ -3,39 +3,52 @@ import { StudentStoryProps } from "@/app/types/StudentStory";
 export const studentStory: StudentStoryProps = {
   id: "4f31eacf-0062-49f0-accb-05deebc48ec8",
   showLearningPlan: false,
-  showAssets: false,
-  showGallery: false,
+  showAssets: true,
+  showGallery: true,
   headline:
     "From Sneakers to Sports Cards: How a 9th Grader Built a Thriving Resale Business",
   discipline: "Business, Finance & Entrepreneurship",
   topic: "Business / Entrepreneurship",
   startDate: "2024-09-23",
-  lastSessionDate: "2025-02-04",
-  sessionsCompleted: 14,
+  lastSessionDate: "2025-03-23",
+  sessionsCompleted: 18,
   status: "scheduled",
   learningPlanUrl: "#",
   assets: [
     {
-      title: "Sports Card Business Investment Deck",
-      url: "#",
+      title: "Mirror Sports Cards eBay Store",
+      url: "https://www.ebay.com/usr/mirrorsportscards",
+    },
+    {
+      title: "Mirror Sports Cards TikTok",
+      url: "https://www.tiktok.com/@mirrorsportscards",
+    },
+    {
+      title: "Mirror Sports Cards Linktree",
+      url: "https://linktr.ee/mirrorsportscards",
     },
   ],
   gallery: {
     images: [
       {
-        url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e2e8f0'/%3E%3C/svg%3E",
-        caption:
-          "Max displaying his collection at a local card show, engaging with potential buyers",
+        url: "https://ucarecdn.com/db758e8a-bf41-42b8-b474-9b97fee40471/-/preview/1000x592/",
+        caption: "Inventory tracking system",
       },
       {
-        url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e2e8f0'/%3E%3C/svg%3E",
-        caption:
-          "Recording TikTok content showcasing valuable card pulls to grow his social media presence",
+        url: "https://ucarecdn.com/0d90063b-e95a-4741-9628-c15e52235101/-/preview/1000x615/-/crop/1:1/left/",
+        caption: "Mirror Sports Cards eBay Store",
       },
       {
-        url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e2e8f0'/%3E%3C/svg%3E",
-        caption:
-          "Analyzing market trends to make strategic card purchasing decisions",
+        url: "https://ucarecdn.com/920eadf0-e3f2-4141-a45a-34024e85b7c7/-/preview/999x525/",
+        caption: "High-value Caleb Williams card listed for $500",
+      },
+      {
+        url: "https://ucarecdn.com/2378a82c-c8ae-4f27-8a7a-b5b742ccd742/-/preview/864x885/",
+        caption: "Mirror Sports Cards TikTok",
+      },
+      {
+        url: "https://ucarecdn.com/e9264367-5cb1-4a80-bc4c-e9062aca9210/-/preview/743x674/",
+        caption: "Mirror Sports Cards Linktree",
       },
     ],
   },
@@ -51,11 +64,11 @@ export const studentStory: StudentStoryProps = {
     "Adaptable",
   ],
   studentInterests: [
-    "Sports card collecting",
+    "Sports Card Collecting",
     "Baseball",
     "Entrepreneurship",
-    "Music production",
-    "Digital marketing",
+    "Music Production",
+    "Digital Marketing",
   ],
   mentorProfileImage:
     "https://ucarecdn.com/cdfcfa7a-ea80-4477-8e3b-799554222bea/",
@@ -134,6 +147,15 @@ export const studentStory: StudentStoryProps = {
           "Surpassed $900 in sales with a 75% profit margin. Began investigating professional card grading services to increase inventory value and expanded his reach through strategic content creation across platforms.",
         icon: "trophy",
       },
+      {
+        id: 5,
+        startDate: "2025-02",
+        endDate: "2025-03",
+        title: "Expanding Investment Portfolio",
+        summary:
+          "Acquired several high-value cards including a $1,500 card and started professional grading services with Beckett Grading to maximize card values. Successfully grew his inventory to over $2,500 in estimated value.",
+        icon: "trending-up",
+      },
     ],
   },
   skillsDeveloped: [
@@ -143,13 +165,16 @@ export const studentStory: StudentStoryProps = {
     "Sales negotiation and pricing strategy",
     "Inventory management systems",
     "Brand development and customer relationship building",
+    "Professional card grading and valuation",
+    "Content creation and audience engagement",
   ],
   challengesOvercome: [
     "Transitioning from sneaker reselling to sports card business model",
     "Gaining confidence in creating on-camera content for social media",
     "Developing systematic approach to inventory management",
     "Balancing school commitments with growing business demands",
+    "Learning to make strategic investment decisions based on market trends",
   ],
   futureGoals:
-    "Max plans to expand his sports card business by implementing professional card grading to increase inventory value, establishing a regular presence at regional card shows, and growing his social media following to drive online sales. He aims to explore card break operations as a new revenue stream, potentially bringing in investors to scale this aspect of the business. With his impressive profit margins and growing inventory valuation, Max is well-positioned to transform his entrepreneurial passion into a substantial business that could fund future educational opportunities.",
+    "Max plans to expand his sports card business by completing professional card grading for his high-value inventory, establishing a regular presence at regional card shows, and growing his social media following to drive online sales. He aims to explore card break operations as a new revenue stream and leverage his impressive profit margins to further scale his business. With his growing inventory now valued at over $2,500 and his recent acquisition of several cards worth $500-$1,500 each, Max is positioned to transform his entrepreneurial passion into a substantial business that could fund future educational opportunities while balancing his commitment to baseball and academics.",
 };
