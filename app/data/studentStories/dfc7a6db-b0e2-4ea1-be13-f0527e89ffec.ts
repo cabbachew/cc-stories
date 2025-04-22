@@ -48,6 +48,10 @@ export const studentStory: StudentStoryProps = {
         url: "https://ucarecdn.com/9301fb7b-3947-4909-ad40-1494f984bb06/-/crop/1:1/left/",
         caption: "Acceptance letter from Stanford Summer Humanities Institute",
       },
+      {
+        url: "https://ucarecdn.com/09abf50c-7902-4c4c-93e6-a95f37fbebd1/-/preview/554x720/-/crop/525x525/center/",
+        caption: "Celebrating acceptance to Harvard's Secondary School Program",
+      },
       //   {
       //     url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e2e8f0'/%3E%3C/svg%3E",
       //     caption:
