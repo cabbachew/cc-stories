@@ -15,21 +15,35 @@ export const studentStory: StudentStoryProps = {
   status: "scheduled",
   learningPlanUrl: "#",
   assets: [
-    {
-      title: "Stanford Summer Humanities Institute",
-      url: "https://summerhumanities.spcs.stanford.edu/",
-    },
     // {
     //   title: "Cross-Cultural Prison System Analysis Research Paper",
     //   url: "#",
     // },
-    // {
-    //   title: "Interview Series: Perspectives on Justice Reform",
-    //   url: "#",
-    // },
+    {
+      title: "Comparative Analysis Research Outline",
+      url: "https://docs.google.com/document/d/1wCK_DOQ4AbXcHTWZoXiNSOftAw2o5sx_QZc0uaHF_cw/edit?usp=sharing",
+    },
+    {
+      title: "Incarceration Interview Questionnaire",
+      url: "https://docs.google.com/document/d/1etiAZijxeY9WiWLAURMlwzVCosdzDLo0Plx4Je_RR5U/edit?usp=sharing",
+    },
+    {
+      title: "Stanford Summer Humanities Institute",
+      url: "https://summerhumanities.spcs.stanford.edu/",
+    },
   ],
   gallery: {
     images: [
+      {
+        url: "https://ucarecdn.com/e8738aeb-d2a6-4da1-b0b4-fe0d2c9f1dea/-/preview/1000x849/",
+        caption:
+          "Analyzing academic sources for cross-cultural criminal justice research",
+      },
+      {
+        url: "https://ucarecdn.com/165c300e-9ae3-4ebb-be24-373c1f66308e/-/preview/1000x871/",
+        caption:
+          "Interview Questions to Explore Personal Perspectives on Incarceration",
+      },
       {
         url: "https://ucarecdn.com/9301fb7b-3947-4909-ad40-1494f984bb06/-/crop/1:1/left/",
         caption: "Acceptance letter from Stanford Summer Humanities Institute",
@@ -43,11 +57,6 @@ export const studentStory: StudentStoryProps = {
       //     url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e2e8f0'/%3E%3C/svg%3E",
       //     caption:
       //       "Research notes exploring the concept of 'benevolent paternalism' in Japanese corrections",
-      //   },
-      //   {
-      //     url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e2e8f0'/%3E%3C/svg%3E",
-      //     caption:
-      //       "Analyzing academic sources for cross-cultural criminal justice research",
       //   },
       //   {
       //     url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e2e8f0'/%3E%3C/svg%3E",
