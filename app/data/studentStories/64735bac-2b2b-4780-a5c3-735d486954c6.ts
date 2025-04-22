@@ -27,6 +27,14 @@ export const studentStory: StudentStoryProps = {
   gallery: {
     images: [
       {
+        url: "https://ucarecdn.com/251d484b-d303-405e-9b2c-681c075043b8/-/preview/672x1000/",
+        caption: "",
+      },
+      {
+        url: "https://ucarecdn.com/c5942e97-220b-4634-bb78-a7ab36a25e1f/-/preview/701x1000/-/crop/701x701/bottom/",
+        caption: "",
+      },
+      {
         url: "https://ucarecdn.com/19b7f9d7-f279-46c6-ae3c-9b59bec689e6/-/preview/819x755/",
         caption: "Excerpt from The Journeys Through Alrana (Chapter 23)",
       },
@@ -37,6 +45,10 @@ export const studentStory: StudentStoryProps = {
       {
         url: "https://ucarecdn.com/ffbc1c8a-f830-46c5-a9a8-9f665a46a9f5/-/preview/750x1000/-/crop/750x750/top/",
         caption: "Character sketches showcasing royal fairy outfits",
+      },
+      {
+        url: "https://ucarecdn.com/fa31a503-8521-4638-b699-cbb1192b612a/-/preview/1000x842/",
+        caption: "",
       },
       // {
       //   url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e2e8f0'/%3E%3C/svg%3E",
@@ -56,7 +68,7 @@ export const studentStory: StudentStoryProps = {
     ],
   },
   studentProfileImage:
-    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e2e8f0'/%3E%3C/svg%3E",
+    "https://ucarecdn.com/e017f8b0-5a5f-46ab-add1-831062e749b8/-/preview/863x1000/",
   studentName: "Mila Chwals Lee",
   studentSchool: "Friends Seminary",
   studentGrade: 7,
