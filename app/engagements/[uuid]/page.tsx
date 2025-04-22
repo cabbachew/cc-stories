@@ -95,12 +95,6 @@ export default function StudentStory() {
         <div className="text-center">
           <h1 className="text-2xl font-bold text-red-500">Error</h1>
           <p className="mt-2">{error || "Student story not found"}</p>
-          <NextLink
-            href="/"
-            className="mt-4 inline-block text-blue-500 hover:underline"
-          >
-            Return to home
-          </NextLink>
         </div>
       </div>
     );
