@@ -3,8 +3,8 @@ import { StudentStoryProps } from "@/app/types/StudentStory";
 export const studentStory: StudentStoryProps = {
   id: "64735bac-2b2b-4780-a5c3-735d486954c6",
   showLearningPlan: false,
-  showAssets: false,
-  showGallery: false,
+  showAssets: true,
+  showGallery: true,
   headline:
     "From Imagination to Novel: A Young Writer's Fantasy World Comes to Life",
   discipline: "Arts & Humanities",
@@ -16,36 +16,43 @@ export const studentStory: StudentStoryProps = {
   learningPlanUrl: "#",
   assets: [
     {
-      title: "Novel Draft - The Journeys of Alrana",
-      url: "#",
+      title: "Excerpt from The Journeys Through Alrana (Chapter 23)",
+      url: "https://docs.google.com/document/d/1lp4rGNvWvfIkS7KOMyej9cB5E7FIRpGHFZS1psboQkw/edit?usp=sharing",
     },
     {
-      title: "Character Design Portfolio",
-      url: "#",
+      title: "Character Profile of Olivia Henry",
+      url: "https://docs.google.com/document/d/1oQmKFgBC0oJWUL0B1IGakc87dvZj1HDeU30nZOIapnQ/edit?usp=sharing",
     },
   ],
   gallery: {
     images: [
       {
-        url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e2e8f0'/%3E%3C/svg%3E",
-        caption:
-          "Character artwork showcasing royal fairy outfits with detailed wing designs",
+        url: "https://ucarecdn.com/19b7f9d7-f279-46c6-ae3c-9b59bec689e6/-/preview/819x755/",
+        caption: "Excerpt from The Journeys Through Alrana (Chapter 23)",
       },
       {
-        url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e2e8f0'/%3E%3C/svg%3E",
-        caption:
-          "Worldbuilding map of Alrana showing Earth, Fire, and underwater kingdoms",
+        url: "https://ucarecdn.com/c76078d9-fd05-4f18-b1b9-65e1013dc21b/-/preview/791x744/",
+        caption: "Character Profile of Olivia Henry",
       },
       {
-        url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e2e8f0'/%3E%3C/svg%3E",
-        caption:
-          "Character profile workshop developing the Blood Sorcerer's complex backstory",
+        url: "https://ucarecdn.com/ffbc1c8a-f830-46c5-a9a8-9f665a46a9f5/-/preview/750x1000/-/crop/750x750/top/",
+        caption: "Character sketches showcasing royal fairy outfits",
       },
-      {
-        url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e2e8f0'/%3E%3C/svg%3E",
-        caption:
-          "Editing session showing the transformation from first draft to polished prose",
-      },
+      // {
+      //   url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e2e8f0'/%3E%3C/svg%3E",
+      //   caption:
+      //     "Worldbuilding map of Alrana showing Earth, Fire, and underwater kingdoms",
+      // },
+      // {
+      //   url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e2e8f0'/%3E%3C/svg%3E",
+      //   caption:
+      //     "Character profile workshop developing the Blood Sorcerer's complex backstory",
+      // },
+      // {
+      //   url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e2e8f0'/%3E%3C/svg%3E",
+      //   caption:
+      //     "Editing session showing the transformation from first draft to polished prose",
+      // },
     ],
   },
   studentProfileImage:
