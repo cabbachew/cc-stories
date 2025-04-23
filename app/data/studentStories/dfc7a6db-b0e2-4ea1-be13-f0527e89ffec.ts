@@ -28,8 +28,13 @@ export const studentStory: StudentStoryProps = {
       url: "https://docs.google.com/document/d/1etiAZijxeY9WiWLAURMlwzVCosdzDLo0Plx4Je_RR5U/edit?usp=sharing",
     },
     {
-      title: "Stanford Summer Humanities Institute",
-      url: "https://summerhumanities.spcs.stanford.edu/",
+      title:
+        "Acceptance Letter from the 2025 Stanford Summer Humanities Institute",
+      url: "https://ucarecdn.com/16e0c66e-b88a-4130-ad37-d270094f6461/",
+    },
+    {
+      title: "Acceptance Letter from the John Locke Institute",
+      url: "https://ucarecdn.com/844b74a0-1a1b-4c7c-89ad-0c76cbe841fb/",
     },
   ],
   gallery: {
@@ -45,8 +50,13 @@ export const studentStory: StudentStoryProps = {
           "Interview Questions to Explore Personal Perspectives on Incarceration",
       },
       {
-        url: "https://ucarecdn.com/9301fb7b-3947-4909-ad40-1494f984bb06/-/crop/1:1/left/",
+        url: "https://ucarecdn.com/0cd0007a-90f3-4bad-941e-69aa98d46a41/-/preview/686x660/",
         caption: "Acceptance letter from Stanford Summer Humanities Institute",
+      },
+      {
+        url: "https://ucarecdn.com/0e0104e8-2199-44dd-a520-de49a13d746c/-/preview/1000x987/",
+        caption:
+          "Acceptance letter from the John Locke Institute Public Policy Symposium",
       },
       {
         url: "https://ucarecdn.com/09abf50c-7902-4c4c-93e6-a95f37fbebd1/-/preview/554x720/-/crop/525x525/center/",
@@ -70,7 +80,8 @@ export const studentStory: StudentStoryProps = {
     ],
   },
   studentProfileImage:
-    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e2e8f0'/%3E%3C/svg%3E",
+    "https://ucarecdn.com/f79bdcba-0dc8-46fd-909f-31d3a09cbc89/-/preview/750x1000/-/crop/500x500/center/",
+  // "https://ucarecdn.com/f9592a26-9f97-4f7f-98d9-41a47396e490/-/preview/750x1000/",
   studentName: "Sascha Chan Lee",
   studentSchool: "Dwight Global",
   studentGrade: 11,
