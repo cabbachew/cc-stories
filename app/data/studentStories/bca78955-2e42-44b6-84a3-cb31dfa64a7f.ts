@@ -25,6 +25,22 @@ export const studentStory: StudentStoryProps = {
   gallery: {
     images: [
       {
+        url: "https://ucarecdn.com/30b7fc0f-f549-4657-b149-09a1a2ff7d0a/-/preview/698x1000/",
+        caption: "IYK Jewels Instagram",
+      },
+      {
+        url: "https://ucarecdn.com/cda893e0-2e82-4895-87de-3806620c16a0/-/preview/951x931/",
+        caption: "IYK Jewels Homepage",
+      },
+      {
+        url: "https://ucarecdn.com/6fd7dfe1-a661-4a18-818c-a3be85b8ff4b/-/preview/948x911/",
+        caption: "About IYK Jewels",
+      },
+      {
+        url: "https://ucarecdn.com/cd3b4a78-fe5c-4819-a6b4-89a7f3e9e229/-/preview/945x971/",
+        caption: "Social Impact Partnership with Every Mother Counts",
+      },
+      {
         url: "https://ucarecdn.com/0b477dd7-0833-474c-ba8c-0c152b7e7ade/",
         caption: "One Charm Bracelet",
       },
